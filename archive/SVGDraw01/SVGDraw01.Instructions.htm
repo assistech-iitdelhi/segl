@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Instructions for using the program named SVGDraw01</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+	</head>
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 10pt"
+bgcolor="#FEFFF0" link="#0000ff" vlink="#cc00cc" alink="#ff0000">
+
+
+<h1>Instructions for using the program named SVGDraw01</h1>
+<p>Version 0.0.20a 20111229</p>
+<p>This document is designed to be read from inside the program named SVGDraw01, 
+but it can also be read using a conventional web browser.</p>
+<p>At any time while viewing the document from within SVGDraw01, you can tab down to the button labeled &quot;Return to Home Base,&quot; press that button to quit viewing this document, and 
+return to Home Base. If you press Esc while viewing this document, you will land 
+back where you were when you opened the document. </p>
+
+
+	<h2>Table of contents</h2>
+
+<ul>
+	<li><a href="#Whats_new_in_this_version">What's new in this version?</a></li>
+	<li><a href="#Whats_new_in_recent_versions">What's new in recent versions?</a></li>
+	<li><a href="#Viewing_the_drawing_onscreen">Viewing the drawing onscreen</a></li>
+	<li><a href="#Printing_or_embossing">Printing and embossing</a><ul>
+		<li><a href="#A_note_about_page_size">A note about page size</a></li>
+	</ul>
+	</li>
+	<li><a href="#Purpose">Purpose</a><ul>
+		<li><a href="#A_robust_graphics_standardSVG">A robust graphics standard - SVG</a></li>
+		<li><a href="#An_accessible_and_userfriendly_drawing_program">An accessible and user-friendly drawing program 
+		SVGDraw01</a></li>
+		<li><a href="#Converting_graphics_information_into_sound">Converting 
+		graphics information into sound</a></li>
+		<li><a href="#Converting_graphics_information_into_sound_and_touch">
+		Converting graphics information into sound and touch combined</a></li>
+		<li>
+		<a href="#High-quality,_economical,_and_readilyavailable_graphics_embossing_equipment">High-quality, economical, and readily-available graphics embossing equipment</a></li>
+	</ul>
+	</li>
+	<li><a href="#Overview">Overview</a><ul>
+		<li><a href="#The_menu_system">The menu system</a><ul>
+			<li><a href="#The_File_menu_">The File menu (Alt+F)</a></li>
+			<li><a href="#The_Draw_menu">The Draw menu (Alt+D)</a></li>
+			<li><a href="#The_Mod_menu">The Mod menu (Alt+M)</a></li>
+			<li><a href="#The_Advanced_menu">The Advanced menu (Alt+A)</a></li>
+			<li><a href="#The_Instant_Display_menu">The Instant Display menu 
+			(Alt+I)</a></li>
+			<li><a href="#The_AudioTac_Display_menu">The AudioTac Display menu 
+			(Alt+U)</a></li>
+			<li><a href="#The_Help_menu">The Help menu (Alt+H)</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Program_startup">Program startup</a></li>
+	<li><a href="#User_instructions">General user instructions</a><ul>
+		<li><a href="#Selecting_action_items">Selecting actions from the menus</a></li>
+		<li><a href="#Performing_the_action">Performing the action</a></li>
+		<li><a href="#Pressing_the_Esc_key">Pressing the Esc key</a></li>
+		<li><a href="#Text_field_objects">Text field objects</a></li>
+		<li><a href="#Checkbox_objects">Checkbox objects</a></li>
+		<li><a href="#Button_objects">Button objects</a></li>
+		<li><a href="#Message_box_objects">Message box objects</a></li>
+		<li><a href="#Polylines_and_polygons">Polylines, polygons, and paths</a></li>
+		<li><a href="#The_name_and_path_of_the_output_file">The name and path of the output file</a></li>
+		<li><a href="#Rotation_translation_and_scaling">Rotation, translation, and 
+	scaling</a></li>
+		<li><a href="#Transforms_in_SVG_matrix_format">Transforms in SVG matrix format</a></li>
+		<li><a href="#Reviewing,_marking,_and_unmarking_shapes">Reviewing, marking, and unmarking shapes</a></li>
+		<li><a href="#Instant_display">Instant Display</a></li>
+		<li><a href="#The_AudioTac_concept">The AudioTac Display</a></li>
+	</ul>
+	</li>
+	<li><a href="#Specific_user_instructions" name="actionItemListInToc">Actions</a><ul>
+		<li><a href="#Start_a_new_drawing">Start a New Drawing (Ctrl+N)</a></li>
+		<li><a href="#Open_existing_drawing">Open SVGdraw File (Ctrl+O)</a></li>
+		<li><a href="#Import_Existing_Drawing">Import SVGdraw File (Ctrl+M)</a></li>
+		<li><a href="#Import_Other_SVG_File">Import Other SVG File (Ctrl+H)</a></li>
+		<li><a href="#Write_drawing_file">Save Normal (Ctrl+S)</a></li>
+		<li><a href="#Save_Flipped">Save Flipped (Ctrl+F)</a></li>
+		<li><a href="#Save_As">Save As...</a></li>
+		<li><a href="#Stop_program">Exit (Alt+F4)</a></li>
+		<li><a href="#Draw_a_line">Line (Ctrl+L)</a></li>
+		<li><a href="#Draw_a_rectangle">Rectangle (Ctrl+R)</a></li>
+		<li><a href="#Draw_a_circle">Circle (Ctrl+C)</a></li>
+		<li><a href="#Draw_an_ellipse">Ellipse (Ctrl+E)</a></li>
+		<li><a href="#Draw_a_polyline,_a_polygon,_or_a_path">Polyline, polygon, 
+		or path (Ctrl+P)</a><ul>
+			<li><a href="#A_csv_file">A csv file</a></li>
+			<li><a href="#A_path_file">A path file</a></li>
+			<li><a href="#Sample_csv_files">Sample files</a></li>
+		</ul>
+		</li>
+		<li><a href="#Draw_line_of_text">Text (Ctrl+T)</a></li>
+		<li><a href="#Vector">Vector (Ctrl+U)</a></li>
+		<li><a href="#Review_shapes">Review (without modification) (Alt+V)</a></li>
+		<li><a href="#Rotate_shapes">Rotate (Alt+R)</a></li>
+		<li><a href="#Translate_shapes">Translate (Alt+T)</a></li>
+		<li><a href="#Scale_shapes">Scale (Alt+S)</a></li>
+		<li><a href="#Move_Shapes">Move (Alt+O)</a></li>
+		<li><a href="#Clip">Clip (Alt+C)</a></li>
+		<li><a href="#Delete_shapes">Delete (Alt+Delete)</a></li>
+		<li><a href="#Remove_Attributes">Remove Common Attributes (Alt+Shift+R)</a></li>
+		<li><a href="#Set_Attributes">Set Common Attributes (Alt+Shift+S)</a></li>
+		<li><a href="#Set_Shape-Specific_Attributes">Set Shape-Specific Attributes (Alt+Shift+P)</a></li>
+		<li><a href="#Show_Display_(Ctrl+D)_">Show Instant Display (Ctrl+D) </a>
+</li>
+		<li><a href="#Instant_Display_Parameters_(Ctrl+I)_">Set Instant Display Parameters (Ctrl+I)
+		</a>
+</li>
+		<li><a href="#Instant_Display_Refresh_(Ctrl+A)_">Refresh Instant Display (Ctrl+A)</a>
+</li>
+		<li><a href="#Hide_Display_(Ctrl+B)">Hide Instant Display (Ctrl+B) </a>
+</li>
+		<li><a href="#Show_AudioTac_Display_(Ctrl+G)">Show AudioTac Display 
+		(Ctrl+G)</a></li>
+		<li><a href="#Set_AudioTac_Display_Parameters_(Ctrl+">Set AudioTac 
+		Display Parameters (Ctrl+J)</a></li>
+		<li><a href="#Refresh_AudioTac_Display_(Ctrl+K)">Refresh AudioTac 
+		Display (Ctrl+K)</a></li>
+		<li><a href="#Hide_AudioTac_Display_(Ctrl+Q)">Hide AudioTac Display 
+		(Ctrl+Q)</a></li>
+		<li><a href="#userInstructions2">Instruction (F1)</a></li>
+	</ul>
+	</li>
+	<li><a href="#Please_provide_feedback">Please provide feedback</a></li>
+
+</ul>
+<h2><a name="Whats_new_in_this_version">What's new in this version</a>?</h2>
+<p>Version 0.0.20a is a minor bug fix for version 0.0.20.</p>
+<h3>Transforms in SVG matrix format</h3>
+<p>The ability to open SVG files that specify transforms in SVG matrix format 
+was added. Note, however, that matrix transforms cannot be mixed with literal 
+rotate, translate, and scale transforms. Either one format or the other, but not 
+both must be used. This is probably not of interest to most users, but may be of 
+interest to some users.</p>
+<h3>Color improvements</h3>
+<p>This version not only handles named colors as before, but also handles any color specified
+ as "#RRGGBB" where RR, GG, and BB are the two-digit hexadecimal representations of the red, green, and blue color
+ components.</p>
+<h3>Wide angle versus narrow angle probe for the AudioTac display</h3>
+<p>This version adds a narrow angle probe to the AudioTac display. The narrow 
+angle probe is good for exploring crowded areas.</p>
+<p>The wide angle versus narrow angle selection key (W) is used to enable or disable 
+a narrow angle search probe. The narrow angle probe covers only one-ninth the area 
+of the wide angle probe.</p>
+<p>There is no stereo and no frequency shifting as you cross the border of a shape 
+with the narrow angle probe.</p>
+<p>You can toggle between wide angle and narrow angle probes by pressing the w key 
+or the W key. The default is wide angle when you first show the AudioTac display. 
+When you press the selection key, a message box will tell which probe you are 
+selecting.</p>
+<h3>Vectors</h3>
+<p>This version adds Vector to the Draw menu as a new primitive shape. A Vector 
+shape is a line with an arrow head on one end.</p>
+<p>The position, length, and orientation of a Vector can be specified using either rectangular or polar coordinates.</p>
+<p>The size of the arrow head is proportional to the width of the line.</p>
+<h3>Spoken element type in AudioTac</h3>
+<p>In this version, if you press the T-key to cause the title of the most 
+recently encountered shape in AudioTac to be spoken by the screen reader, the 
+type of the element is prefixed onto the title.</p>
+<h2><a name="Whats_new_in_recent_versions">What's new in recent versions</a>?</h2>
+<p>The contents of this section consist of text copied from previous versions of 
+this document. Therefore, when the text in this section refers to &quot;this 
+version,&quot; it is actually speaking to the earlier version in which the new 
+capability was implemented. Also, in some cases, such as the Instant Display, 
+new features have rendered some of the statements made earlier in this section 
+obsolete.</p>
+<h3>Improvements to the AudioTac display</h3>
+<p>This version contains three major improvements in the AudioTac Display area:</p>
+<ul>
+	<li>The addition of screen-reader-speech to report the <a href="#any_of_three_keys">title, 
+	description, and text content</a> (if any) of acquired shapes when requested.</li>
+	<li>The display of <a href="#Groups_of_characters">rectangles</a> to 
+	represent the location and size of text blocks along with the ability to 
+	have the text content of text blocks spoken by the screen reader.</li>
+	<li>Radio buttons that allow you to select among
+	<a href="#Three_radio_buttons">three display options</a>. This option makes 
+	it possible to reduce the audio &quot;clutter&quot; that text can create while 
+	concentrating on the shapes, or to concentrate on the text without audio 
+	interference from the shapes. The default selection is &quot;Shapes only.&quot;<ul>
+		<li>Shapes only</li>
+		<li>Text (outline) only</li>
+		<li>Shapes and text (outline)</li>
+	</ul>
+	</li>
+</ul>
+<h3>The AudioTac Display</h3>
+<p>The major new feature that was added to this version of the program is the
+<a href="#The_AudioTac_concept">AudioTac Display</a> feature. That feature 
+is described in detail <a href="#The_AudioTac_concept">below</a>.</p>
+<h3>Standard file open and save menus</h3>
+<p>Previous versions used a sort of homebrew approach to opening and saving 
+files. This version uses standard SWT dialogs for opening and saving files. You 
+should already be familiar with such dialogs, so not much needs to be said about 
+this.</p>
+<h3>Instant display</h3>
+<p>An Instant Display is now available for blind users who want to explore their 
+drawings with a clean full-screen version of The vOICe software, as well as 
+visually impaired and fully sighted users, such as the teachers of blind 
+students.</p>
+<p>The Instant Display can be shown, hid, adjusted, and refreshed from a new 
+menu named Instant Display. See <a href="#The_Instant_Display_menu">The Instant 
+Display menu</a> below for a more thorough discussion of this feature.</p>
+<h3> Editing shape-specific attributes</h3>
+<p> Previous versions of the program have allowed you to create and/or edit the 
+values of the following attributes that are common to all shapes:</p>
+<ul>
+	<li>stroke (color)</li>
+	<li>stroke-width</li>
+	<li>stroke-opacity</li>
+	<li>fill (color)</li>
+	<li>fill-opacity</li>
+	<li>clip-path (ID)</li>
+	<li>transform</li>
+	<li>any attribute name (common or otherwise)</li>
+</ul>
+<p> That capability is accessed from the Advanced menu, or by pressing
+<a href="#Set_Attributes">Alt+Shift+S</a>.</p>
+<p> This version adds the capability to edit shape-specific attributes for 
+existing lines, rectangles, circles, and ellipses. Shape-specific attributes 
+include:</p>
+<ul>
+	<li>coordinates</li>
+	<li>radii</li>
+	<li>width</li>
+	<li>height</li>
+</ul>
+<p> This capability is accessed from the Advanced menu, or by pressing
+<a href="#Set_Shape-Specific_Attributes">Alt+Shift+P</a>.</p>
+<p> Assume, for example, that you want to create a grid. Using this capability, 
+you could create and save a drawing of a line. Then you could import multiple 
+copies of that line drawing into a new drawing and edit the coordinates of the 
+end points of each line to place the lines in the shape of a grid.</p>
+<h3> Mark all, then selectively unmark</h3>
+<p> Previous versions have allowed you to check a checkbox to cause all of the 
+shapes in the drawing to be marked for rotation, translation, scaling, or 
+deletion. The program was updated in this version to allow you to selectively 
+un-mark shapes that were previously marked in that fashion.</p>
+<p> For example, if you want to view, emboss, or sonify a subset of the total 
+set of shapes in the drawing, you can mark them all, un-mark the subset, scale 
+the remaining shapes by 0.0, save the drawing in a new file, and view, emboss, 
+or sonify the contents of that output file.</p>
+<h3> Smaller download file</h3>
+<p> The size of the downloadable zip file was reduced to about 75% of its 
+previous size.</p>
+<h3>Leaner and meaner</h3>
+<p>Numerous changes were made in this version to reduce the verbosity of the 
+audio screen reader. By this, I mean that prompts were reduced to the bare 
+minimum necessary to tell you what you need to do next. All of the long in-line 
+explanations were removed. In doing this, I am assuming that you will be willing 
+to press the F1 key and consult the Help document when you encounter a prompt 
+that you don't understand.</p>
+<p>In addition, many information message boxes that previously required you to 
+press the OK button to continue were replaced by an audible beep. In those 
+cases, the information that was previously displayed in the message box was 
+routed to the standard output device (typically the command-line window) in case 
+you need that information.</p>
+<p>User feedback has identified the requirement for several superfluous keyboard 
+actions in earlier versions. Those keyboard actions have been eliminated.</p>
+<h3>Reviewing, marking, and unmarking shapes</h3>
+<p>The procedure for reviewing, marking, and unmarking shapes was completely 
+redesigned for this version as described in the section titled
+<a href="#Reviewing,_marking,_and_unmarking_shapes">Reviewing, marking, and 
+unmarking shapes</a>.</p>
+<h3>Flipped output file</h3>
+<p>I have added the capability to write output files with the origin at the lower-left 
+corner of the drawing, positive Y going up the page, and positive X going to the 
+right (with some limitations). A new menu item, Ctrl+F, has been added to the File menu to support this 
+feature. 
+See the details in <a href="#Save_Flipped">Save Flipped (Ctrl+F)</a>.</p>
+<h3>More streamlined process for saving files</h3>
+<p>I have added a <a href="#Save_As">Save As...</a> action on the File menu and 
+streamlined the process for saving output files. See more information in
+	<a href="#Save_As">Save As...</a> below. The File menu also contains new 
+	<a href="#Write_drawing_file">Save Normal (Ctrl+S)</a> and
+	<a href="#Save_Flipped">Save Flipped (Ctrl+F)</a> actions in support of the new 
+	<a href="#Save_As">Save As...</a> action.</p>
+<h3>Fixed the double extension problem</h3>
+<p>Without getting into the details, earlier versions made 
+it easy to inadvertently create output files with double .svg extensions. While 
+not a technical issue, this could cause some confusion when trying to find the 
+most current output file. That 
+problem has been fixed. With this fix, the output file will always have a single 
+.svg extension whether you specify it or not when you enter the file name.</p>
+<h3>Suggestions for improved usability and accessibility</h3>
+<p>I have received numerous suggestions for improved usability and 
+accessibility, and many of those suggestions are not implemented in this version. I'm not ignoring 
+those suggestions. Instead, I have prioritized the suggestions and have been 
+working on issues in order of priority. I will be incorporating more of those 
+suggestions in future versions.</p>
+<h3>The Advanced menu</h3>
+<p>An &quot;Advanced&quot; menu 
+was added containing two advanced actions. These actions are intended for advanced users 
+only. They require a solid knowledge of SVG to be useful.</p>
+<h3>Import shape objects from existing drawings</h3>
+<p>This new capability allows you to create a library of drawings that you can 
+later import and combine to produce larger overall drawings. If you have drawn 
+it once and saved the SVG file, you should never need to draw it again. Just 
+import the old drawing into a new drawing and edit as appropriate.</p>
+<h3>Move shape objects up and down in the stack of shape objects</h3>
+<p>You can think of an SVG drawing as a stack of individual shape objects. By 
+default, the shape object that you create first is at the bottom of the stack 
+and the shape object that you create last is at the top of the stack. If you 
+look down on the stack from above, those objects on or near the top of the stack 
+may cover and hide those objects further down the stack. Sometimes this is 
+important, and sometimes it is not.</p>
+<p>For example, with the ViewPlus IVEO software, if you draw a circle in the 
+center of the page and then draw a rectangle that is the same size as the page. 
+the rectangle will hide the circle and prevent the IVEO software from providing 
+audio information about the circle even if the rectangle is completely 
+transparent.</p>
+<p>This new feature allows you to adjust the relative positions of shape objects 
+in the stack without having to redraw the shapes.</p>
+<h3>Addition of clipping capability</h3>
+<p>The Mod menu now contains a &quot;Clip&quot; action. This action allows you to use one 
+shape to determine what portion of a second shape actually gets drawn. The 
+capability is useful for a variety of purposes, one of the most important of 
+which is to draw circular and elliptical arcs.</p>
+<h3>New packaging</h3>
+<p>Beginning with this version, I am also trying out a new packaging scheme. If 
+this scheme is successful, anyone having access to a computer with a Windows 
+operating system, version XP or later, 32-bit or 64-bit hardware, can run the 
+SVGDraw01 program from a USB flash drive with no requirement to install any 
+software on the computer.</p>
+<h3><a name="Conversion_to_a_menu_system">Conversion to a menu system</a></h3>
+<p>If you are a user of earlier versions of this program and found yourself 
+wishing for a conventional menu system, take heart. This version provides those 
+menus.</p>
+<p>Previous versions used a long list of actions that had to be scrolled in 
+order to perform an action, such as drawing a rectangle or rotating a shape 
+object. That list of actions has now been replaced by a menu system that uses a 
+full suite of accelerator and mnemonic keys.</p>
+<p>For example, pressing Alt+D will open the Draw menu that provides access to 
+all of the drawing capabilities of the program. For even more convenience, 
+pressing Ctrl+R will bypass the Draw menu and land you on a page where you can 
+draw a new rectangle. Pressing Alt+M will open the Mod menu that provides 
+actions that you can perform to review or modify existing shape objects. 
+Pressing Alt+R will bypass the Mod menu and land you on a page where you can 
+rotate any existing shape object.</p>
+<h3><a name="Other_enhancements">Other enhancements</a></h3>
+<p>In addition to the new menu system, this version includes a number of 
+enhancements including:</p>
+<ul>
+	<li>Ability to select and view the attributes of any existing shape object 
+	without modifying the object.</li>
+	<li>Ability to maintain original stroke width when scaling shape objects.</li>
+	<li>A checkbox for selecting all existing shape objects for rotation, 
+	translation, scaling, and deletion.</li>
+	<li>Creation of a &quot;Home Base&quot; concept. Each time you complete an action, you 
+	now return to the Home Base from which you can initiate other actions.</li>
+	<li>Many other improvements in convenience and accessibility that are too 
+	numerous to mention here.</li>
+</ul>
+<h2><a name="Viewing_the_drawing_onscreen">Viewing the drawing onscreen</a></h2>
+<p>Some users may need to view the drawing onscreen. This includes 
+sighted teachers of blind students and other sighted persons who may find the use of 
+this drawing program advantageous.</p>
+<p>This also includes blind users who may want 
+to view the drawing using the vOICe software or blind users who want to use the 
+AudioTac Display feature to explore and interpret a drawing.</p>
+<p>There are at least three ways to view the 
+drawing onscreen. The first two ways are to select either the
+<a href="#The_Instant_Display_menu">Instant Display Menu</a> or the
+<a href="#The_AudioTac_Display_menu">AudioTac Display Menu</a>.</p>
+<p>The third&nbsp; way to view the drawing onscreen is to open and render the output SVG file in 
+a compatible browser. In some cases, this will provide better results than the Instant 
+Display. Note however that this is not an alternative to the AudioTac Display, 
+which has a very specialized purpose.</p>
+<p>Rendering the SVG file in an external program such as a browser is the only way to view the flipped version of the drawing 
+onscreen. Neither the Instant Display nor the AudioTac Display will display the 
+flipped version of the drawing.</p>
+<p>Here are the steps for opening the drawing in a browser:</p>
+<ol>
+	<li>Press Ctrl+N or Ctrl+O to create a drawing in memory.</li>
+	<li>Press Ctrl+S or Ctrl+F to save the drawing in one output file with an 
+	extension of .svg and optionally a second output file with an extension of .flipped.svg.</li>
+	<li>Open one or both output files in Firefox, Google Chrome, or IE9 (IE8 and 
+	earlier versions won't work).</li>
+</ol>
+<p>After that, whenever you want to see an updated version of the drawing, press 
+Ctrl+S or Ctrl+F to save the updated drawing(s) and then refresh the browser 
+window(s).</p>
+<h2><a name="Printing_or_embossing">Printing and embossing</a></h2>
+<p>You will need to use another program to print or emboss your drawing. One of the 
+easiest ways to do this is to open the SVG output file in Firefox, Chrome, or 
+IE9 (IE8 won't work). Use the browser size controls to adjust the size of your 
+drawing as necessary and then send it to the printer or the embosser. In most 
+browsers, pressing Ctrl+0 (zero, not o) will set the browser's zoom feature to the default 
+one-to-one value. If your drawing size is 8.5x11 inches, that default setting 
+should cause your drawing to fit on 8.5x11 inch paper.</p>
+<p>Another alternative is to download the free IVEO viewer from the ViewPlus 
+website. Open the SVG output file in the viewer program and print or emboss from 
+there.</p>
+<h3><a name="A_note_about_page_size">A note about page size</a></h3>
+<p>Your printer may not be capable of printing from the extreme left edge to 
+the extreme right edge, or from the extreme top edge to the extreme bottom edge 
+of the largest paper size that it is advertised to accommodate. For example my 
+HP DeskJet 6940 printer advertises &quot;Borderless Printing up to 8.5 x 24 in.&quot; 
+However, the largest rectangle that it will actually print on a single sheet of 
+8.5x11 inch paper is 8.14 x 10.63 
+inches. 
+Therefore, you should probably allow for some loss of print width and print 
+height on the right side and the bottom of the page.</p>
+<p>If you plan to emboss your drawing on a graphics embosser, you may also need to 
+purposely leave a margin on both sides of your drawing to accommodate the width 
+of the mechanical embossing mechanism. Check the specifications of the embosser 
+that you plan to use to determine what those margins need to be.</p>
+<h2><a name="Purpose">Purpose</a></h2>
+<p>Select <a href="#Overview">Overview</a> to skip 
+this section and go directly to the next major section.</p>
+<p>In a nutshell, the purpose of this program is to make it possible for blind 
+people to communicate with the rest of the world using the mathematical concepts 
+embodied in the Cartesian coordinate system. Stated differently, the purpose is 
+to make it possible for blind people to both create and interpret drawings in a 
+two-dimensional plane.</p>
+<p>I believe that making it possible for blind and visually impaired people, and 
+particularly students in Science, Technology, Engineering, and Mathematics 
+(STEM) <a name="to_communicate">to communicate</a> using accurate audio, printed, and tactile graphics will 
+improve the quality of life and improve the likelihood of academic success for those people. The purpose of this program is to make it possible for blind 
+and visually impaired people to create and to interpret such graphics in an accessible and 
+user-friendly way.</p>
+<p>As a side effect of designing the program so that it can be used by blind 
+people, the program can also be useful for sighted people who are capable of 
+using a computer keyboard, but who are incapable of using a mouse. The program 
+can be operated directly from the keyboard with no requirement for the use of a 
+mouse. All actions that the program performs can be initiated using menus, 
+accelerator keys, and mnemonic keys. All locations and dimensions on a drawing 
+are entered from the keyboard in numeric form.</p>
+<p>The following components are necessary to accomplish the communications 
+	<a href="#to_communicate">goal</a> 
+described above:</p>
+<ul>
+	<li>Availability of a robust and universally accepted
+		<a href="#A_robust_graphics_standardSVG">graphics standard</a>.</li>
+	<li>Availability of an accessible and user-friendly 
+		<a href="#An_accessible_and_userfriendly_drawing_program">drawing program</a> that 
+	allows blind people to take advantage of that standard.</li>
+	<li>Availability of the capability to convert graphics information into 
+	<a href="#Converting_graphics_information_into_sound">sound</a>.</li>
+	<li>Availability of the capability to convert graphics information into 
+	<a href="#Converting_graphics_information_into_sound_and_touch">sound and touch</a> 
+	combined.</li>
+	<li>Availability of high-quality, economical, and readily available graphics
+		<a href="#High-quality,_economical,_and_readilyavailable_graphics_embossing_equipment">embossing equipment</a>.</li>
+</ul>
+<p>Of course, sighted users don't need an embosser. A typical ink-squirt printer 
+works just fine.</p>
+<h3><a name="A_robust_graphics_standardSVG">A robust graphics standard - SVG</a></h3>
+<p>A robust and universally accepted graphics standard is already available in 
+the form of Scalable Vector Graphics (SVG). See
+	<a href="http://www.w3.org/TR/SVG/">Scalable Vector Graphics (SVG) 1.1 (Second 
+Edition)</a></p>
+<h3><a name="An_accessible_and_userfriendly_drawing_program">An accessible and 
+user-friendly drawing program - SVGDraw01</a></h3>
+<p>This first-ever program is my attempt to provide, 
+free of charge, a drawing program that makes it possible for blind and visually 
+impaired 
+people to take advantage of many of the graphics capabilities of SVG. Even though the 
+program is still under development, it already makes it 
+possible for STEM students to create graphics that mirror many of the figures 
+and diagrams typically found in STEM textbooks.</p>
+<h4>A graph board on steroids</h4>
+<p>If you are a teacher of blind and visually impaired students, you might think 
+of this program as bringing the old-fashioned graph board (pushpins and rubber bands) into the 
+computer age. Students and others using this program can create both printed and 
+tactile graphics using much the same thought processes that they would use when 
+constructing a &quot;drawing&quot; on a graph board using pushpins, rubber bands, a 
+protractor, and a measuring stick.</p>
+<p>For example, one person might use this program to create and send an SVG file 
+to a friend with the message &quot;Take a look at the cool floor plan of my new 
+apartment.&quot;</p>
+<p>Another person might use this program to create and send an SVG file to a 
+college professor with the message &quot;This is a free body diagram showing the 
+magnitude and directions of forces F21 and F23 caused by the interactions among 
+charges q1, q2, and q3.&quot;</p>
+<h4>Getting an immediate visual output</h4>
+<p>If you are sighted, or if you are 
+a blind user using the vOICe sonification software to view the progress of your drawing, 
+or you are a blind user needing a way to interpret drawings using a combination 
+of sound and touch, you can 
+use the procedures described in <a href="#Viewing_the_drawing_onscreen">Viewing 
+the drawing onscreen</a> to create an immediate visual output and to view the 
+progress of your drawing as you create it.</p>
+<h3><a name="Converting_graphics_information_into_sound">Converting graphics information into sound</a></h3>
+<p>The <a href="#Instant_display">Instant Display</a> feature of the program 
+makes it convenient and easy to create a clean full-screen version of your 
+drawing that works well with the vOICe software.</p>
+<h3><a name="Converting_graphics_information_into_sound_and_touch">Converting 
+graphics information into sound and touch</a> combined</h3>
+<p>The <a href="#The_AudioTac_concept">AudioTac Display</a> feature provides a 
+mechanism whereby a blind user can use a combination of sound, 
+screen-reader-speech, and touch to form 
+a &quot;quick-look&quot; mental image of a drawing prior to embossing the finished drawing.</p>
+<h3>
+<a name="High-quality,_economical,_and_readilyavailable_graphics_embossing_equipment">High-quality, economical, and readily-available graphics embossing equipment</a></h3>
+<p>This is the area where we fall short relative to achieving the
+	<a href="#to_communicate">communications goal</a> mentioned earlier. Although high-quality embossing equipment is 
+available, it is not yet economical or readily available for the majority of 
+blind people. </p>
+<p>I view this as something of a supply and demand problem. 
+Prior to the release of this program, to the 
+best of my knowledge, there have been no free and readily-available tools that make it 
+possible for blind people to create accurate drawings for use with a 
+high-quality embosser. Thus, the demand for such equipment has been very 
+limited. My hope is that by making it possible for all blind people to create 
+accurate drawings, the demand for such equipment will go up and the costs for 
+the equipment will come down.</p>
+<p>Even today, however, many schools, colleges, and other organizations own 
+high-quality graphics embossing equipment that they can make available to their 
+clients on some basis. In those cases, there is no reason for blind people to 
+hold back from learning to communicate using accurate graphics.</p>
+<h2><a name="Overview">Overview</a></h2>
+<p>This section provides a brief overview of the program structure. More 
+detailed information is provided in later sections.</p>
+<h3><a name="The_menu_system">The menu system</a></h3>
+<p>The program is organized around the following menus:</p>
+<ul>
+	<li>File (Alt+F)</li>
+	<li>Draw (Alt+D)</li>
+	<li>Mod (Alt+M)</li>
+	<li>Advanced (Alt+A)</li>
+	<li>Instant Display (Alt+I)</li>
+	<li>AudioTac Display (Alt+U)</li>
+	<li>Help (Alt+H)</li>
+</ul>
+<h4><a name="The_File_menu_">The File menu </a>(Alt+F)</h4>
+<p>The File menu provides the following actions:</p>
+<ul>
+	<li>Start a New Drawing (Ctrl+N)</li>
+	<li>Open SVGdraw File (Ctrl+O)</li>
+	<li>Import SVGdraw File (Ctrl+M)</li>
+	<li>Import Other SVG File (Ctrl+H)</li>
+	<li>Save Normal (Ctrl+S)</li>
+	<li>Save Flipped (Ctrl+F)</li>
+	<li>Save As...</li>
+	<li>Exit (Alt+F4)</li>
+</ul>
+<p>For the most part, you should be able to infer the action associated with 
+each menu item on the basis of its name. However, more detailed information will 
+be provided for some of the items later.</p>
+<h4><a name="The_Draw_menu">The Draw menu</a> (Alt+D)</h4>
+<p>The items in the Draw menu make it possible for you to draw the following 
+shapes:</p>
+<ul>
+	<li>Line (Ctrl+L)</li>
+	<li>Rectangle (Ctrl+R)</li>
+	<li>Circle (Ctrl+C)</li>
+	<li>Ellipse (Ctrl+E)</li>
+	<li>Polyline, polygon, or path (Ctrl+P)</li>
+	<li>Text (Ctrl+T)</li>
+	<li>Vector (Ctrl+U)</li>
+</ul>
+<p>More detailed information about drawing each of these shapes will be provided 
+later.</p>
+<h4><a name="The_Mod_menu">The Mod menu</a> (Alt+M)</h4>
+<p>The Mod menu makes it possible for you to modify existing shape objects in 
+the following ways:</p>
+<ul>
+	<li>Review (without modification) (Alt+V)</li>
+	<li>Rotate (Alt+R)</li>
+	<li>Translate (Alt+T)</li>
+	<li>Scale (Alt+S)</li>
+	<li>Move (Alt+O)</li>
+	<li>Clip (Alt+C)</li>
+	<li>Delete (Alt+Delete)</li>
+</ul>
+<p>More detailed information about making these modifications will be provided 
+later.</p>
+<h3><a name="The_Advanced_menu">The Advanced menu</a> (Alt+A)</h3>
+<ul>
+	<li>Remove Common Attributes (Alt+Shift+R)</li>
+	<li>Set Common Attributes (Alt+Shift+S)</li>
+	<li>Set Shape-Specific Attributes (Alt+Shift+P)</li>
+</ul>
+<p>The actions on this menu require a solid knowledge of SVG for 
+	understanding. They should only be selected by advanced users.</p>
+<h3><a name="The_Instant_Display_menu">The Instant Display menu</a> (Alt+I)</h3>
+<p>The Instant Display menu provides the following actions:</p>
+<ul>
+	<li>Show Instant Display (Ctrl+D)</li>
+	<li>Set Instant Display Parameters (Ctrl+I)</li>
+	<li>Refresh Instant Display (Ctrl+A)</li>
+	<li>Hide Instant Display (Ctrl+B)</li>
+</ul>
+<p>I will have more to say about each of these actions later.</p>
+<h3><a name="The_AudioTac_Display_menu">The AudioTac Display menu</a> (Alt+U)</h3>
+<p>The AudioTac Display menu provides the following actions:</p>
+<ul>
+	<li>Show AudioTac Display (Ctrl+G)</li>
+	<li>Set AudioTac Display Parameters (Ctrl+J)</li>
+	<li>Refresh AudioTac Display (Ctrl+K)</li>
+	<li>Hide AudioTac Display (Ctrl+Q)</li>
+</ul>
+<p>I will have more to say about each of these actions later.</p>
+<h3><a name="The_Help_menu">The Help menu</a> (Alt+H)</h3>
+<p>The Help menu provides access to the following information:</p>
+<ul>
+	<li>Instructions (F1)</li>
+	<li>About</li>
+</ul>
+<h2><a name="Program_startup">Program startup</a></h2>
+<p>When the program starts, you will land on Home Base from which you can select the 
+following actions:</p>
+<ul>
+	<li><a href="#Start_a_new_drawing">Start a New Drawing</a> - start fresh and creates a new drawing.</li>
+	<li><a href="#Open_existing_drawing">Open SVGdraw File</a> - open a drawing file that was previously created 
+	and saved using SVGDraw01.</li>
+	<li><a href="#Import_Existing_Drawing">Import SVGdraw File</a> - import 
+	the shapes in an existing drawing file that was created using SVGDraw01 and add them to the current drawing.</li>
+	<li><a href="#Import_Other_SVG_File">Import Other SVG File</a> - 
+	attempt to open and extract shape objects from an SVG file written by 
+	another program.</li>
+	<li><a href="#Write_drawing_file">Save Normal</a> - write the current drawing into 
+	the current SVG output file.</li>
+	<li><a href="#Save_Flipped">Save Flipped</a> - write the current drawing 
+	into the current (flipped) SVG output file with the y-axis flipped to 
+	conform with most STEM textbooks.</li>
+	<li><a href="#Save_As">Save As...</a> - establish a path and file name and 
+	write the current drawing into that file.</li>
+	<li><a href="#Stop_program">Exit</a> - just what it says. Be sure to save your drawing 
+	in an 
+	output file before selecting this action.</li>
+	<li><a href="#Draw_a_line">Line </a>- draw a straight line segment between two specified points.</li>
+	<li><a href="#Draw_a_rectangle">Rectangle</a> - draw a rectangle at a specified location with a 
+	specified width and height.</li>
+	<li><a href="#Draw_a_circle">Circle</a> - draw a circle at a specified location with a specified 
+	radius.</li>
+	<li><a href="#Draw_an_ellipse">Ellipse</a> - draw an ellipse at a specified location with specified 
+	width and height.</li>
+	<li><a href="#Draw_a_polyline,_a_polygon,_or_a_path">Polyline, polygon, or 
+	path</a> - draw a polyline, a polygon, or a path based on imported csv or path data.</li>
+	<li><a href="#Draw_line_of_text">Text</a> - draw a line of text at a specified location with a 
+	specified point size and other parameters.</li>
+	<li><a href="#Vector">Vector</a> - draw a vector at a specified location 
+	with a specified length and orientation.</li>
+	<li><a href="#Review_shapes">Review (without modification)</a> - review the name, 
+	description, ID, and attributes of the shapes in the current drawing.</li>
+	<li><a href="#Rotate_shapes">Rotate</a> - rotate one or more shapes by a specified angle in 
+	degrees clockwise around a specified center of rotation. See
+		<a href="#Rotation_translation_and_scaling">Rotation, translation, and 
+	scaling</a> for cautions regarding the use of this action.</li>
+	<li><a href="#Translate_shapes">Translate</a> - translate one or more shapes by specified 
+	distances along the X-axis and the Y-axis. See
+		<a href="#Rotation_translation_and_scaling">Rotation, translation, and 
+	scaling</a>.</li>
+	<li><a href="#Scale_shapes">Scale</a> - multiply the coordinate values that make up one or more 
+	shapes by scale factors along the X-axis and the Y-axis to enlarge or shrink the shapes. See
+		<a href="#Rotation_translation_and_scaling">Rotation, translation, and 
+	scaling</a>.</li>
+	<li><a href="#Move_Shapes">Move</a> - move shape objects up and down the 
+	shape stack (the Z-axis).</li>
+	<li><a href="#Clip">Clip</a> - requires two overlapping shapes. One shape determines what 
+	portion of the other shape will be visible when the SVG data is displayed 
+	using Instant Display or AudioTac Display, or when the SVG output file is 
+	rendered by a different program such as Firefox.</li>
+	<li><a href="#Delete_shapes">Delete</a> - delete one or more shapes from the current drawing.</li>
+	<li><a href="#Remove_Attributes">Remove Common Attributes</a> - for 
+	advanced users only. Can be used to remove attributes that are common to all 
+	shapes (and other attributes as well).</li>
+	<li><a href="#Set_Attributes">Set Common Attributes</a> - for advanced users 
+	only. Can be used to set attribute values that are common to all shapes (and 
+	other attributes as well).</li>
+	<li><a href="#Set_Shape-Specific_Attributes">Set Shape-Specific Attributes</a> 
+	- can be used to set attribute values that are specific to shapes such as 
+	coordinate values, width, height, and radii.</li>
+	<li><a href="#Show_Display_(Ctrl+D)_">Show Instant Display</a> - cause the instant 
+	display to appear on the screen according to the settings in
+	<a href="#Instant_Display_Parameters_(Ctrl+I)_">Set Instant Display Parameters</a> 
+	below.</li>
+	<li><a href="#Instant_Display_Parameters_(Ctrl+I)_">Set Instant Display Parameters</a> - 
+	set location, size, and scale factor parameters for the Instant Display.</li>
+	<li><a href="#Instant_Display_Refresh_(Ctrl+A)_">Refresh Instant Display</a> - 
+	refresh the Instant Display.</li>
+	<li><a href="#Hide_Display_(Ctrl+B)">Hide Instant Display</a> - remove the Instant 
+	Display from the screen and from computer's memory.</li>
+	<li><a href="#Show_AudioTac_Display_(Ctrl+G)">Show AudioTac Display</a> - 
+	cause the AudioTac Display to appear on the screen according to the settings 
+	in <a href="#Set_AudioTac_Display_Parameters_(Ctrl+">Set AudioTac Display 
+	Parameters</a> below.</li>
+	<li><a href="#Set_AudioTac_Display_Parameters_(Ctrl+">Set AudioTac Display 
+	Parameters</a> - set location, size, scale factor, and the choice between 
+	move and drag parameters for the AudioTac Display.</li>
+	<li><a href="#Refresh_AudioTac_Display_(Ctrl+K)">Refresh AudioTac Display</a> 
+	- refresh the AudioTac Display.</li>
+	<li><a href="#Hide_AudioTac_Display_(Ctrl+Q)">Hide AudioTac Display</a> - 
+	remove the AudioTac Display from the screen and from the computer's memory.</li>
+	<li><a href="#userInstructions2">Instructions</a> - open this HTML 
+	instruction file in a 
+	browser window.</li>
+	<li>About - general information about the program such as copyright, etc.</li>
+</ul>
+<p>The first action that you select should be <a href="#userInstructions2">Instructions 
+(F1)</a>, <a href="#Open_existing_drawing">Open SVGDraw File (Ctrl+O)</a>, or 
+	<a href="#Start_a_new_drawing">Start a New Drawing (Ctrl+N)</a>. </p>
+<p>You should always select either <a href="#Open_existing_drawing">Open SVGDraw File 
+(Ctrl+O)</a> or <a href="#Start_a_new_drawing">Start a New Drawing (Ctrl+N)</a> and provide the requested information 
+before selecting any of the other actions with the exceptions 
+of <a href="#userInstructions2">Instructions (F1)</a> and
+	<a href="#Stop_program">Exit (Alt+F4)</a>.</p>
+<h2><a name="User_instructions">General user instructions</a></h2>
+<p>If you are reading this document from inside the program, you must have 
+already opened this HTML document in an SWT 
+browser widget. If so, keep reading. This information is for you.</p>
+<p>On the other hand, you may have opened this document in a 
+standard browser without running the SVGDraw01 program. If so, keep reading. 
+This information is also for you.</p>
+<h3><a name="Selecting_action_items">Selecting actions from the Menus</a></h3>
+<p>With the exception of a relatively small number of actions, when you select an action from a menu, an Action Page (or 
+perhaps a dialog box) will open containing labels, text fields, 
+check boxes, radio buttons, push buttons, and other Graphical User Input (GUI) 
+components.&nbsp; That Action Page will enable you to provide the 
+information needed to execute the selected action.</p>
+<p>While on the Action Page, you can navigate down through the GUI components with the 
+tab key. You can navigate up through the GUI components with the shift-tab key combination.</p>
+<p>You can navigate through radio buttons and through the items in lists using the 
+arrow keys. Press the tab key to escape from a set of radio buttons or from a 
+list without making a selection. (Note that when you use the arrow keys to 
+navigate through a set of radio buttons, each press of an arrow key will 
+automatically select the next radio button in the set.)</p>
+<h3><a name="Performing_the_action">Performing the action</a></h3>
+<p>Most of the Action pages contain a button that you must press to cause the action to 
+be performed. If you tab past that button and return to Home Base, the selected action will not have been performed 
+and the data that you have entered for that action will be lost.</p>
+<p>If you select &quot;Exit&quot;, you must confirm that you really do want to stop the 
+program before that action will be performed.</p>
+<p>If you select &quot;Instructions&quot; or &quot;About&quot;, the specified action happens 
+immediately with no requirement for further confirmation.</p>
+<p>In some cases, when you press the action button or perform other actions within 
+a page, a message window will pop up asking you to confirm the action. In most 
+cases, there will be no popup window.&nbsp; In some cases, there will be a sound 
+confirming that you performed the action. Also in some cases, text will appear 
+in the command-line window describing the action that you just performed in case 
+you need that information.</p>
+<h3><a name="Pressing_the_Esc_key">Pressing the Esc key</a></h3>
+<p>In all cases other than while reading the instructions in the browser window, if you press the Esc key, 
+either:</p>
+<ul>
+	<li>nothing will happen, or </li>
+	<li>the current action will be abandoned and you will 
+land back on Home Base.</li>
+</ul>
+<p>If you press the Esc key while reading the instructions in the browser window, 
+you will land back where you were when you pressed F1 to open the 
+instructions. That allows you to get information about a particular action while 
+you are in the process of performing that action.</p>
+<h3><a name="Text_field_objects">Text field objects</a></h3>
+<p>Press the tab key to accept the default value in a text field. To change the 
+value in the field, type the new value and press the tab key. Normally, it 
+should not be necessary for you to delete the current contents of a text field in 
+order to change it. Just type over the current contents. However, you may find situations where it is necessary to delete the current contents so be on the lookout for those situations.</p>
+<p>Many of the text fields will accept only numeric data. If you attempt to enter 
+non-numeric data into those text fields, your keystrokes will simply be ignored.</p>
+<h3><a name="Checkbox_objects">Checkbox objects</a></h3>
+<p>You must press the space bar to check or uncheck a check box. (The Enter key 
+won't do the job.)
+
+</p>
+<h3><a name="Button_objects">Button objects</a></h3>
+<p>You can press either the space bar or the Enter key to activate a button when it 
+has the focus.</p>
+<h3><a name="Message_box_objects">Message box objects</a></h3>
+<p>A message box will appear to announce the completion of those actions where 
+completion is not obvious such as writing the output file, for example.</p>
+<p>Most errors will also result in the appearance of a message box. In most cases, 
+you can press either the space bar or the Enter key to dismiss a message box. 
+However, in some cases you must select one of two buttons labeled Yes and No.</p>
+<p>If you discover errors that do not result in a message box, please let me know.</p>
+<h3><a name="Polylines_and_polygons">Polylines, polygons</a>, and paths</h3>
+<p>The polyline, the polygon, and the path are by far the most versatile shapes that you can 
+draw with this program. For example, if you need to plot a function such as y = x^2, the polyline 
+shape or the path shape are probably your best choices.</p>
+<p>I will explain how to draw these three types of shapes in more detail 
+	<a href="#Draw_a_polyline,_a_polygon,_or_a_path">later</a>.</p>
+<h3><a name="The_name_and_path_of_the_output_file">The name and path of the output file</a></h3>
+<p>The first time you select &quot;Save Normal&quot; in the File menu, a 
+standard File dialog will open and allow you to specify the name and location of 
+the file. After 
+that, whenever you select &quot;Save Normal,&quot; your new output file will overwrite the 
+previous one.</p>
+<p>If you need to save with a different path and/or file name, select &quot;Save As...&quot; 
+in the File menu.</p>
+<h3><a name="Rotation_translation_and_scaling">Rotation, translation, and scaling</a></h3>
+<p>These three features, which fall in the general category of SVG transforms, are 
+relatively easy to use as long as you don't combine them on a single shape. However, once you 
+combine them, the topic of SVG transforms becomes an advanced topic and will 
+probably require outside study on your part for proper use.</p>
+<p>Among other things, when you apply a 
+	combination of rotation, translation, and scaling transforms, the order in 
+	which you perform the transforms is critically important to the outcome. A good understanding of the use of transforms in SVG is needed in order to 
+	understand those outcomes for combined transforms.</p>
+<h3><a name="Transforms_in_SVG_matrix_format">Transforms in SVG matrix format</a></h3>
+<p>The program can open SVG files that specify transforms in SVG matrix format. 
+Note, however, that matrix transforms cannot be mixed with literal rotate, 
+translate, and scale transforms. Either one format or the other, but not both 
+must be used.</p>
+<h3><a name="Reviewing,_marking,_and_unmarking_shapes">Reviewing, marking, and unmarking shapes</a></h3>
+<p>Many of the actions on the Mod menu and the Advanced menu allow you to mark 
+one or more shapes on which to perform the selected action. Having selected an 
+action from the Mod or Advanced menu, you can tab to a list that contains all of&nbsp; the shapes in your 
+drawing and scroll up and down that list using the arrow keys.</p>
+<p>Along the way, you can also check a checkbox that causes all of the shapes in 
+the list to be marked for the action.</p>
+<p>The list of 
+shapes displays the title and description that were assigned to each shape when 
+it was created.</p>
+<p>Once you scroll to a particular shape, you can press any of the following 
+three keys:</p>
+<ul>
+	<li>'v' - review the shape with no resulting action</li>
+	<li>'m' - mark the shape for action</li>
+	<li>'u' - unmark the shape</li>
+</ul>
+<h4>Review the shape</h4>
+<p>When you press the v-key, a message box will pop up containing everything 
+there is to know about the shape. However, no action will occur as a result of 
+reviewing a shape.</p>
+<h4>Mark the shape</h4>
+<p>When you press the m-key, the shape will be marked in such a way that the 
+specified action will be performed on the shape when you press the action button 
+later. In addition, the word &quot;marked&quot; will be appended to the description in the list of shapes to let you know that this shape has been 
+marked for action.</p>
+<h4>Unmark the shape</h4>
+<p>When you press the u-key, the shape will be returned to an unmarked state. 
+The word &quot;marked&quot; will be removed from the description in the list and the shape 
+will not be affected when the action button is pressed later.</p>
+<h4>Marking all and selectively un-marking some shapes</h4>
+<p>One procedure that is sometimes useful is to mark all of the shapes by 
+checking the checkbox and then selectively un-marking shapes by scrolling 
+through the list of shapes and pressing the u-key. For example, if you have 
+created a drawing with a large number of shapes and you want to rotate all but a 
+few of the shapes, the most efficient way to do this might be to check the box 
+to mark all of the 
+shapes for rotation and then to un-mark the few that you don't want to rotate.</p>
+<h3><a name="Instant_display">Instant Display</a></h3>
+<p>An Instant Display is available for blind users who want to explore their 
+drawings with the vOICe software, as well as 
+visually impaired and sighted users, such as the teachers of blind 
+students. The Instant Display can be set to full screen, in which case it 
+provides a clean full-screen display that works well with the vOICe software.</p>
+<p>The Instant Display can be shown, hid, adjusted, and refreshed from a menu named Instant Display.</p>
+<p>With very few restrictions, the Instant Display feature can display anything 
+that can be drawn with SVGDraw01. The known restrictions are described below. (Note 
+that these are restrictions on the Instant Display feature and are not 
+restrictions on the capabilities of SVGDraw01 as a whole.)</p>
+<h4>Clipped text</h4>
+<p>Although SVGDraw01 supports clipped text, the fact that text 
+has been clipped will not show up in the Instant Display.</p>
+<h4>Limited color support</h4>
+<p>SVGDraw01 can produce SVG files that will render with 
+approximately 175 different named colors plus any color that is defined as "#RRGGBB" where 
+RR, GG, and BB are the two-digit hexadecimal representations of the red, green, and blue color
+ components. However, the Instant Display feature supports only the 
+following named Java colors or colors that are defined as "#RRGGBB&quot;. All other colors are displayed as black by the 
+Instant Display feature:</p>
+<ul>
+	<li>BLACK</li>
+	<li>BLUE</li>
+	<li>CYAN</li>
+	<li>DARK_GRAY</li>
+	<li>GRAY</li>
+	<li>GREEN</li>
+	<li>LIGHT_GRAY</li>
+	<li>MAGENTA</li>
+	<li>ORANGE</li>
+	<li>PINK</li>
+	<li>RED</li>
+	<li>WHITE</li>
+	<li>YELLOW</li>
+</ul>
+<h4>Elliptical or circular arcs in SVG path data</h4>
+<p>SVGDraw01 can produce SVG files that will render elliptical and circular 
+arcs when rendered in an external program such as Firefox. However, when such arcs are encountered by the Instant Display feature, 
+the arcs along with the remainder of that SVG path will be ignored.</p>
+<h4>Switching between Instant Display and AudioTac Display</h4>
+<p>In addition to the Instant Display, the program also provides an AudioTac 
+Display that is described elsewhere in this document. Only one of the displays 
+can be on the screen at the same time. Selecting one hides the other and vice 
+versa.</p>
+<h3><a name="The_AudioTac_concept">The AudioTac Display</a></h3>
+<p>The name AudioTac is a combination of the words audio and tactile. The AudioTac feature 
+makes it possible for blind users to interpret drawings using sound and 
+screen-reader-speech in conjunction with an 
+embossed tactile grid system mounted on a touchpad.&nbsp; (A standard mouse can also be 
+used, but a touchpad, which allows more direct contact between the nerves in the 
+finger and the tactile grid, is probably more effective.)</p>
+<p>More specifically, AudioTac makes it possible for blind users to trace out 
+the shapes in a drawing by moving a finger on a tactile grid system while 
+a screen reader speaks information about the shapes and a tone generator emits 
+stereo sounds that are unique to each shape.</p>
+<p>Audio hints are provided to help the user acquire the different shapes in a 
+drawing. Once the user has touched a location on the touchpad that corresponds 
+to the border of a shape, a series of stereo audio pulses makes it possible for 
+the user to trace out the shape with the finger on the embossed grid. In 
+addition, the user can press <a name="any_of_three_keys">any of three keys</a> on the keyboard to hear:</p>
+<ul>
+	<li>T - The type and title that was originally assigned to the shape,</li>
+	<li>D - The description that was originally provided for the shape, and</li>
+	<li>C - Any text content&nbsp; associated with the shape.</li>
+</ul>
+<p>AudioTac is not a replacement for an embosser. Instead, AudioTac provides 
+blind users with a &quot;quick look&quot; at the drawing during the drawing process and 
+prior to embossing the finished drawing. This can be particularly important when 
+an embossing process is being used that requires expensive media, such as 
+special paper.</p>
+<p>The mechanisms by which the user can distinguish one shape in the drawing 
+from the other shapes in the drawing are as follows:</p>
+<ul>
+	<li>Each shape in the drawing emits pulses with different audio frequencies 
+	as the user traces out the shape with a finger.</li>
+	<li>Each shape in the drawing works in conjunction with an audio screen 
+	reader to provide spoken type, title, description, and text content&nbsp;information about the shape when requested.</li>
+</ul>
+<p><a name="Groups_of_characters">Groups of characters</a> that appear as text in the Instant Display and in the 
+SVG output are represented by rectangles that outline the location and size of 
+the text in the drawing. As with all other shapes, pressing the T and D keys 
+after acquiring a text rectangle causes the type, title and description to be spoken 
+by the screen reader. In addition, pressing the C key causes the content of the 
+text to be spoken by the screen reader.</p>
+<p><a name="Three_radio_buttons">Three radio buttons</a> that are accessible from the Set AudioTac 
+Parameters action on the AudioTac Display menu allow the user to choose among 
+the following three display options:</p>
+<ul>
+	<li>Shapes only</li>
+	<li>Text (outline) only</li>
+	<li>Shapes and text (outline)</li>
+</ul>
+<p>This makes it possible to reduce the audio &quot;clutter&quot; that text can create 
+while concentrating on the shapes, or to concentrate on the text without audio 
+interference from the shapes. The default selection is &quot;Shapes only.&quot;</p>
+<h4>Wide angle versus narrow angle probe</h4>
+<p>Both a wide angle probe and a narrow angle probe are available for use with 
+the AudioTac display. The narrow angle probe is good for exploring crowded areas.</p>
+<p>The wide angle versus narrow angle selection key (W) is used to enable or disable 
+a narrow angle search probe. The narrow angle probe covers only one-ninth the area 
+of the wide angle probe.</p>
+<p>There is no stereo and no frequency shifting as you cross the border of a shape 
+with the narrow angle probe.</p>
+<p>You can toggle between wide angle and narrow angle probes by pressing w key 
+or the W key. The default is wide angle when you first show the AudioTac display. 
+When you press the selection key, a message box will tell which probe you are 
+selecting.</p>
+<h4>Touchpad requirements</h4>
+<p>In order for a touchpad to be suitable for use with this program, moving a 
+finger on the touchpad must simulate moving the mouse pointer while either pressing 
+or not pressing the left button on the mouse. Moving the mouse without pressing 
+the button on the mouse is commonly known simply as &quot;moving&quot; the mouse pointer. 
+Moving the mouse while pressing the button is commonly known as &quot;dragging&quot; the 
+mouse pointer.</p>
+<p>A pair of radio buttons accessible from the Set AudioTac 
+Parameters action on the AudioTac Display menu allows the user to choose between the two operations. Simply 
+moving the mouse pointer works best when using a physical mouse to trace out a drawing. 
+Dragging the mouse pointer will probably work best when using most touchpads to 
+trace out a drawing.</p>
+<p>The setup features of the touchpad must also make it possible to specify the 
+rectangular portion of the computer screen that maps to the active area of the 
+touchpad. This is necessary to allow the user to relate the position of a finger 
+on the touchpad to the location of the mouse pointer within the drawing. This is a 
+common setup feature for many touchpads.</p>
+<h4>User instructions for either a touchpad or a mouse</h4>
+<p>In addition to a Windows computer with stereo speakers or headphones, you 
+will need either a touchpad or a mouse and (optionally) a sheet of paper embossed with a rectangular 
+grid system. Emboss grid lines on the paper at approximately one-quarter-inch 
+intervals, or closer if you can discern the lines by touch.. If you don't have an embosser, use a tracing wheel, an ice pick, or whatever works for you to create tactile grid lines. It will 
+probably work best if you tape the grid paper to the touchpad or to the tabletop to keep it from 
+moving.</p>
+<h5>Open the AudioTac Display menu</h5>
+<p>Once the program is running, and you have either started a new drawing or 
+opened an existing drawing, open the AudioTac Display menu and select the Show 
+AudioTac Display action. This will cause a window containing the drawing to be 
+opened on the screen.</p>
+<h5>The screen size for the accessible drawing area</h5>
+<p>By default, the drawing area is set to 1000x725 pixels to cause the drawing 
+and the frame in which it resides to almost completely fill a computer screen having dimensions of 
+1024x768 pixels.</p>
+<p>If the dimensions of your computer screen in pixels is greater 
+than 1024x768, you might want to select the Set AudioTac Display Parameters action 
+to adjust the width and height of the drawing area and make it larger.</p>
+<h5>Relationship between drawing page size and AudioTac drawing area</h5>
+<p>The SVG page size that you specify when you create a new drawing is independent 
+of the drawing area in the AudioTac Display. For example, if you draw 
+a circle that is too wide to fit within the SVG page size, portions of the 
+circle won't be visible when you render the drawing with an SVG rendering engine 
+such as the Firefox browser. However, if the pixel width of your AudioTac 
+Display is greater than the pixel width of your SVG page size, you may be able 
+to see the portion of the circle that is missing from the SVG drawing in the 
+AudioTac Display.</p>
+<p>Also, as you will learn later, you can apply a scale factor to adjust the 
+size of your drawing in the AudioTac Display regardless of its size in the SVG 
+drawing.</p>
+<h5>The X and Y coordinate values</h5>
+<p>Getting back to the Action Page for the Set AudioTac Display Parameters 
+action, you can also change the position of the window on the screen by entering 
+coordinate values into the fields labeled X... and Y... However, these fields 
+contain default values of 0 and you should normally accept those values unless 
+you have a good reason to reposition the display on the screen.</p>
+<h5>The drawing scale factor</h5>
+<p>You can set a drawing scale factor from that Action Page to cause your 
+drawing to make maximum use of the drawing area. Ideally, you would like for 
+your drawing to be as large as possible without going off the right side or the 
+bottom edge of the drawing area.</p>
+<p>If you were the creator of the drawing, you should 
+know what the maximum X and Y values are, so you should be able to calculate a 
+scale factor that will cause your drawing to fill the drawing area. If you 
+create and send a drawing to another blind person, you should specify the 
+maximum width and height in pixels when you send the drawing.</p>
+<h5>Move or drag?</h5>
+<p>By default, the &quot;Move&quot; radio button is selected on the Action Page. That 
+is what you will probably want when using a mouse to interpret the drawing. On 
+the other hand, if you are using a touchpad, you will probably need to select 
+the &quot;Drag&quot; option instead.</p>
+<h5>Shapes only, Text (outline) only, or Shapes and text (outline)</h5>
+<p>Select one of these radio buttons to specify which of the three options you 
+want to display. The &quot;Shapes only&quot; button is selected by default.</p>
+<h5>Press the button labeled Set AudioTac Display Parameters</h5>
+<p>Once all of the parameters on the Action Page are set to your liking, press the action button and any changes that you 
+have made will be reflected in the AudioTac Display.</p>
+<h5>Other actions on the AudioTac Display menu</h5>
+<p>While you had the AudioTac Display Menu open, you may have noticed that it 
+also contains actions that allow you to refresh or hide the AudioTac Display. If 
+you have some reason to believe that the display has become corrupted, you can 
+refresh it by selecting the Refresh AudioTac Display action. If you add a shape to the drawing and can't 
+seem to locate it in the AudioTac Display, refresh the display to see if that solves the problem.</p>
+<p>If you decide not to use the AudioTac Display, you can hide it by selecting 
+the Hide AudioTac Display action to reduce the 
+clutter on the screen.</p>
+<h5>Switching between Instant Display and AudioTac Display</h5>
+<p>In addition to the AudioTac Display, the program also provides an Instant 
+Display that is described elsewhere in this document. Only one of the displays 
+can be on screen at the same time. Selecting one hides the other and vice 
+versa.</p>
+<h4>Interpreting the drawing using a touchpad</h4>
+<p>Even if you plan to use a mouse instead of a touchpad, you should probably 
+read this section. You may find useful information here that is not included in 
+the section on using a mouse.</p>
+<p>As mentioned elsewhere in this document, you will need a touchpad that is 
+capable of simulating the behavior of a mouse when you drag your finger on the 
+surface of the touchpad. Touchpads that plug into a USB port and satisfy that 
+requirement are readily available at a nominal cost from one or more vendors. 
+The cost of touchpads often increases with the size of the touchpad and the 
+addition of features to the touchpad. Larger touchpads will probably be more 
+effective than smaller ones for this purpose.</p>
+<h5>Required touchpad features</h5>
+<p>A &quot;plain vanilla&quot; touchpad will probably 
+suffice for this purpose. For example, the so-called multi-touch feature is not a requirement 
+because the program doesn't support multi-touch operation. There is one feature, 
+however, 
+that is critical. It must be possible to configure the touchpad software so that 
+the active area on the touchpad maps to a specific rectangular area on the 
+screen. as specified by screen coordinates in pixels.</p>
+<p>In other words, having configured the touchpad to represent a specific 
+rectangular area on the screen, dragging the finger from the left edge to the 
+right edge of the active area of the touchpad should cause the mouse pointer to 
+move from the left edge to the right edge of the specified rectangular area on 
+the screen. The same thing can be said for dragging the finger from the top edge 
+to the bottom edge of the active area of the touch pad.</p>
+<p>This feature makes it possible for you to cause finger motion on the touchpad 
+to be applied only to the shapes in the AudioTac Display drawing area. Thus, you 
+should configure the touchpad to cause the active area on the touchpad to map to 
+the AudioTac Display drawing area. Generally speaking, you should probably use 
+the width, height, and scale factor described earlier to cause that drawing area 
+and the drawing itself to fill the majority of the screen.</p>
+<h5>Configuring the touchpad</h5>
+<p>Having configured the touchpad in that manner, little if any additional setup 
+is required. As you will see later, a default window slightly larger than 
+1000x725 pixels containing the drawing in a 1000x725-pixel area is placed in the 
+upper-left corner of the screen when you select the Show AudioTac Display action 
+on the AudioTac Display menu. You can change the size and location of that 
+window if you choose by selecting the Set AudioTac Display Parameter action on 
+the same menu.</p>
+<p>Whatever size and location you elect to use for that window, you should 
+configure your touchpad to correspond to that rectangular area of the screen. 
+Having done that, dragging you finger in the active area of the touchpad will 
+cause a corresponding movement of the mouse pointer within that window.</p>
+<p>Ideally, it would be best if you can obtain assistance from a sighted person 
+and specify the rectangle to include only the active portion of the drawing 
+window, exclusive of the banner at the top and the borders on the sides and the 
+bottom. Once you know the specifications of the rectangular area that matches 
+that active area, the location of the upper-left corner of the rectangle should 
+not change regardless of the overall size of the drawing window. Also, the right 
+and bottom borders of the drawing window are normally quite small so it isn't as 
+important that you exclude those borders from your specified rectangular screen 
+area.</p>
+<p>Later on, I may add a keystroke feature that displays the top-to-bottom 
+dimension of the banner 
+at the top along with the widths of the borders on the left, right, and bottom 
+to assist in configuring the touchpad. In the meantime, be aware that if you 
+match the active area of your touchpad to the overall size and location of the 
+drawing window, there will be a small strip along the top of your touchpad that 
+is a <a name="dead_zone">dead zone</a> from which you will receive no audio 
+signals.</p>
+<h4>Interpreting the drawing using a mouse</h4>
+<p>Even if you plan to use a touchpad instead of a mouse, you should probably 
+read this section. You may find useful information here that was not included in 
+the previous section on using a touchpad.</p>
+<p>Grasp the mouse in your right hand with your thumb touching the upper-left 
+corner of the grid. (If you are left-handed, you may want to grasp the mouse in 
+your left hand with your third or fourth finger touching the 
+upper-left corner of the grid.)</p>
+<p>Press the 'h' key with your free hand. That will position the mouse pointer 
+near the upper-left corner of the screen within the active area of the drawing 
+window. Any time you feel lost you can repeat 
+that procedure to reposition the mouse pointer in the &quot;home&quot; position to get 
+your bearings again. (I think of this as the &quot;home&quot; position, which is why I 
+applied this feature to the 'h' key.)</p>
+<p>By default, the drawing is positioned in the upper-left corner of the screen. 
+Although it is possible to reposition the drawing to a different portion of the 
+screen, doing so will render the use of the 'h' key ineffective. Pressing the 
+'h' key will still position the mouse in the home position on the screen, 
+but there is no point in doing that if the upper-left corner of the drawing 
+window 
+isn't located in the upper-left corner of the screen.</p>
+<p>Note that the concept of the home position mentioned in this section does not 
+apply to the use of a touchpad. If you configure the touchpad as described in an 
+earlier section, the upper-left corner of the active area on your touchpad will 
+correspond to the upper-left corner of the drawing.</p>
+<h4>Operations common to the use of a touchpad or a mouse</h4>
+<p>In this section, I will use the term &quot;mouse pointer&quot; to represent either the 
+result of dragging your finger on the touchpad or moving the physical mouse.</p>
+<h5>Locating the horizontal position of shapes</h5>
+<p>If you move the mouse pointer from the home position towards the right while dragging your thumb 
+or finger along the top 
+edge of the grid, you will hear a deep rumble in both ears similar to a 
+motorcycle idling. (Don't forget the possible <a href="#dead_zone">dead zone</a> 
+at the top of the touch pad.) That sound switches between 100 Hz and 150 Hz depending on 
+the locations of shapes in the drawing.</p>
+<p>Whenever you hear the higher frequency or higher pitch sound, that means that there is a shape 
+somewhere above or below the mouse pointer. (Note that you will only hear sounds when 
+the mouse pointer is moving.)</p>
+<p>Whenever you hear the lower pitch sound, it means that there is no shape 
+either above or below the mouse pointer.</p>
+<h5>Acquiring the shape</h5>
+<p>To acquire a shape after hearing the higher pitch motorcycle sound, slowly move the mouse 
+pointer in a zig-zag 
+pattern from the top of the grid towards the bottom of the grid. Pay attention 
+to the position of your finger or thumb in the grid system in order to identify the 
+location of a shape once you acquire it. </p>
+<p>When you have acquired the boundary of a shape with the mouse pointer, you 
+will hear a series of pulses with a frequency or pitch that is noticeably higher than the 
+motorcycle sound.</p>
+<h5>Identifying the shape</h5>
+<p>Once you have acquired the shape, you can press any of the following three 
+keys to cause the information shown to pop up in a text box on the screen. If 
+you are using an audio screen reader, the information in the text box should be spoken 
+by the screen reader.</p>
+<ul>
+	<li>T - The title that was originally assigned to the shape,</li>
+	<li>D - The description that was originally provided for the shape, and</li>
+	<li>C - Any text content&nbsp; associated with the shape.</li>
+</ul>
+<p>Then press the Enter key to dismiss the text box and return to the 
+shape-tracing mode.</p>
+<h5>Vertical adjustments</h5>
+<p>There are three frequencies or pitches associated with each shape, and the three pitches 
+associated with one shape are readily distinguishable from the three pitches 
+associated with each of the other shapes.</p>
+<p>When you have placed the mouse pointer squarely on the center line of a 
+horizontal 
+boundary of a shape, you will hear a series of pulses at a pitch that I will 
+refer to as the center pitch. When the mouse pointer is slightly below the 
+center line, you will hear a slightly higher pitch. This means that you should 
+move the mouse toward the top of the grid to place the mouse pointer on the 
+center line. When the mouse pointer is slightly above the center line, you will 
+hear a pitch that is slightly below the center pitch. This means that you should 
+move the mouse toward the bottom of the grid to put the pointer on the center 
+line.</p>
+<h5>Horizontal adjustments</h5>
+<p>You will also hear the pulses in your left ear only, your right ear only, or evenly in 
+both ears. When the mouse pointer is positioned squarely on the center line of a 
+vertical boundary of a shape, you 
+should hear the pulses with equal intensity in both ears. If you hear the sound 
+in your left ear only, you need to move the mouse pointer slightly to the left in order 
+to place the mouse pointer on the center line. Similarly, if you hear the pulses 
+in your right ear only, you need to move the mouse pointer slightly to the right to 
+acquire the center line.</p>
+<p>If you use ear buds rather than headphones, make certain that you 
+have the &quot;right&quot; bud in the right ear and the &quot;left&quot; bud in the left ear. 
+Otherwise, the instructions given above must be reversed.</p>
+<h5>Sloping lines</h5>
+<p>Many, and perhaps most of the lines in your drawing will not be horizontal or 
+vertical. Instead, they will have a slope within in the small segment that is 
+coincident with the mouse pointer. Therefore, you will need to learn to combine 
+stereo sound with pitch in order to keep the mouse pointer on the center line.</p>
+<p>You should think in terms of viewing a pixel on the screen using a viewport 
+that is divided into nine equal size cells as shown below:</p>
+<pre>HL HC HR
+ML MC MR
+BL BC BR</pre>
+<p>If the MC cell in the center encounters the pixel, the sound will be at the 
+center-frequency equally in both ears. If the HL cell in the upper-left corner 
+encounters the pixel, the sound will be a slightly higher pitch in the left ear. 
+Similarly, if the BR cell in the lower-right corner encounters the pixel, the 
+sound will be a slightly lower pitch in the right ear. You should be able to figure 
+out the pitch and ear for the remaining six cells on your own. </p>
+<p>Because we are more interested in lines than individual pixels, several of the 
+cells in the above diagram will encounter pixels belonging to the shape boundary 
+at any given time. A priority scheme is used to determine which sound you will 
+hear in which ear in those cases.</p>
+<h5>Follow the line with the mouse or the finger</h5>
+<p>Once you acquire the center line of the boundary of a shape with the mouse 
+pointer, you can move your finger or move the mouse on the grid in such a way as to follow 
+the boundary of the shape that you have acquired. While doing that, you can feel the embossed 
+grid and (hopefully) form a mental image of the geometry of the shape.</p>
+<h5>Don't pick up the mouse</h5>
+<p>When using a mouse, you should be careful to avoid lifting it from the table. 
+If you pick it up and set it back down, it will have lost registration relative 
+to the grid unless you place it in exactly the same spot from which you picked 
+it up. If you do inadvertently lift the mouse off the table, move the mouse back 
+to the upper-left corner of the grid and press the 'h' key to re-establish 
+proper registration. (This is one of the difficulties of using a mouse.)</p>
+<h4>May require practice</h4>
+<p>I'm not suggesting that it is easy to follow the boundary of the shape with 
+the finger or the mouse or to form a mental image of the geometry of the shape 
+by following the boundary. 
+However, once you learn to do that, the results can be very rewarding. The 
+combination of the drawing features of the program and the ability to interpret 
+drawings with sound and touch will make it possible for you to communicate with 
+the rest of the world using 
+the important mathematical concepts embodied by the Cartesian coordinate system.</p>
+<p>Practice may be required for you to get it right. I suggest that you start by 
+drawing and interpreting simple shapes, such as circles, rectangles, ellipses, 
+and simple polylines and progress to more complex shapes as your skills improve.</p>
+<h4>Quantitative versus qualitative information</h4>
+<p>The Instant Display feature, discussed elsewhere in this document, makes it 
+possible for blind users to use sonification software such as the vOICe to 
+obtain qualitative information about shapes. In other words, an experienced 
+vOICe user can gain a qualitative idea of the generalities of a shape by 
+analyzing an image of that shape with the vOICe software. A practiced vOICe user 
+might even be able to infer some quantitative information for simple shapes from the 
+sounds as the program scans the image.</p>
+<p>The AudioTac feature makes it possible for blind users to obtain quantitative 
+information about a shape, such as the locations and values of the peaks and 
+troughs in the price of a stock, or the distance between two walls in the floor 
+plan of an apartment.</p>
+<p>Both approaches have much to offer the blind user, and I encourage you to use 
+both approaches to glean as much information as possible about the shapes in 
+drawings. You can use the Instant Display for sonification, and the AudioTac 
+Display for a more quantitative analysis.</p>
+<h4>Other things you need to know about the AudioTac Display</h4>
+<h5>All shapes are closed</h5>
+<p>In order to help you maintain your orientation, all shapes are forced to be 
+closed, even if they weren't originally closed when the drawing was created in 
+SVGDraw01. By this I mean that if you plot a series of points 
+using the Polyline action in SVGDraw01, an extra line will be drawn that automatically 
+connects the last point back to the first point when using the AudioTac feature. 
+(The extra line will not be included in the SVG drawing file produced by 
+SVGDraw01 or in the Instant Display of the same shape.)</p>
+<p>That extra line will help 
+you identify and avoid falling off the end of a curve 
+only to search in vain for the rest of the curve. Continuing to follow the 
+boundary will take you back to the point where you started. Once you reach that 
+starting point, you will know that you have seen everything there is to see 
+about that shape.</p>
+<p>On the other hand, this is not completely without its problems. The return 
+stroke can sometimes cross the curve and create a crossroads where there is no 
+difference in the pitch of each of the four directions of travel at the 
+intersection. (Think of the center of a figure 8.) I'm still thinking about how 
+to solve this problem, but so far I haven't come up with a solution that I like.</p>
+<h5>When shape boundaries cross</h5>
+<p>When you have two or more shapes in the same drawing, their boundaries will 
+often cross. Whenever you come to a point where two shapes cross while tracing 
+a boundary with the mouse pointer, you will hear pulses that may be any of six 
+different pitches.</p>
+<p>Three of those pitches will be the three pitches associated with one of the 
+shapes and the other three will be the three pitches associated with the other 
+shape. You should be able to distinguish between the shapes because the three 
+pitches associated with one shape are readily distinguishable from the three 
+pitches associated with the other shape.</p>
+<h5>Shapes at the same horizontal but different vertical positions</h5>
+<p>As you move the mouse pointer from the top of the grid to the bottom of the 
+grid, you may encounter more than one shape. Therefore, when doing the vertical 
+zig-zag to locate shapes indicated by the higher-pitch motorcycle sound, 
+you should be sure to search from the top of the grid to the bottom of the grid. </p>
+<h5>No text is displayed</h5>
+<p>Except for the possibility of very large characters, it would be impractical 
+for a user to follow the shapes of individual characters in text. This is 
+especially true since all of the characters in a given block of text belong to 
+the same shape and would therefore emit the same three pitches.</p>
+<p>However, It could be very useful for a user to be able to trace out the 
+outline of a block of text and hear what the text has to say. Therefore, there 
+is an option to cause a rectangle to appear for each text block where the size 
+and position of the rectangle indicates the overall size and position of the 
+text block. That rectangle emits three pitches just like any other shape. In 
+addition, by pressing the C key (upper or lower case) after acquiring the 
+rectangle, you can hear (through your screen reader) the content of the text. 
+Therefore, if the text block were to read &quot;Vector representation of the forces 
+on a free-body diagram,&quot; that is what you should hear spoken by the screen 
+reader when you acquire 
+the rectangular outline of the text and press the C key. As with the other 
+shapes, you can also hear the title and description spoken by the screen reader by pressing the T and D 
+keys.</p>
+<h5>Elliptical and circular arcs in SVG paths are not displayed</h5>
+<p>This program is written in the Java programming language. Converting SVG 
+graphics to Java graphics is not a trivial task, and I have not yet solved all 
+of the problems involved in converting elliptical and circular arcs contained 
+in SVG path data. Therefore, circular and elliptical arc path data is simply ignored by the AudioTac 
+Display. I may go back and add that capability at some point in the future. </p>
+<p><strong>Frequency differences between the different shapes</strong></p>
+<p>As mentioned earlier, the motorcycle sound is achieved by emitting pulses 
+with center frequencies at either 100 or 150 Hz. Beyond that, sound frequencies 
+are automatically applied to the shapes in the drawing in the order that the 
+shapes appear from the back to the front of the drawing. The lowest frequency 
+sound applied to a shape is 500 Hz. The separation between the frequencies 
+assigned to different shapes is 200 Hz. Therefore, if your audio system and your 
+ears will accommodate pulses up to a frequency of 4500 Hz, the program should 
+accommodate 20 different shapes in a single drawing. While this may not seem 
+like many different shapes for a complex drawing, using SVGDraw01, it is 
+possible to create and save the drawing in parts, and then to import and combine 
+those drawings into a final version of the drawing.</p>
+<p>The frequency difference between the low, center, and high frequency for each 
+shape is 50 Hz. In other words, the first shape in the stack, which is assigned 
+a center frequency of 500 Hz, is also assigned frequencies of 450 Hz and 550 Hz. 
+This results in a 100 Hz difference in the higher pitch for one shape and the 
+lower pitch for the next shape in the stack of shapes. This difference is 
+readily discernable at the low end of the frequency spectrum. It remains to be 
+seen how discernable it will be at the high-frequency end of the spectrum.</p>
+<h2><a name="Specific_user_instructions">Actions</a></h2>
+<p>When you first start the program you will land on Home 
+Base, from which you can select and 
+perform more than 30 different actions. When you first start using the 
+program, you will probably need to select the appropriate menu from which you 
+can select the desired action. However, if you pay attention to the accelerator 
+keys for each action, such as Ctrl+L to draw a line, for example, you will soon learn to bypass 
+the menus and perform the actions directly from Home Base (or from just about 
+anywhere else for that matter).</p>
+<p>I will discuss 
+each of the available actions in this section.</p>
+<h3><a name="Start_a_new_drawing">Start a New Drawing</a> (Ctrl+N)</h3>
+<p>As the name of the action implies, you should select this action to start a new drawing. When you select this action, you will land on a page from which you can provide the 
+information required for a new drawing.</p>
+<p>The first two text fields allow you to enter a title and a description for your 
+new drawing. If you simply tab past those two fields, a default title and a 
+default description will be assigned to your new drawing.</p>
+<p>You may enter the width and height in inches of your new drawing in 
+the next two text fields. If you simply tab past those two fields, default 
+values will be assigned for width and height.</p>
+<h4>A very important point</h4>
+<p>This is where I need to explain a very important point. You specify the width 
+and height of your new drawing in inches, such as 8.5 inches and 11 inches. 
+Just enter the numbers. Don't enter the units. The units of inches are understood by the 
+program.</p>
+<p>After you establish the width and height of your new drawing in inches by 
+executing this action, you will have many opportunities, while executing other actions later, to provide coordinate and/or dimensional information. In those cases, you 
+must provide the information in units of 0.01 inch, 
+or 100 units per inch. For example, if you later decide to draw a rectangle that 
+is 8.0 inches wide and 10.5 inches high, you must specify the width as 800 and 
+you must specify the height as 1050. (Multiply the dimension in inches by 100 to 
+get the required data-entry value.)</p>
+<h4>The Action button</h4>
+<p>Like most other Action pages, this page has an Action button near the end 
+that is labeled &quot;Start drawing.&quot; When you press that button, a sound will be 
+emitted to indicate that you successfully started your new drawing.</p>
+<h3><a name="Open_existing_drawing">Open SVGdraw File</a> (Ctrl+O)</h3>
+<p>Selecting this action opens a standard file menu, from which you can specify 
+the SVG file that you want to open. This action applies only to SVG files that 
+were earlier created and saved by this program. Another action that I will 
+explain later deals with SVG files created by other programs.</p>
+<p>(Unless you have a good reason to do so, you probably will not want to open the 
+version of the drawing that contains the word &quot;flipped&quot; in the file 
+name. 
+Instead you will probably want to open the normal version that does not contain 
+the word &quot;flipped&quot; in the file name.)</p>
+<p>Be aware that when you select this action, any 
+work that you may have been doing on another drawing will be lost unless you 
+first save 
+that work by selecting <a href="#Write_drawing_file">Save Normal (Ctrl+S)</a> 
+before executing this action.</p>
+<h4>Patience is the watchword here</h4>
+<p>You may have to be very patient at this 
+point. Sometimes it takes quite a while on my computer for the program to find, open, 
+and process the existing 
+drawing file even if it is a small drawing.</p>
+<p>If the file is not found, a Message Box will pop up with that information. Press 
+OK to dismiss the Message Box and focus will return to Home Base.</p>
+<p>If the file is found and opened, a Message Box will pop up with that information 
+as well. When you press the OK button on that Message Box, focus will return to Home Base.</p>
+<h3><a name="Import_Existing_Drawing">Import SVGdraw File</a> (Ctrl+M)</h3>
+<p>This capability allows you to create a library of drawings that you can 
+later import and combine to produce larger overall drawings. If you have drawn 
+it once and saved the SVG file, you should never need to draw it again. Just import 
+the old drawing into a new drawing and edit as appropriate.</p>
+<p>Selecting this action opens a standard file menu, from which you can specify 
+the SVG file to open.</p>
+<p>(Once again, this action applies only to SVG files that were earlier created 
+and saved by this program. Another action that I will explain later deals with 
+SVG files created by other programs.)</p>
+<p>The procedure for importing an existing drawing is very similar to the procedure 
+for <a href="#Open_existing_drawing">opening</a> an existing drawing. The 
+difference is that when you open an existing drawing, it becomes the current 
+drawing, overwriting any work that you might have been doing on another drawing. 
+When you import an existing drawing, only the shapes are imported, and they are 
+added to the current drawing.</p>
+<h4>Once again, patience is the watchword</h4>
+<p>As when opening a drawing file, you may have to be very patient at this 
+point. Sometimes it takes quite a while on my computer for the program to find, open, 
+and process the existing 
+drawing file even if it is a small drawing.</p>
+<p>If the file is not found, a Message Box will pop up with that information. Press 
+OK to dismiss the Message Box and focus will return to Home Base.</p>
+<p>If the file is found and opened, a Message Box will pop up with that information 
+as well. When you press the OK button on that Message Box, focus will return to Home Base.</p>
+<h3><a name="Import_Other_SVG_File">Import Other SVG File</a> (Ctrl+H)</h3>
+<p>Whereas the action named <a href="#Import_Existing_Drawing">Import SVGDraw File</a> 
+allows you to import a drawing file previously created and saved using this program, this action attempts to import SVG drawing files created by other 
+programs. I say attempts because the result may or may not be what you want, 
+depending on the structure of the SVG file that you are trying to import.</p>
+<p>SVG is a complex graphics standard and there are many ways to write the SVG code 
+for a given drawing. Simply reading an SVG file is easy. This program will 
+probably read most SVG files and pass them through to the output file. The 
+challenge comes in reading the file and capturing the shape objects in such a 
+way that you can use the capabilities of this program to edit them, display 
+them, AudioTac them, add to them, 
+etc.</p>
+<p>The only way to know if this program will successfully import a drawing file 
+produced by a different program is to try it. First you must select either
+	<a href="#Start_a_new_drawing">Start a New Drawing</a> or
+	<a href="#Open_existing_drawing">Open SVGDraw File</a>. Then select this action, 
+which will open a standard file menu, from which you can specify 
+the SVG file to import.</p>
+<h4>Be patient</h4>
+<p>As with the other actions that involve opening an SVG file, you will need to be 
+patient. It may take quite a long time for the program to find, open, and 
+process the file.</p>
+<p>When you receive the notification that the file has been opened, select
+	<a href="#Review_shapes">Review (without modification)</a>. Examine the list of 
+shapes to see if that list contains what you expected it to contain.</p>
+<p>I have tested this action using SVG files from 
+	<a href="http://www.fooplot.com/">http://www.fooplot.com/</a> and it seems to work well for those files.</p>
+<h4>A word of caution</h4>
+<p>There is one word of caution, however. <a href="#Save_Flipped">Elsewhere</a> in this document I explain how 
+the vertical axis on drawings created using this program are upside down 
+relative to drawings in typical STEM textbooks. 
+SVG files created at <a href="http://www.fooplot.com/">http://www.fooplot.com/</a> have been corrected so that the images are right 
+side up. If you merge drawing files from that source with shape objects created 
+using this program, you will need to take that into account.</p>
+<h3><a name="Write_drawing_file">Save</a> Normal (Ctrl+S)</h3>
+<p>If you have not previously saved your drawing in a file with a specified path 
+and file name, selecting this action will automatically invoke the
+	<a href="#Save_As">Save As...</a> action described below.</p>
+<p>If you have previously saved your drawing, selecting this action will cause 
+the current state of your drawing to be saved with the same file name with no further 
+action required on your part.</p>
+<p>It might be a good idea to perform this action 
+frequently while creating a drawing so that if you make a mistake (or you have a 
+power failure), you can re-open the most recently-saved version of the drawing file. 
+In that case, simply press Ctrl+O and specify the path and file name to open the most recently saved file.</p>
+<h3><a name="Save_Flipped">Save Flipped</a> (Ctrl+F)</h3>
+<h4>A conflict between SVG and STEM textbooks</h4>
+<p>Some of you are aware of a conflict that exists between the way that SVG (and 
+many other computer graphics systems) treat the graphics space and the way that textbooks 
+in many STEM courses treat that same graphics space. In particular, with SVG, 
+the 0,0 origin is at the upper-left corner of the drawing. Positive X is to the 
+right and positive Y goes down the drawing. In many STEM textbooks, however, the 
+0,0 origin is at the lower-left corner of the drawing, positive X is to the 
+right, and positive Y goes up the drawing.</p>
+<p>While this might seem like a trivial problem to solve through programming, it is, 
+in fact, a difficult programming problem for graphics programs 
+that use standard libraries to draw text on the drawing. Without getting into 
+the details, when you simply flip the Y-axis, you turn the text upside down. 
+That upside-down text is not something that is easy to correct.</p>
+<h4>Pressing Ctrl+F before selecting Save As...</h4>
+<p>If you have not previously saved your drawing in a file with a 
+specified path and file name, pressing Ctrl+F will notify you that you must save your 
+drawing as a &quot;normal&quot; drawing file at least once before you can save it in the 
+&quot;flipped&quot; format described below.</p>
+<h4>Two output files are produced</h4>
+<p>After saving your drawing at least once as a normal SVG file, 
+pressing Ctrl+F produces two output files. One file, with an extension of .svg, 
+contains the &quot;normal&quot; SVG drawing file. The other file, with an extension of .flipped.svg, 
+contains a drawing with the vertical axis flipped, the origin at the lower-left 
+corner of the drawing, and positive Y going up the drawing.</p>
+<h4>Limitations of the flipped format</h4>
+<p>There is a&nbsp; limitation, however, that applies only to the flipped output 
+format. Any text that you may have placed on the drawing will not be properly 
+handled if you attempt to rotate, translate, or scale that text. (Unfortunately, 
+this precludes the possibility of drawing text along a vertical axis for the 
+flipped output format.)</p>
+<p>Otherwise, everything in the drawing should be a correctly flipped version of 
+the contents of the &quot;normal&quot; SVG file even if rotation, translation, or scaling 
+have been applied to shapes other than text.</p>
+<p>Therefore, if you use this option, you should plan on using 
+horizontally-oriented text only. You should also plan on placing and sizing that 
+text without any requirement to rotate, translate, or scale the text.</p>
+<p>None of the limitations described above apply to the drawing in the normal SVG 
+output drawing file without the word &quot;flipped&quot; in the file name.</p>
+<h4>Save early and often</h4>
+<p>As before, it might be a good idea to perform this action frequently while creating a drawing so that if you make a mistake (or you have a 
+power failure), you can re-open the most recent good version of the &quot;normal&quot; drawing file. 
+In that case, simply press Ctrl+O to open the most recently saved normal drawing 
+file.</p>
+<h4>Be carful which file you open</h4>
+<p>Unless you have a good reason to do so, you probably will not want to open the 
+flipped version of the drawing, but instead will want open the normal version 
+that does not contain the word &quot;flipped&quot; in the file name. One case 
+where you might want to open the flipped version is if you intend to import 
+other SVG files that are also flipped, such as files from
+	<a href="http://www.fooplot.com/">http://www.fooplot.com/</a>. Having done that, 
+you might want to flip the files again to get everything back to the normal SVG 
+orientation.</p>
+<h3><a name="Save_As">Save As</a>...</h3>
+<p>Selecting this action opens a standard file menu, from which you can specify 
+the path and file name in which to save the SVG file.</p>
+<p>Each time you perform this action, the current state of your drawing will be 
+saved in the specified file.</p>
+<p>This action can be executed by opening the File menu and pressing the &quot;a&quot; 
+key. That is what you will need to do if you need to change the output file name 
+in the middle of a run. Frequently, however, you will execute this action by 
+pressing Ctrl+S before having established an output path and 
+file name. In those cases, control will automatically be transferred to this 
+action. </p>
+<h3><a name="Stop_program">Exit</a> (Alt+F4) </h3>
+<p>As the name implies, selecting the &quot;Exit&quot; action will cause the program to be terminated. Make sure that you have 
+performed the <a href="#Write_drawing_file">Save Normal</a> action before 
+performing this action if you want to save your drawing. <em>(Note that at one 
+point in the history of the program, the &quot;Exit&quot; action was taken using Ctrl+X. 
+However, this was changed to Alt+F4 to make it more consistent with other 
+Windows programs.)</em></p>
+<h3><a name="Draw_a_line">Line</a> (Ctrl+L)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a line segment between any two points in your 
+drawing.</p>
+<h4>The title and description fields</h4>
+<p>On this page, as on may other pages, the first 
+two fields allow you to enter a title and description for the shape object. If 
+you tab through these two fields, a default title and a default description will 
+be assigned to the object. Because this is essentially the same on all pages, I 
+won't mention it with respect to Action pages that I discuss in the 
+remaining sections of this document.</p>
+<h4>Coordinate-value fields</h4>
+<p>You will be asked to enter the X and Y coordinate values for one end of the line 
+in the next two fields. The fields already contain default values that 
+you can accept by simply tabbing through the fields.</p>
+<p>You will then be asked to enter the X and Y coordinate values for the other end of 
+the line in the next two fields.</p>
+<p>Recall that you need to enter these values in units of 0.01 inch. Multiply the 
+desired coordinate values in inches by 100 and enter the product in the text 
+fields.</p>
+<h4>Stroke width and opacity</h4>
+<p>You will be asked to enter the stroke width and opacity in the next two fields. 
+You will encounter these same two fields on many Action Pages and the 
+meaning will always be the same. Therefore, I will explain the meaning of these 
+fields here and 
+then ignore them for the remainder of this document.</p>
+<h5>The stroke width</h5>
+<p>The stroke width is the width or thickness of the line that will be drawn. If 
+you are planning to emboss the drawing, the stroke width might need to be at 
+least as wide as the distance between two dots on the embosser. Thus, if the embosser 
+supports 20 dots per inch, you might need to make the stroke width at least 5, which 
+represents 0.05 inch or the distance between the dots on a 20 dot per inch embosser.</p>
+<p>If the 
+embosser supports 16 dots per inch, you might need to make the stroke width at least 
+6.25, which represents 0.0625 inch or the distance between the dots at 16 dots 
+per inch.</p>
+<p>This is an area where you should experiment with your embosser to find the 
+stroke width that works best for you.</p>
+<h5>The opacity</h5>
+<p>If we were talking about color, opacity would be a complicated topic. However, 
+since we are mainly talking about white, black, and shades of gray, the concept of opacity is fairly simple.</p>
+<p>You will be asked to enter a value between 0 and 1 for the stroke opacity. The 
+line will be drawn pure black for a value of 1.</p>
+<p>The line will essentially not be drawn and therefore will be invisible for a value of 0.</p>
+<p>The line will be drawn with a shade of gray that is half way 
+between <span lang="en-us"></span>white and black for a value of 0.5. Other values result in 
+shades of gray that are proportional to the value. </p>
+<p>(Another way to draw with shades of gray is to specify a value of 1.0 for 
+opacity and then specify a color of GRAY, DARK_GRAY, or LIGHT_GRAY for the stroke using the Set Common 
+Attributes action on the Advanced menu. You can also use that action to cause the 
+stroke to be one of approximately 175 other named colors or any color that is 
+defined as "#RRGGBB" where RR, GG, and BB are the two-digit hexadecimal representations of the red, green, and blue color
+ components. .)</p>
+<p>Getting back to opacity, the greater the opacity 
+value, the darker will be the line. The smaller the opacity value, the 
+lighter will be the line.</p>
+<p>On an embosser with variable dot height, a value of 1 
+will produce dots with the maximum height. For lower stroke opacity values, the height of the dots 
+will be lower. If your embosser doesn't provide variable dot height, you should 
+probably always enter a value of 1 for the stroke opacity.</p>
+<p>(Also see <a href="#The_fill_checkbox_and_fill_opacity">The fill checkbox and fill opacity</a> later.)</p>
+<h3><a name="Draw_a_rectangle">Rectangle</a> (Ctrl+R)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a rectangle whose sides are parallel to the 
+horizontal and vertical axes. If you need a rectangle whose sides are not 
+parallel to the horizontal and vertical axes, you can draw it with this action 
+and then <a href="#Rotate_shapes">rotate</a> it later or draw it as a
+	<a href="#Draw_a_polyline,_a_polygon,_or_a_path">polygon</a> or as a
+	<a href="#Draw_a_polyline,_a_polygon,_or_a_path">path</a>.</p>
+<p>Using this action, you specify the X and Y coordinates of the upper-left 
+corner of the rectangle and the width and the height of the rectangle. If you 
+write the output file in the flipped format described elsewhere in this 
+document, that upper-left corner of the rectangle will become the lower-left 
+corner of the flipped rectangle.</p>
+<p>As before, 
+you also specify the stroke width and the stroke opacity.</p>
+<h4><a name="The_fill_checkbox_and_fill_opacity">The fill checkbox and fill opacity</a></h4>
+<p>This action, along with several of the other actions to be discussed later, 
+introduces a new parameter. This new parameter is named &quot;fill.&quot;. I will explain it here and then ignore it 
+when discussing actions in subsequent sections.</p>
+<p>Because a rectangle is a closed geometric shape, you can cause it to be filled with a 
+color ranging from black through gray to white by setting the fill opacity value 
+on the Action Page.</p>
+<p>(As mentioned elsewhere, you can also use the Set Common Attribute action on 
+the Advanced menu to cause the fill to be many other colors as well.)</p>
+<p>Before you reach the Action Button while navigating down this Action Page, you will 
+encounter a checkbox labeled &quot;Check this box for black fill.&quot; You can check (and 
+uncheck) the box by pressing the space bar while the checkbox has the focus.</p>
+<p>If you check the box, a new text field will be exposed between the checkbox 
+and the Action Button. You will be asked for the &quot;Value between 0 and 1 for fill 
+opacity.&quot; Opacity has the same meaning here that it has for stroke opacity 
+discussed earlier, except that this time it doesn't simply apply to a line. Rather, 
+it applies to an entire area defined by a surrounding line.</p>
+<h4>A word of caution</h4>
+<p>A word of caution is in order here. I have been told that if you plan to emboss 
+your graphic using an embosser with variable dot height, you should avoid 
+filling areas with large (dark) opacity values. I have been told that this can 
+cause undesirable paper buckling when the embosser attempts to emboss a large 
+area with high dots. It was suggested that low opacity values (light gray) should be used 
+when filling to avoid this issue.</p>
+<p>If you are using an embosser that doesn't provide variable height, you may need 
+to avoid filling areas altogether. You should experiment with your embosser to 
+determine what works best for you.</p>
+<p>Actually, a similar issue applies to ink-squirt printers. My experience is that 
+printing filled dark areas not only causes the ink on the paper to dry slowly, it also 
+uses a lot of ink causing more frequent replacement of expensive ink cartridges.</p>
+<h4>The Action button for the rectangle</h4>
+<p>You will find an Action Button labeled &quot;Draw rectangle&quot; near 
+the end of the page. 
+As usual, pressing the button will cause the rectangle object to become a part 
+of your drawing and you will land on Home Base.</p>
+<h3><a name="Draw_a_circle">Circle</a> (Ctrl+C)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a circle at a given location with a given radius.</p>
+<p>You won't find anything new on this page. You will be asked to enter the X and Y 
+coordinates for the center of the circle along with the radius of the circle.</p>
+<h3><a name="Draw_an_ellipse">Ellipse</a> (Ctrl+E)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw an ellipse at a given location with a given radius 
+along the horizontal axis and a different radius along the vertical axis. As 
+with the rectangle, you may need to <a href="#Rotate_shapes">rotate</a> the 
+shape later if the default orientation is not what you need.</p>
+<p>In case you aren't familiar with this shape, an ellipse is like a 
+squashed circle. It is a smooth closed shape, but its radius may be larger along 
+one axis than it is along the other axis.</p>
+<p>Once again, you won't find anything new on this Action Page. This page is much like the page for 
+drawing a circle except that on this page, you will be asked to provide both a 
+horizontal radius and a vertical radius. If you enter the same value for 
+both of the radii, you will end up with a circle.</p>
+<h3><a name="Draw_a_polyline,_a_polygon,_or_a_path">Polyline, polygon, or path</a> 
+(Ctrl+P)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a polyline, a polygon, or a path.</p>
+<h4>Polyline and polygon</h4>
+<p>For either a polyline or a polygon, you provide the X and Y coordinate values 
+for a set of points. in a file known as a csv file. (I will provide an example 
+of some csv data later.) The points are connected by straight line segments in the 
+order that you define the points. The only difference between the polyline and 
+the polygon is that 
+when you draw a polygon, the last point is automatically connected to the first 
+point creating a closed shape.</p>
+<h4>A path</h4>
+<p>A path is completely different from either a polyline or a polygon. It can be used to draw 
+something as simple as a straight line segment, or something as complex as a cubic Bezier curve or an elliptical arc.</p>
+<p>To use this 
+feature of the program, you will probably need to first study SVG paths. The 
+best material that I have found on the topic is a tutorial located at
+	<a href="https://developer.mozilla.org/en/SVG/Tutorial/Paths">https://developer.mozilla.org/en/SVG/Tutorial/Paths</a>. Hopefully, it will be 
+sufficiently accessible that you can read it.</p>
+<p>To draw a path, you provide a string of characters consisting of both SVG path 
+commands and coordinate information. I will provide an example of SVG path data later.</p>
+<h4>The Action Page</h4>
+<p>The Action Page for this action is relatively straightforward. The first new 
+thing on the page is a set of three radio buttons by which you specify that you 
+want to draw one of the following three shapes:</p>
+<ul>
+	<li>Polyline</li>
+	<li>Polygon</li>
+	<li>Path</li>
+</ul>
+<p>After working your way past the text fields for title and description, you are 
+presented with a button labeled &quot;Import data file.&quot; Pressing this button opens a 
+standard file dialog from which you can specify the csv or pth file to open.</p>
+<p>Initially the dialog shows only files with a .csv extension. This is what you 
+need for either a polyline or a polygon. If you are importing a file containing 
+SVG path data, you can open a GUI component in the file dialog and cause the 
+filter to be changed from *.csv to *.pth. Once you do that, the dialog will 
+display only files having an extension of .pth.</p>
+<p>If you selected either the Polyline or the Polygon radio button, 
+you will need to provide a <a href="#A_csv_file">csv</a> file containing the 
+data. This file must have an extension of .csv .</p>
+<p>If you selected the Path radio button, you will need to provide a
+	<a href="#A_path_file">path</a> file containing the data. This file must have an 
+extension of .pth.</p>
+<h4><a name="A_csv_file">A csv file</a></h4>
+<p>A csv file is a simple text file containing X,Y coordinate value pairs with no 
+spaces and with the values separated by commas. You can put one or more values 
+on each line so long as you are careful to separate them with commas. You 
+can omit the comma at the end of the line if you wish. As mentioned earlier, the file 
+must 
+have an extension of .csv or it will be rejected.</p>
+<p>Here are the contents of a simple csv file that can be used to draw either a 
+polyline or a polygon</p>
+<pre>200,200
+600,200
+400,400</pre>
+<p>If you were to use this data to draw a polyline, the program would draw two 
+sides of a triangle. If you were to use it to draw a polygon, the program would 
+draw all three sides of the same triangle.</p>
+<h4><a name="A_path_file">A path file</a></h4>
+<p>A path file contains the SVG code for the path that you want to draw in addition 
+to coordinate values. For 
+example, a file containing the following characters will cause a cubic Bezier 
+curve to be drawn:</p>
+<pre>M130 110 C 120 140, 180 140, 170 110</pre>
+<p>You will find an explanation of this SVG code in the section on Bezier curves at
+	<a href="https://developer.mozilla.org/en/SVG/Tutorial/Paths">https://developer.mozilla.org/en/SVG/Tutorial/Paths</a>. 
+	</p>
+<h4><a name="Sample_csv_files">Sample files</a></h4>
+<p>The executable jar file containing this program contains some sample csv files 
+and some sample path files in a folder named Samples. You can extract those 
+files using a program like WinZip and use them to experiment with the data 
+import feature for drawing polylines, polygons, and paths. </p>
+<p>Many programs, including Microsoft Excel, produce csv files as a standard 
+output format. You can also create your own csv files using a text editor.</p>
+<p>I have never seen a program that produces SVG path files as a standard output 
+format. Therefore, if you import path files, you will probably need to create them using 
+a text editor. Although that may sound like a daunting task, you may find it worth your while because you can squeeze a lot of graphic information 
+into a path file once you understand SVG paths.</p>
+<p>For example, assume that you frequently need to draw curves in a Cartesian 
+coordinate system with an X-axis, a Y-axis, and tic marks along each axis, or 
+maybe you need to draw grid lines instead of tic marks. You could create a path 
+file for that basic structure. Then whenever you need to draw a graph, you could 
+begin by importing the path file for the axes and then draw your data points 
+within those axes.</p>
+<h3><a name="Draw_line_of_text">Text</a> (Ctrl+T)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a single line of text at a given location with a 
+given font face (such as Arial) and a given point size. You have three choices 
+for the font style (normal, italic, or oblique). You also have four choices for 
+the font weight (normal, bold, bolder, or lighter).</p>
+<p>If you have worked through the discussions of the Action Pages in the previous 
+sections of this document, you shouldn't find anything new on this Action Page.</p>
+<p>The starting X and Y coordinate values specify the location of the lower-left 
+corner of a rectangle that fully encloses the first character in the line of 
+text. Despite the fact that the coordinate system is upside down, text that you 
+draw using this action will appear right side up when you print or emboss the 
+drawing.</p>
+<p>A point size of 72 will probably produce an upper-case &quot;T&quot; that is approximately 
+one-half inch from top to bottom on your printer. Other point sizes produce text 
+that is proportionally larger or smaller.</p>
+<h3><a name="Vector">Vector</a> (Ctrl+U)</h3>
+<p>Selecting this action will land you on a 
+page from which you can draw a vector at a given location with a given line 
+width, length, and orientation.</p>
+<p>In case you are unfamiliar with the term, a Vector is a line with an arrow 
+head on one end. (For those who may be interested in the details, the vector is 
+constructed using an SVG path element.)</p>
+<p>The position, length, and orientation of a Vector can be specified using either rectangular or polar coordinates.</p>
+<p>You won't find anything new on this Action Page, which is much like the page for 
+drawing a line. A checkbox at the top of the page lets you select either 
+rectangular or polar coordinates. If you clear the box, which is checked by 
+default, you will need to specify the coordinates of the two ends of the vector. 
+The end with the arrow head is called the head and the other end is called the 
+tail.</p>
+<p>If you leave the box checked, you will need to specify the coordinates of the 
+tail plus the Length and Angle of the vector. The length is the combined length 
+of the line and the arrowhead. The angle is specified in degrees clockwise 
+relative to the positive x-axis.</p>
+<p>In both cases, you will also need to specify the width of the line that makes 
+up the body of the vector. The size of the arrow head is proportional to the 
+width of the line.</p>
+<h3><a name="Review_shapes">Review (without modification)</a> (Alt+V)</h3>
+<p>The first few actions 
+discussed above 
+deal with</p>
+<ul>
+	<li>starting a new drawing,</li>
+	<li>opening an existing drawing,</li>
+	<li>saving your drawing, or</li>
+	<li>exiting the program.</li>
+</ul>
+<p>After that, the next several actions discussed above deal with drawing specific 
+shapes such as lines, rectangles, circles, paths, etc.</p>
+<p>Beginning with this section, the next several actions that I will discuss deal with actions that you 
+can perform on shapes that you have already drawn. The first of these actions is the&nbsp; &quot;Review 
+(without modification)&quot; action.</p>
+<p>Selecting the &quot;Review (without modification)&quot; action will land you on a 
+page from which you can mark any shape from a list of shapes in the current 
+drawing and get information about that shape's name, description, ID, and 
+attributes. The shapes in the drawing are not modified by this action.</p>
+<p>(Note that the ID attribute contains a long numeric value that serves an a 
+unique identifier for each shape. You probably won't normally be interested in 
+it but it is presented in case you are interested. For example, you might find 
+it useful if you decide to edit the output SVG file using a text editor.)</p>
+<h4>The Action Page</h4>
+<p>The Action Page for this action is straightforward. When you enter the page, 
+it will contain a list showing all of the shapes in the drawing. </p>
+<p>Each shape in the list is identified as follows:</p>
+<pre>Title {Description}</pre>
+<p>The first two items in the identifying information are the title and description that you assigned to 
+the 
+shape when you created it, or a default title and description that was created 
+by the program if you didn't 
+enter a title or description.</p>
+<h4>Embedded instructions</h4>
+<p>Instructions are embedded among the GUI components on many of the Action 
+Pages. You will find the following instructions on this page immediately before 
+you tab into the list of shapes:</p>
+<p><em>&quot;Tab, select a shape, and press 'v' to mark the shape for review.&quot;</em></p>
+<p>After using the arrow keys and the 'v' key to review all of the shapes of 
+interest, you can press the tab key and press a button labeled &quot;Return to 
+home base&quot; to return focus to the 
+	<a href="#Selecting_action_items">Home Base</a> 
+where you can select another action.</p>
+<h3><a name="Rotate_shapes">Rotate</a> (Alt+R)</h3>
+<p>Selecting the &quot;Rotate&quot; action will land you on a 
+page from which you can mark one or more existing shapes and cause them to be 
+rotated about a common point by a common angle in degrees clockwise. 
+(Negative angles rotate counter-clockwise.)</p>
+<h4>The Action Page</h4>
+<p>The Action Page for this action is relatively straightforward. When you enter 
+the page, it will contain a 
+list with identifying information about each shape that you have thus 
+far created in your drawing. </p>
+<p>Before you get to that list, you will see a checkbox that gives you the opportunity to mark all of the 
+shapes in the list for rotation. If you check that box, the word &quot;marked&quot; is 
+appended to the description for each of the shapes in the list.</p>
+<p>Pressing the tab key at that point causes the focus to move to a set of 
+instructions regarding the use of the list. Those instructions explain how you can review shapes, 
+mark shapes, and/or un-mark shapes.</p>
+<p>For example, if this were an explanation of the Scale action on the Mod menu, 
+I would explain that you can view, emboss, or sonify a subset of the total 
+set of shapes, by marking them all, un-marking the shapes in the subset, scaling 
+the remaining shapes by 0.0, saving the drawing in a new file, and viewing, 
+embossing, 
+or sonifying the contents of that output file.</p>
+<p>If you change your mind after checking the checkbox and clear the checkbox, the list of shapes marked for 
+rotation will also be cleared just as though you never checked the box in the first 
+place.</p>
+<p>If you tab past that checkbox, meaning that you don't want to mark all of the 
+shapes in the drawing for rotation, focus moves to the instructions described 
+above and ultimately to the list of shapes. You can navigate up and down that list using the 
+arrow keys. You can review the shapes in the list by pressing the v-key. You can 
+mark a shape for rotation by pressing the m-key, and you can un-mark a shape by 
+pressing the u-key.</p>
+<h4>Embedded instructions</h4>
+<p>On this page, when you tab past the checkbox, you will see the following 
+instructions:</p>
+<p><em>&quot;Tab, select a shape, and press 'v', 'm', or 'u' to review, mark, or 
+unmark the shape.&quot;</em></p>
+<p>After using the arrow keys and the 'm' key to mark all of the shapes that you 
+want to rotate around a common point, you can press the tab key, enter the coordinates of the common rotation point, and 
+enter the rotation angle in 
+degrees clockwise.</p>
+<p>Finally, you can press a button labeled &quot;Rotate shapes&quot; to cause the 
+rotation to be performed on all of the marked shapes. This is the point where your drawing is actually 
+modified. If you tab past this button and return the focus to the Home 
+Base, 
+your drawing will not be modified.</p>
+<p>Before using the rotation feature, you should read the cautions in the
+	<a href="#Rotation_translation_and_scaling">Rotation, translation, and scaling</a> section.</p>
+<h3><a name="Translate_shapes">Translate</a> (Alt+T)</h3>
+<p>Selecting the &quot;Translate&quot; action will land you on a page from 
+which you can mark one, some, or all existing shapes and cause them to be translated 
+(moved) by specific distances along the horizontal and vertical axes.</p>
+<p>The procedure for performing this action is essentially the same as the 
+procedure for rotating shapes. The main difference is that in this case, you specify translation distances instead of the rotation 
+	point and rotation angle required by the Rotate action.</p>
+<p>If you understand how to rotate shapes, you should have no problem using this 
+action to translate shapes.</p>
+<p>Once again, however, before using the translation feature, you should read the cautions in the 
+	<a href="#Rotation_translation_and_scaling">Rotation, translation, and scaling</a> 
+section.</p>
+<h3><a name="Scale_shapes">Scale</a> (Alt+S)</h3>
+<p>Selecting the &quot;Scale&quot; action will land you on a page from 
+which you can mark one, more, or all existing shapes and cause them to be scaled 
+(made larger or smaller) by applying specific multiplicative scale factors along the horizontal and vertical axes.</p>
+<p>The procedure for performing this action is essentially the same as the 
+procedure for rotating shapes with one major exception as described below. In this case, you specify multiplicative scale factors instead of the rotation 
+	point and rotation angle required by rotation.</p>
+<p>The exception has to do with the width of the lines after scaling takes place. 
+In some cases, you might want your shapes to become larger or smaller and to 
+have the widths of the lines change in a proportional manner. In other cases, 
+you might want your shapes to become larger or smaller and to have the widths of 
+the lines remain relatively unchanged.</p>
+<p>A checkbox is included on the Action Page that allows you to choose between the 
+two alternatives. If you check the box, the line widths after scaling will be 
+approximately the same as the line widths before scaling. If you leave the 
+checkbox unchecked, the line widths will change in proportion to the scale 
+factors applied along the X and Y axes.</p>
+<p>I say approximately because if you apply different scale factors to the X and Y 
+directions, there is no exact solution to the problem of keeping the line widths 
+the same. In this case, a line-width correction is made on the basis of the 
+average of the X and Y scale factors so that the average line widths will remain 
+approximately the same as before.</p>
+<p>If you understand how to rotate shapes, you should have no problem using this 
+action to scale shapes.</p>
+<p>Before using the scaling feature, you should read the cautions in the 
+	<a href="#Rotation_translation_and_scaling">Rotation, translation, and scaling</a> 
+section.</p>
+<h3><a name="Move_Shapes">Move</a> (Alt+O)</h3>
+<p>Don't confuse the Move action with the <a href="#Translate_shapes">Translate</a> 
+action. The Translate action allows you to change the position of a shape object 
+relative to where it appears on the two-dimensional view of the drawing - right, 
+left, up, and down. The Move action allows you to change the position of a shape 
+object relative to where it appears in a three-dimensional view of the drawing - 
+front to back. Sometimes the two-dimensional view is described in the literature by X and Y 
+coordinates and the front to back or three-dimensional view is described in the 
+literature by the 
+Z axis. In other words, the (imaginary) Z axis protrudes out of the front of your 
+computer screen and pokes you in the eye.</p>
+<p>You can think of an SVG drawing as a stack of individual shape objects. By 
+default, the shape object that you create first is at the bottom of the stack 
+and the shape object that you create last is at the top of the stack. If you 
+look down on the stack from above, those objects on or near the top may cover 
+and hide those further down the stack. Sometimes this is important, and 
+sometimes it is not important.</p>
+<p>For example, with the ViewPlus IVEO software, if you draw a circle in the center 
+of the page and then you draw a rectangle that is the same size as the page. the 
+rectangle will hide the circle from the IVEO software even if the rectangle is 
+completely transparent. By this I mean that if you look at the drawing, you will 
+be able to see the circle behind the transparent rectangle but the IVEO program 
+won't be able to see the circle for purposes of generating audio.</p>
+<p>One of the main features of the IVEO system has to do with the use of audio to 
+supplement tactile information. If a properly designed embossed image is placed 
+on the IVEO touchpad, and then explored with the fingers, audio information is 
+generated as the fingers touch different parts of the image.</p>
+<p>In the case mentioned above involving the rectangle and the circle, when the 
+rectangle is on top, touching the circle will not cause audio to be generated 
+that pertains to the circle. Instead, the audio that is generated will probably 
+pertain to the rectangle. In order to support IVEO and for other reasons as 
+well, we need a way to change the position of the shapes in the stack without 
+having to redraw the shapes. That is the purpose of the &quot;Move&quot; action on the 
+&quot;Mod&quot; menu.</p>
+<p>Selecting the &quot;Move&quot; action will land you on a page from 
+which you can mark an existing shape and cause it to be moved by one step, up 
+or down the stack, by pressing the &quot;u&quot; key for up or the &quot;d&quot; key for down. 
+First, however, you must press the button labeled &quot;Get or refresh list of 
+shapes&quot; to populate the list according to the current stacking order of the 
+shapes. Then you can identify a shape in the list and press one of the letter 
+keys to perform the desired action.</p>
+<p>Each time you do that, you can press the button to refresh the list of shapes showing each shape in its new position 
+in the stack, and do it again. Thus, for the case 
+of the rectangle and the circle discussed above, you could either move the 
+rectangle down or move the circle up to cause the circle to be higher than the 
+rectangle in the stack. Then when you touch the circle in IVEO, the audio that 
+is generated will pertain to the circle and not to the rectangle.</p>
+<h4>The Action Page</h4>
+<p>The Action Page for the &quot;Move&quot; action looks much like the Action 
+Pages for 
+rotate, scale, translate, etc., Therefore, no instructions beyond those given 
+above should be needed.</p>
+<h3><a name="Clip">Clip</a> (Alt+C)</h3>
+<p>Selecting the &quot;Clip&quot; action will land you on a page from 
+which you can mark two shapes. The first shape that you mark will 
+clip the second shape that you mark when the SVG file is rendered onto a 
+printer or an embosser or viewed in Instant Display or AudioTac Display. The first shape 
+that you mark will disappear. Only 
+those portions of the second marked shape that overlap the first marked shape will be 
+visible.</p>
+<p>Given the ability to mark and unmark shapes, knowing which shape will be 
+clipped by another shape can be complicated. Only two shapes will survive the 
+mark/unmark process. The last shape that you mark will be clipped by the other 
+surviving shape.</p>
+<p>The best explanation of clipping in SVG that I have found is available at
+	<a href="https://developer.mozilla.org/en/SVG/Tutorial/Clipping_and_masking">https://developer.mozilla.org/en/SVG/Tutorial/Clipping_and_masking</a></p>
+<p>The procedure for performing this action is very similar to the procedure for 
+rotating shapes except that in this case, you can only mark (without unmarking) two shapes.</p>
+<p>This capability has a variety of different uses. One of the most important uses is 
+drawing circular or elliptical arcs. While you can also draw circular and 
+elliptical arcs using a <a href="#Draw_a_polyline,_a_polygon,_or_a_path">path</a>, 
+in many cases it will be easier to do using clipping.</p>
+<h3><a name="Delete_shapes">Delete</a> (Alt+Delete)</h3>
+<p>Selecting the &quot;Delete&quot; action will land you on a page from 
+which you can mark one or more existing shapes and cause them to be deleted 
+from your drawing.</p>
+<p>The procedure for deleting shapes is similar to but simpler than the 
+procedure for rotating shapes. The main difference is:</p>
+<ul>
+	<li>In this case, there are no coordinate values to be provided. Instead, 
+	you simply mark the shapes that are to be deleted and press the button 
+	labeled &quot;Delete shapes.&quot;</li>
+</ul>
+<p>If you understand how to rotate shapes, you should have no problem using this 
+action to delete shapes.</p>
+<h3><a name="Remove_Attributes">Remove Common Attributes</a> (Alt+Shift+R)</h3>
+<p>This action, which is intended only for advanced users, can be used to remove 
+attributes from the shapes in your drawing. If you are the advanced user for which this action 
+is intended, you shouldn't need instructions on how to use it. A solid 
+understanding of SVG will be required to understand the use of this action.</p>
+<h3><a name="Set_Attributes">Set Common Attributes</a> (Alt+Shift+S)</h3>
+<p>This action, which is intended only for advanced users, can be used to set new 
+values into the attributes in your drawing. It is primarily intended to allow 
+you to set the attribute values for attributes that are common to most or all shapes 
+such as stroke opacity for example.</p>
+<p>However, it also allows you to set the attribute value for any attribute for 
+which you know the name, or to create new attributes with new names. If you are the advanced user for 
+which this action is intended, you shouldn't need instructions on how to use it.&nbsp; 
+A solid understanding of SVG will be required to understand the use of this 
+action.</p>
+<p>For example, you can use this action to change the stroke color and fill 
+color to any of the colors listed at
+<a href="http://www.december.com/html/spec/colorsvg.html">
+http://www.december.com/html/spec/colorsvg.html</a> or any color that is 
+defined as "#RRGGBB" where RR, GG, and BB are the two-digit hexadecimal representations of the red, green, and blue color
+ components. </p>
+<h3><a name="Set_Shape-Specific_Attributes">Set Shape-Specific Attributes</a> (Alt+Shift+P)</h3>
+<p>This action, can be used to set new 
+values into the shape-specific attributes in your drawing, such as coordinates, 
+width, height, and radii.</p>
+<p>Assume, for example, that you want to create a grid. Using this capability, 
+you could create and save a drawing of a line. Then you could import multiple 
+copies of that drawing into a new drawing and edit the coordinates of the 
+end points of each line to place the lines in the shape of a grid.</p>
+<h3><a name="Show_Display_(Ctrl+D)_">Show Instant Display (Ctrl+D)
+</a>
+</h3>
+<p>This action causes the Instant Display to appear on the screen immediately to 
+the right of the main SVGDraw01 window. The initial size corresponds to an 8.5 x 
+11-inch drawing with a drawing scale factor of 0.5. </p>
+<p>The position, size, and scale factor for the Instant Display can be changed 
+by selecting the <a href="#Instant_Display_Parameters_(Ctrl+I)_">Set Instant Display 
+Parameters</a> action.</p>
+<h3><a name="Instant_Display_Parameters_(Ctrl+I)_">Set Instant Display Parameters (Ctrl+I)
+</a>
+</h3>
+<p>Selecting this action causes an Action Page to open for the purpose of 
+specifying the location and size of the Instant Display along with the drawing 
+scale factor.</p>
+<p>For example, to create a full-screen display for use with the vOICe software, 
+set the x and y values to 0. Set the width and height of the Instant Display to 
+the width and height of your screen, which you can get from the Windows Control 
+Panel. Set the Drawing scale factor to a value that will make the best use of 
+the screen size.</p>
+<p>Note that the size of the Instant Display is independent of the page size 
+that you specify when you create a new drawing. By this, I mean that you can 
+display shapes in the Instant Display that are outside the range of the SVG page 
+size on the right and the bottom of the page.</p>
+<h3>Refresh <a name="Instant_Display_Refresh_(Ctrl+A)_">Instant Display (Ctrl+A)
+</a>
+</h3>
+<p>Selecting this action causes the Instant Display to be erased and redrawn if 
+that is necessary.</p>
+<h3><a name="Hide_Display_(Ctrl+B)">Hide Instant Display (Ctrl+B)</a>
+</h3>
+<p>Selecting this action removes the Instant Display from the 
+screen. The object that represents the display is also removed from the computer 
+memory.</p>
+<h3><a name="Show_AudioTac_Display_(Ctrl+G)">Show AudioTac Display (Ctrl+G)</a></h3>
+<p>This action causes the AudioTac Display to appear in the upper-left corner of the screen. 
+(You may need to use Alt+Tab to position it in front of the SVGDraw01 main page.) 
+The initial size of the display window is such as to enclose a drawing area of 
+1024x768 pixels. This is comparable to an SVG page size of 10.24 by 7.68 inches.</p>
+<p>The position, size, and drawing scale factor for the AudioTac Display can be changed 
+by selecting the <a href="#Set_AudioTac_Display_Parameters_(Ctrl+">Set AudioTac 
+Display Parameters</a> action.</p>
+<h3><a name="Set_AudioTac_Display_Parameters_(Ctrl+">Set AudioTac Display 
+Parameters (Ctrl+</a>J)</h3>
+<p>Selecting this action causes an Action Page to open for the purpose of 
+specifying the location and size of the AudioTac Display along with the drawing 
+scale factor and some other parameters. For example, the page also provides for the specification of whether the 
+pointing device should simulate mouse-moved or mouse-dragged behavior. 
+Mouse-moved behavior occurs when you simply move the mouse pointer. Mouse 
+dragged behavior occurs when you press the left button on the mouse, hold the 
+button down, and move the 
+mouse pointer.</p>
+<p>In addition, three radio buttons allow you to select one the following 
+display options:</p>
+<ul>
+	<li>Shapes only</li>
+	<li>Text (outline) only</li>
+	<li>Shapes and text (outline)</li>
+</ul>
+<p>This makes it possible to reduce the audio &quot;clutter&quot; that text can create 
+while concentrating on the shapes, or to concentrate on the text without audio 
+interference from the shapes. The default selection is &quot;Shapes only.&quot;</p>
+<h4>Full screen display</h4>
+<p>To create a full-screen display, 
+set the x and y values to 0. Set the width and height of the AudioTac Display to 
+the width and height of your screen, which you can get from the Windows Control 
+Panel. Set the Drawing scale factor to a value that will make the best use of 
+the screen size.</p>
+<p>Note that the size of the AudioTac Display is independent of the page size 
+that you specify when you create a new drawing. By this, I mean that you can 
+display shapes in the AudioTac Display that are outside the range of the SVG page 
+size on the right and the bottom of the page.</p>
+<h3><a name="Refresh_AudioTac_Display_(Ctrl+K)">Refresh AudioTac Display 
+(Ctrl+K)</a></h3>
+<p>Selecting this action causes the AudioTac Display to be erased and redrawn if 
+that becomes necessary.</p>
+<h3><a name="Hide_AudioTac_Display_(Ctrl+Q)">Hide AudioTac Display (Ctrl+Q)</a></h3>
+<p>Selecting this action removes the AudioTac Display from the 
+screen. The object that represents the display is also removed from the computer 
+memory.</p>
+<h3><a name="userInstructions2">Instructions</a> (F1)</h3>
+<p>If you select &quot;Instructions&quot; in the Help menu, this HTML document will open in a separate browser window. 
+Note that the browser window is an SWT Widget, and may appear different in 
+some respects from your standard browser. However, you should still be able to navigate and read the 
+document just like you would read any other HTML document in a browser window.</p>
+<p>When you get to the end of the document, pressing the tab key will land you on a button labeled &quot;Return to 
+Home Base.&quot; As the name implies, pressing the button will cause the browser 
+window to close and focus will return to Home Base, from which you can make another 
+selection.</p>
+<p>If you press the Esc key while reading the instructions in the browser window, 
+you will land back where you were when you pressed F1 to open the 
+instructions. That allows you to get information about a particular action from 
+the instructions while you are in the process of performing that action.</p>
+<h2><a name="Please_provide_feedback">Please provide feedback</a></h2>
+<p>Please let me know if you find errors in these instructions, or you find areas 
+that deserve a more thorough explanation.</p>
+<p>I would also like to hear about it if there are features that you would like to 
+see added to this program.</p>
+<p>Dick Baldwin<br/>
+baldwin@dickbaldwin.com</p>
+
+
+
+

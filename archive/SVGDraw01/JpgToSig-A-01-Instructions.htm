@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Instructions for using the program named SVGDraw01</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+	</head>
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 10pt"
+bgcolor="#FEFFF0" link="#0000ff" vlink="#cc00cc" alink="#ff0000">
+
+
+<h1>Instructions for using the program named JpgToSig-A-01</h1>
+<p>Version 0.0.1 2012.02.12<br />
+Revised 02/12/12</p>
+
+
+	<h2>Table of contents</h2>
+
+<ul>
+	<li><a href="#Introduction">Introduction</a><ul>
+		<li><a href="#Semi-theoretical_background">Semi-theoretical background</a><ul>
+			<li><a href="#The_answer_to_the_question">The answer to the question</a><ul>
+				<li><a href="#Loss_of_color_information">Loss of color 
+				information</a><ul>
+					<li><a href="#The_billboard_example">The billboard example</a></li>
+				</ul>
+				</li>
+				<li><a href="#Loss_of_spatial_detail">Loss of spatial detail</a></li>
+			</ul>
+			</li>
+			<li><a href="#The_solution">The solution to the color loss problem</a><ul>
+				<li><a href="#Outlines">Outlines are good</a></li>
+				<li><a href="#Color_differences_are_paramount">Color differences are paramount</a></li>
+				<li><a href="#Camouflage">Camouflage</a></li>
+				<li><a href="#Emphasizing_outlines">Emphasizing outlines</a></li>
+				<li><a href="#Color_changes">Color changes</a></li>
+				<li><a href="#An_audio_speed_sensor">An audio speed sensor</a></li>
+				<li><a href="#Getting_back_to_outlines">Getting back to outlines</a></li>
+				<li><a href="#A_mathematical_description">A mathematical description</a></li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Operating_instructions">Brief operating instructions</a><ul>
+		<li><a href="#GUI_components">GUI components</a></li>
+		<li><a href="#Data_entry">Data entry and file selection</a></li>
+		<li><a href="#The_sliding_scale">The sliding scale</a></li>
+		<li><a href="#Sliding_scale_value_display">Sliding scale value display</a></li>
+		<li><a href="#Write_the_output_file">Write output files</a></li>
+		<li><a href="#Exit_the_program">Exit the program</a></li>
+	</ul>
+	</li>
+	<li><a href="#Fitting_the_embossed_image_to_the_page">Fitting the embossed image to the page</a><ul>
+		<li><a href="#Retention_of_the_salient_features_of_the_original_image">Retention of the salient features of the original image</a></li>
+		<li>
+		<a href="#Tactile_presentation_of_the_salient_features_of_the_original_image">Tactile presentation of the salient features of the original image</a><ul>
+			<li><a href="#A_12_dot_per_inch_embosser_example">A 12 dot-per-inch embosser example</a></li>
+			<li><a href="#A_100_pixel_per_inch_monitor">A 100 pixel-per-inch monitor</a></li>
+			<li><a href="#Poster_size_embossed_images">Poster size embossed images</a></li>
+			<li><a href="#Simulating_a_24-inch_embosser">Simulating a 24-inch embosser</a></li>
+			<li><a href="#The_maximum_allowable_number_of_panels">The maximum allowable number of panels</a></li>
+			<li><a href="#An_integer_number_of_panels">An integer number of panels</a></li>
+			<li><a href="#The_output_file_number_system">The output file numbering system</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Detailed_operating_instructions">Detailed operating 
+	instructions</a></li>
+
+	<ul>
+		<li><a href="#Embosser_width_in_inches">Embosser width in inches</a></li>
+		<li><a href="#Dots_per_inch">Dots per inch</a></li>
+		<li><a href="#Maximum_allowable_number_of_panels">Maximum allowable 
+		number of panels</a></li>
+		<li><a href="#SelectAndProcessFile">Select file</a><ul>
+			<li><a href="#Allowable_file_types">Allowable file types</a></li>
+			<li><a href="#Processing_begins">Processing begins</a></li>
+		</ul>
+		</li>
+
+			<li><a href="#Slide_to_adjust_image">Slide to adjust threshold</a></li>
+		<li><a href="#Sliding scale value display">Sliding scale value display</a></li>
+		<li><a href="#Write_output_file(s)">Write output file(s) </a>
+		</li>
+	</ul>
+
+</ul>
+<h2><a name="Introduction">Introduction</a></h2>
+<p>JpgToSig-A-01 is a program that is designed to make it easier for sighted 
+teachers and others who assist blind people to enhance bitmap images, convert them to SIG files, and emboss them in the 
+enhanced format on an embosser that accepts the Duxbury QuickTac SIG file format 
+for embossing graphics data.</p>
+<p>The program is not accessible to blind users because it requires the use of a 
+mouse and a slider to adjust a threshold in the enhancement algorithm for best results on each 
+individual image.</p>
+<p>The program applies a sophisticated image processing algorithm to the 
+full-color bitmap image for the purpose of identifying and
+<a href="#Retention_of_the_salient_features_of_the_original_image">retaining the 
+salient features</a> of the image prior to converting to black and white format.</p>
+<p>The program also employs a presentation format that is designed to provide an 
+enhanced
+<a href="#Tactile_presentation_of_the_salient_features_of_the_original_image">
+tactile presentation</a> of those salient features.</p>
+<h3><a name="Semi-theoretical_background">Semi-theoretical background</a></h3>
+<p>Why is it so difficult to produce tactile embossed images that are 
+recognizable by and useful to blind users? The answer is simple. The solution is not so 
+simple.</p>
+<h4><a name="The_answer_to_the_question">The answer to the question</a></h4>
+<p>In most cases, a digital image consists of an array of colored pixels where 
+any one pixel can take on more than 16 million colors.</p>
+<p>Unless you are fortunate enough to have access to an embosser that produces 
+variable dot heights, an embossed output is analogous to a digital image 
+containing only two colors -- black and white. The situation is somewhat better 
+with variable dot height, which can represent black, white, and three or four 
+shades of gray.</p>
+<p>However, this program is designed specifically for use with embossers that can only 
+display black and white, so the remaining discussion will concentrate on 
+the preparation of images for use on embossers of those types. I will publish a 
+different program later that is designed to use with embossers that produce dots 
+of different heights.</p>
+<h5><a name="Loss_of_color_information">Loss of color information</a></h5>
+<p>Part of the answer is that in order to emboss a digital image, we 
+must somehow map 16 million colors into two colors (black and white) and still cause those 
+two colors to portray the original image.</p>
+<p>Assume, for example, that you were to divide the colors into two sets of 
+about 8 million colors each. Then assume that in order to emboss a bitmap image, 
+you were to convert every pixel whose color falls in one set to black and you 
+were to convert every pixel whose color falls in the other set to white.</p>
+<p>The results that you get will depend entirely on chance and the chances for 
+success aren't very good. The chances are about 8 million to 1 that each pixel 
+will be indistinguishable from its neighbors in the final black and white 
+version.</p>
+<h6><a name="The_billboard_example">The billboard example</a></h6>
+<p>Assume, for example, that two of the primary colors, red and green, are 
+assigned to black and the third primary color, blue, is assigned to white. Now 
+assume that you emboss an image of a green rectangular billboard containing red 
+letters in front of a blue sky. The result would be a black rectangle on a white 
+background. The message being conveyed by the red letters would be completely 
+lost because they also would be converted to black and would be 
+indistinguishable from the billboard.</p>
+<p>We need a better way to convert those 16 million colors to black and white. I 
+will explain a better way shortly.</p>
+<h5><a name="Loss_of_spatial_detail">Loss of spatial detail</a></h5>
+<p>The second part of the answer has to do with spatial sampling. A typical 
+500x500 bitmap image consists of an array of 250,000 colored pixels. Typical 
+embossers have dot resolutions ranging from 10 dots per inch on the low side to 
+25 dots per inch on the high side. Therefore, an 8x10 
+inch embossed image will typically contain somewhere between 8,000 and 50,000 
+dots (black) or spaces (white) depending on the embosser.</p>
+<p>Fewer dots mean that less detail can be portrayed by the embossed image. For 
+example, a small circle in a bitmap image may come out looking more like a square 
+than a circle in 
+an embossed image. An arrowhead on a vector in a bitmap image may come out 
+looking like a random collection of a few dots in an embossed image.</p>
+<p>Short of inventing an embosser with many more dots per inch, this is a very 
+difficult problem to solve. However, I do have a non-ideal approach to 
+alleviating the problem that I will describe later.</p>
+<h4><a name="The_solution">The solution to the color loss problem</a></h4>
+<p>Let me begin by saying that there is no single best solution to the problem 
+of color loss. 
+Different solutions may provide better results for different images. The 
+solution provided by this program is only one of several possible solutions.</p>
+<h5><a name="Outlines">Outlines are good</a></h5>
+
+<p>Coloring books used by small sighted children contain images consisting 
+almost entirely of the outlines of objects. However, once a student progresses 
+beyond childhood coloring books and enrolls in an art class, she learns that there are very few outlines 
+in nature. Consequently, there are usually very few outlines in digital images.</p>
+<h5><a name="Color_differences_are_paramount">Color differences are paramount</a></h5>
+<p>In general, the only 
+thing that distinguishes one object from another in a full color digital image is 
+the fact that the two objects are colored differently. As mentioned above, if 
+the scheme for converting the color image to black and white depends on 
+subdividing the colors into two groups, and simply mapping the colors into black 
+and white, much of the information will be lost in 
+the transformation from color to black and white.</p>
+<h5><a name="Camouflage">Camouflage</a></h5>
+<p>Animals and military combat troops use camouflage to avoid being seen by 
+predators or by the enemy. The purpose of camouflage is to eliminate outlines 
+and to prevent the recognition of common shapes.</p>
+<p>For example, the colors of the feathers on a quail cause it to blend into its 
+surroundings and eliminate or reduce its visual outline. The chameleon and 
+certain undersea creatures can change their color to match that of their 
+surroundings, once again to eliminate or reduce their visual outline.</p>
+<p>For purposes of embossing a digital image on a two-level embosser, we need a 
+way to un-camouflage the objects in the image.</p>
+<h5><a name="Emphasizing_outlines">Emphasizing outlines</a></h5>
+<p>Rather than eliminating outlines, the image processing algorithm used by this 
+program is designed to emphasize outlines. The objective is to cause each object 
+in an image to be described by a black outline against a white background.</p>
+<h5><a name="Color_changes">Color changes</a></h5>
+<p>The distinguishing characteristic among objects in a full-color digital image 
+is usually not the absolute colors themselves. Instead, the distinguishing characteristic is the 
+change in color from one object to the next. For example, I can invert the 
+colors in a color image so that every unique color is changed to a different 
+unique color and a sighted person will probably still be able to distinguish 
+among the different objects in the image.</p>
+<p>Therefore, the primary characteristic of the algorithm used by this program 
+is not based the translation of absolute colors into black and white. Instead, it 
+is based on detecting the changes in color and reflecting those changes in black 
+and white.</p>
+<h5><a name="An_audio_speed_sensor">An audio speed sensor</a></h5>
+<p>This is analogous to installing a buzzer in your car that sounds off when 
+your rate of change of position (speed) exceeds a preset limit. The buzzer 
+doesn't care about your absolute position, it cares only about the rate of 
+change in position.</p>
+<p>The algorithm used in this program doesn't care about absolute color, it 
+cares only about the rate of change of color.</p>
+<h5><a name="Getting_back_to_outlines">Getting back to outlines</a></h5>
+<p>The net effect of the algorithm is to convert the image back to the &quot;coloring book&quot; format of 
+black outlines on a white background. This is a format that seems to work well 
+for embossing images with a two-level embosser.</p>
+<h5><a name="A_mathematical_description">A mathematical description</a></h5>
+<p>For the mathematicians in the group, the enhancement algorithm simulates the 
+computation of the first derivative of a five-dimensional surface (X, Y, red, 
+green, and blue) and the creation of a three-dimensional surface where the height of the 
+surface at a particular X-Y coordinate position represents the rate of change of color at 
+that position in the original image.</p>
+<p>A slider is used to manually apply a level detector to the surface, producing 
+black pixels where the rate of change exceeds the threshold and producing white 
+pixels where the rate of change is less than the threshold. Thus, peaks in the 
+surface are represented as black islands in a sea of white.</p>
+<h2><a name="Operating_instructions">Brief operating instructions</a></h2>
+<p>JpgToSig-A-01 is a GUI application designed for use by sighted instructors 
+and others who assist blind people. It is not designed to be accessible for 
+unassisted use by the blind. (I will publish a different version of the program 
+later that is designed for unassisted use by the blind.) The user interface consists 
+of labels, data entry fields, a sliding scale, a small display window, two 
+buttons, and a large onscreen visual display.</p>
+<h3><a name="GUI_components">GUI components</a></h3>
+<p>When the program starts running, focus is on a component that I refer to as 
+home base. It reads &quot;Start here and tab down.&quot; As you tab down, you will 
+encounter the following components in order, which are labeled as shown. I will explain 
+the purpose of each component in later sections of this document.</p>
+<ul>
+	<li><a name="Edit_field">Edit field</a> - 
+	<a href="#Embosser_width_in_inches">Embosser width in inches</a></li>
+	<li>Edit field - <a href="#Dots_per_inch">Dots per inch</a></li>
+	<li>Edit field - <a href="#Maximum_allowable_number_of_panels">Maximum allowable number of panels</a></li>
+	<li>Button - <a href="#SelectAndProcessFile">Select file</a></li>
+	<li>Sliding scale - <a href="#Slide_to_adjust_image">Slide to adjust threshold</a></li>
+	<li>Display - <a href="#Sliding scale value display">Sliding scale value display</a></li>
+	<li>Button - <a href="#Write_output_file(s)">Write output file(s)</a></li>
+</ul>
+<h3><a name="Data_entry">Data entry</a> and file selection</h3>
+<p>Enter data into the three edit fields and then press the button 
+labeled &quot;Select file.&quot;. When you press that button, a 
+standard file selection dialog will appear allowing you to select 
+a bitmap image file for processing.</p>
+<h3><a name="The_sliding_scale">The sliding scale</a></h3>
+<p>When you select an image file for processing, the program will begin running 
+the image enhancement algorithm described <a href="#The_solution">earlier</a> The slider 
+on the scale will move to the center position with a value of 50 and a black and 
+white version of the selected image will appear in a onscreen display.</p>
+<p>A threshold value that is used by the enhancement algorithm can be adjusted to show more less detail. Detail 
+decreases you move the slider to the left and increases as you move the slider 
+to the right. </p>
+<p>Only you can decide what works best for any particular 
+image and you can use the slider to adjust the level of detail accordingly.</p>
+<h3><a name="Sliding_scale_value_display">Sliding scale value display</a></h3>
+<p>The sliding scale is calibrated from 0 on the left to 100 on the right. As 
+you move the slider, you should see the current position of the slider reflected 
+in a small read-only display immediately below the sliding scale.</p>
+<h3><a name="Write_the_output_file">Write output file</a>(s)</h3>
+<p>When you are satisfied with the image showing in the onscreen display, press 
+the button labeled &quot;Write output file(s). This will cause one or more output 
+files to be written in the Duxbury sig file format. The files will be written 
+into the same folder as the input file that you <a href="#Data_entry">selected</a> 
+for processing earlier.</p>
+<p>When the output SIG files have been written, you can use them to produce an 
+embossed version of the enhanced image. </p>
+<p>At that point, you can either select another file for processing, or exit the 
+program.</p>
+<h3><a name="Exit_the_program">Exit the program</a></h3>
+<p>You can exit the program by selecting the X in the 
+upper-right corner of the graphical user interface.</p>
+<h2><a name="Fitting_the_embossed_image_to_the_page">Fitting the embossed image 
+to the page</a></h2>
+<p>In an earlier section, I explained the problem resulting from the
+<a href="#Loss_of_spatial_detail">loss of spatial detail</a>. The program is designed to take full advantage of the paper size 
+and dot resolution capacity of 
+your embosser to produce embossed 
+tactile images that preserve the salient features of the original image.</p>
+<p>When you run this program, you will provide information on embosser or paper
+<a href="#Embosser_width_in_inches">width</a>, the number of 
+<a href="#Dots_per_inch">dots per inch</a> that your embosser can punch, and the 
+maximum allowable <a href="#Maximum_allowable_number_of_panels">number of panels</a>.</p>
+<p>Two important concepts were paramount in the design of the 
+program:</p>
+<ol>
+	<li>Identification and retention of the salient features of the original image 
+	prior to discarding the color information</li>
+	<li>Tactile presentation of the salient features of the original image</li>
+</ol>
+<h3><a name="Retention_of_the_salient_features_of_the_original_image">Retention 
+of the salient features of the original image</a></h3>
+<p>A full-color bitmap image can contain more than sixteen million different 
+colors applied to images with typical widths of 250 to 600 pixels. Obviously, 
+some images are wider and some are narrower.</p>
+<p>Typical embosser widths range from 100 to 350 dots. Embossers with variable 
+dot heights can probably represent three or four colors (dot heights or shades 
+of gray) and embossers without variable dot height can only represent black and 
+white. This program is designed specifically for use with embossers that do not 
+support variable dot height.</p>
+<p>Regardless of how you approach the problem, the conversion of a full-color 
+image to an array of Braille dots requires that a tremendous amount of 
+information be discarded in the process.</p>
+<p>As explained <a href="#The_solution">earlier</a>, this program is designed to retain as much information as possible about the 
+salient features of the original image. This is accomplished by applying a 
+sophisticated image processing algorithm to the full-color image and extracting 
+those features prior to 
+discarding the color information and transforming the image into a black and 
+white image.</p>
+<h3>
+<a name="Tactile_presentation_of_the_salient_features_of_the_original_image">
+Tactile presentation of the salient features of the original image</a></h3>
+<p>Doing an effective job of retaining the salient features of the original 
+image in the conversion from full color to black and white is only part of the 
+problem. The other part of the problem is finding an effective way to present 
+the enhanced black and white information in a tactile format based on only ten to twenty-five 
+Braille dots per inch.</p>
+<h4><a name="A_12_dot_per_inch_embosser_example">A 12 dot-per-inch embosser 
+example</a></h4>
+<p>For talking purposes, let's assume that you have an embosser with 12 dpi that 
+supports continuous form paper. Assume that the machine can emboss across the perforations that 
+separate pages. If the paper is 8.5 inches wide, you can create embossed images 
+that are about 100 dots wide and any length. (When the image is converted to 
+landscape mode, you can create embossed images that are about 100 dots high and 
+any width.)</p>
+<h4><a name="A_100_pixel_per_inch_monitor">A 100 pixel-per-inch monitor</a></h4>
+<p>My 22-inch monitor can display about 100 pixels per inch. Thus, a full width embossed 
+image on your 12 dpi embosser would be about one inch wide on my monitor. If I 
+begin with a bit-mapped image that is 300 pixels wide and scale it down until it 
+is only 100 pixels wide, I will have lost a lot of information even if I retain 
+16 million colors. (I will lose a lot more information if I convert it 
+to black and white in the process.) In all probability, the original image that is three inches wide conveys a lot 
+more information than the image that is only one inch wide.</p>
+<h4><a name="Poster_size_embossed_images">Poster size embossed images</a></h4>
+<p>I believe that up to a point, the same concept should apply to embossed 
+tactile images. For example, a poster-sized tactile image that is 300 dots wide 
+(about 24 inches at 12 dpi) should convey more information than the same image 
+scaled down to make it 100 dots or 8 inches wide.</p>
+<p>The real question then has to do with overall size limitations in the 
+interpretation of tactile material by blind users. In other words, can a blind 
+user effectively extract the same information from an embossed image that is 24 
+inches wide that I can extract from a corresponding visual image that is 300 
+pixels wide? I don't know the answer to that question.</p>
+<h4><a name="Simulating_a_24-inch_embosser">Simulating a 24-inch embosser</a></h4>
+<p>As far as I know, there are no commercially available embossers that can 
+handle paper that is 24 inches wide. Therefore, this program subdivides the 
+enhanced image into panels that are intended to be embossed and placed 
+side-by-side for interpretation. The program produces a separate output file for 
+embossing each panel.</p>
+<p>The program also adds a grid of individual dots on 
+one-inch centers as an aid in the interpretation of large tactile images.</p>
+<h4><a name="The_maximum_allowable_number_of_panels">The maximum allowable 
+number of panels</a></h4>
+<p>The purpose of the input parameter named 
+<a href="#Maximum_allowable_number_of_panels">Maximum allowable number of 
+panels</a> is to specify the overall size of the final embossed image 
+consisting of one or more panels placed side-by-side for interpretation.</p>
+<p>For example, if the enhanced version of your original image is 350 pixels wide, you have a paper 
+width of 100 dots, and you specify one panel, the enhanced image will be scaled 
+down to fill one panel. (Note that in the enhancement process, excessive white 
+margins are discarded keeping only that portion of the enhanced image that 
+contains black pixels.)</p>
+<p>If you specify two panels, the enhanced image will be scaled down to fill two 
+panels.</p>
+<p>If you specify four panels, the enhanced image will be 
+scaled up to fill four panels.</p>
+<p>If you specify five panels, the enhanced image 
+will still be scaled up to fill four panels, and you will get four 
+output files instead of five. In other words, excessive up-scaling is not 
+allowed, because up-scaling a bitmap image to a size larger than the original 
+doesn't add information.</p>
+<h4><a name="An_integer_number_of_panels">An integer number of panels</a></h4>
+<p>Up-scaling to fill an integer number of panels is allowed, however. This makes it 
+possible to easily determine which panel of a multi-panel display will contain a 
+feature that is identified in a single-panel version of the enhanced image. For example, 
+a feature that is found in the right-most portion of a single-panel version of 
+an enhanced image will also appear much larger and with more detail in the right-most 
+panel of a four-panel version of the same enhanced image.</p>
+<p>When more than one output file is produced, you should emboss them all. Then 
+lay the embossed images side-by-side (perhaps using tape to attach them 
+together) for interpretation. The image produced from 
+the first output file should be placed on the left and the image produced from 
+the last output file should be placed on the right.</p>
+<h4><a name="The_output_file_number_system">The output file numbering system</a></h4>
+<p>The names of the output files are based on the name of the input image file. The output files are numbered (beginning with -0 and continuing through -1, 
+-2, etc.) so that you can keep them in order. However, this information is not 
+embossed, so you will need to manually mark the embossed images as you remove 
+them from the embosser so that you can refer to them later in the proper order.</p>
+<p>If the enhanced image is wider than it is tall, the image is automatically 
+rotated into landscape mode. In this case, the output file name will include 
+&quot;-R-&quot; to tell you that the images has been rotated. In this case, the output 
+file numbered 0 will contain the top of the image and the output file with the 
+largest number will contain the bottom of the image.</p>
+<p>Regardless of whether the output is normal or landscape mode, the name of the 
+input file is embossed in the top left corner of each output panel.</p>
+<h2><a name="Detailed_operating_instructions">Detailed operating instructions</a></h2>
+<h3><a name="Embosser_width_in_inches">Embosser width in inches</a></h3>
+<p>This is the width in inches within which your embosser can punch dots. Stated 
+differently, this is the distance in inches from the leftmost dot that your 
+embosser can punch to the rightmost dot that your embosser can punch on the same 
+horizontal row for a given paper size.</p>
+<p>The purpose of this input parameter was discussed in detail earlier in the 
+section titled &quot;<a href="#Fitting_the_embossed_image_to_the_page">Fitting the 
+embossed image to the page</a>.&quot; </p>
+<p>Simply enter the width information into the field, being careful to include 
+only numeric characters and a decimal point.</p>
+<h3><a name="Dots_per_inch">Dots per inch</a></h3>
+<p>This is the maximum number of dots that your embosser can punch in a 
+horizontal inch. You may need to look this up in your embosser documentation. I 
+believe, for example, that the Tiger&nbsp; embossers punch 20 dots per inch. The 
+Phoenix embosser is advertised to punch 25 dots per inch. Although I'm not 
+certain, I believe that the Juliet embosser punches 12 dots per inch, and I am led to believe that some 
+older embossers could only punch 10 dots per inch.</p>
+<p>The purpose of this input parameter was discussed in detail earlier in the 
+section titled &quot;<a href="#Fitting_the_embossed_image_to_the_page">Fitting the 
+embossed image to the page</a>.&quot; </p>
+<p>The program assumes that the number of dots per vertical inch is the same as 
+the number of dots per horizontal inch. If this is not the case, the program 
+should still work, but you should enter a value that is the lesser of the two. 
+The result will be a loss of aspect ratio. In other words, an embossed circle 
+probably won't look like a circle, but will look like an ellipse instead.</p>
+<p>Simply enter the information into the field, being careful to include 
+only numeric characters and a decimal point if needed.</p>
+<h3><a name="Maximum_allowable_number_of_panels">Maximum allowable number of 
+panels</a></h3>
+<p>The purpose of this input parameter was discussed in detail earlier in the 
+section titled &quot;<a href="#Fitting_the_embossed_image_to_the_page">Fitting the 
+embossed image to the page</a>.&quot; </p>
+<h3><a name="SelectAndProcessFile">Select file</a></h3>
+<p>Pressing this button opens a standard file selection dialog. The dialog 
+allows you to select a file for processing. Processing begins when you select 
+the file and close the dialog.</p>
+<h4><a name="Allowable_file_types">Allowable file types</a></h4>
+<p>The image processing portion of this program was written using a multimedia 
+library provided by Georgia Tech University. I'm unsure as to all of the 
+different image file types that it will support. I know that the program will 
+support image files of <a name="types_jpg">types jpg</a>, bmp, and png, so the program is written to 
+allow you to easily select image files of those types. (The program will also allow you 
+to select a file of any type, but a little extra effort is required.)</p>
+<p>If you are interested in 
+routinely processing image files of types other than those <a href="#types_jpg">
+listed above</a>, contact me by email and provide a sample image file. I will 
+test the file, and if it can be supported, I will update the program to include 
+image files of that type.</p>
+<h4><a name="Processing_begins">Processing begins</a></h4>
+<p>As mentioned above, processing begins when you select the file and close the 
+dialog. At this point, you can begin moving the slider to adjust the image in 
+the onscreen display. </p>
+<p>Also, at this point, the values for <strong>Embosser width in inches</strong>, 
+<strong>Dots per inch</strong>, 
+and <strong>Maximum allowable number of panels</strong> are fixed. Changing the values in those 
+fields will have no effect until you select another file for processing.</p>
+<h3><a name="Slide_to_adjust_image">Slide to adjust threshold</a></h3>
+<p>As mentioned earlier, when you select an image file for processing, the 
+program will begin running an image enhancement algorithm that is designed to 
+emphasize the salient features of the original image in the embossed version of 
+the image.</p>
+<p>At that point, the slider on the scale will move to the center position with 
+a value of 50 and a black and white version of the selected image will appear in 
+a onscreen display.</p>
+<p>A threshold used by the enhancement algorithm can be adjusted to show more or less detail. You can 
+decrease the detail by moving the slider to the left and you can increase the 
+detail by moving the slider to the right.</p>
+<p>Depending on the speed of your computer, you may find that the slider is 
+sluggish and difficult to move. Just be patient. One approach is to press the 
+slider with the mouse and then move the mouse pointer to the location where you 
+want the slider to go, even if the slider doesn't move. As soon as the computer 
+finishes the current task, an updated image will appear in the onscreen display 
+and the slider will move to that position.</p>
+<p>Another way to move the slider is to click the mouse in the track to the left 
+or the right of the slider. This will cause the slider to move in very small increments. 
+This is useful in the final stages of adjusting the threshold to cause the 
+algorithm to 
+produce the desired output.</p>
+<p>Only you can decide what works best for any particular image and you can use 
+the slider to adjust the image accordingly.</p>
+<h3><a name="Sliding scale value display">Sliding scale value display</a></h3>
+<p>Also as mentioned earlier, the sliding scale is calibrated from 0 on the left 
+to 100 on the right. As you move the slider, you should see the current position 
+of the slider reflected in a small read-only display immediately below the 
+sliding scale. Note, however, that depending on the speed of your computer, you 
+may also find that updates to the display are also somewhat sluggish.</p>
+<h3><a name="Write_output_file(s)">Write output file(s)</a></h3>
+<p>When you click this button, the enhanced image in its current state will be 
+converted to Duxbury Quick Tac sig file format and written into one or more 
+output files with an extension of .sig. The files will be written into the same 
+folder from which the original image file was read.</p>
+<p>The names of the sig files will be based on the name of the image file to 
+which they pertain. The numbering system for the files was described
+<a href="#The_output_file_number_system">earlier</a>.</p>
+<p>Any sig files in that folder with names based on the name of the image file 
+will be deleted and/or overwritten. Therefore, if you would like to create and 
+emboss several sets of sig files for the same image file with different 
+threshold values, you will need to copy the sig files into a different folder 
+(or manually rename them) before creating the next set of output files.</p>
+<p>Dick Baldwin<br/>
+baldwin@dickbaldwin.com</p>
+
+
+
+
+<p>-end-</p>
+
+
+
+
+

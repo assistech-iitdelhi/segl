@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<registration_data version="1.0">
+   <environment>
+      <hostname>dick-PC</hostname>
+      <hostId/>
+      <osName>Windows Vista</osName>
+      <osVersion>6.0</osVersion>
+      <osArchitecture>x86</osArchitecture>
+      <systemModel>HP Pavilion dv9700 Notebook PC</systemModel>
+      <systemManufacturer>Hewlett-Packard</systemManufacturer>
+      <cpuManufacturer>AuthenticAMD</cpuManufacturer>
+      <serialNumber>CNF82877PB</serialNumber>
+   </environment>
+   <registry urn="urn:st:e18c51e1-4428-4aae-9625-b69dd64fc4b0" version="1.0">
+      <service_tag>
+         <instance_urn>urn:st:2e9538ef-cc65-44f9-a39f-91b2aeb66e3b</instance_urn>
+         <product_name>Java SE 7 Runtime Environment</product_name>
+         <product_version>1.7.0</product_version>
+         <product_urn>JSERE-007-ZZZZ</product_urn>
+         <product_parent_urn>urn:uuid:dc1704fe-264f-11dc-9482-080020a9ed93</product_parent_urn>
+         <product_parent>Java Platform Standard Edition 7 (Java SE 7)</product_parent>
+         <product_defined_inst_id>id=1.7.0-b147 x86,dir=C:\Program Files (x86)\Java\jre7</product_defined_inst_id>
+         <product_vendor>Oracle Corporation</product_vendor>
+         <platform_arch>x86</platform_arch>
+         <timestamp>2011-10-07 23:30:11 GMT</timestamp>
+         <container>global</container>
+         <source>Windows JRE installer</source>
+         <installer_uid>-1</installer_uid>
+      </service_tag>
+   </registry>
+</registration_data>

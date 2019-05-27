@@ -1,0 +1,29 @@
+02/16/12
+
+Among other things, this zip file contains the latest released version of ShapeExtractor02.
+
+The zip file includes the following files and folders:
+
+A file named ReadMeFirst.txt
+A file named _ShapeExtractor02.ReadMeFirst.txt (this file)
+A file named _ShapeExtractor02.version.txt
+A file named RunShapeExtractor02.bat
+A file named ShapeExtractor02v001.jar
+A file named ShapeExtractor02v001-Instructions.htm
+A folder named jre7
+
+Extract all of the material from the zip file into an empty folder being careful to preserve the directory tree structure. Don't extract into the root directory.
+
+Execute the file named RunShapeExtractor02v001.bat to run the program named ShapeExtractor02.
+
+Detailed user instructions are provided in the file named ShapeExtractor02v001-Instructions.htm.
+
+This program requires the Windows operating system.
+
+It is not necessary for you to have Java or any other special software installed on your computer to run this program. You should even be able to extract the contents of the zip file onto a USB flash drive and run the program on any Windows system, Version XP or later, with 32-bit or 64-bit hardware. Of course, you don't have to use a USB flash drive, I mention that simply to emphasize the flexibility that you have with this program.
+
+It would probably a good idea to at least scan the contents of the file named ShapeExtractor02v001-Instructions.htm before running the program.
+
+baldwin@dickbaldwin.com
+
+-end-

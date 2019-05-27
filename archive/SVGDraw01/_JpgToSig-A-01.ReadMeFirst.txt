@@ -1,0 +1,27 @@
+02/12/12
+
+Among other things, this zip file contains the latest released version of JpgToSig-A-01.
+
+The zip file includes the following files and folders:
+
+A file named ReadMeFirst.txt
+A file named _JpgToSig-A-01.ReadMeFirst.txt (this file)
+A file named _JpgToSig-A-01.version.txt
+A file named RunJpgToSig-A-01.bat
+A file named JpgToSig-A-01v001.jar
+A file named JpgToSig-A-01v001-Instructions.htm
+A folder named jre7
+
+Extract all of the material from the zip file into an empty folder being careful to preserve the directory tree structure. Don't extract into the root directory.
+
+Execute the file named RunJpgToSig-A-01v001.bat to run the program named JpgToSvg01.
+
+Detailed user instructions are provided in the file named JpgToSig-A-01v001-Instructions.htm.
+
+This program requires the Windows operating system.
+
+It would probably a good idea to at least scan the contents of the file named JpgToSig-A-01v001-Instructions.htm before running the program.
+
+baldwin@dickbaldwin.com
+
+-end-

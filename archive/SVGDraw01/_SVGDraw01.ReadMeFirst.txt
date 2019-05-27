@@ -1,0 +1,23 @@
+Updated 02/12/12
+
+Among other things, this zip file contains the latest released version of SVGDraw01.
+
+The zip file contains the following files and folders:
+
+A file named _ReadMeFirst.txt
+A file named _SVGDraw01.ReadMeFirst.txt (this file)
+A file named _SVGDraw01.version.txt
+A file named RunSVGDraw01.bat
+A file named SVGDraw01.jar
+A file named SVGDraw01Instructions.htm
+A folder named jre7
+
+This program requires the Windows operating system.
+
+Execute the file named RunSVGDraw01.bat to run the program named SVGDraw01.
+
+When the SVGDraw01 program starts, you will land on Home Base from which you can press F1 to open the help file, or select any of the actions provided by the menus. Instructions for opening the menus are printed on Home Base. Alternatively, you can simply open the file named SvgDraw01.Instructions.htm in your browser and read the instructions without running the program.
+
+baldwin@dickbaldwin.com
+
+-end-

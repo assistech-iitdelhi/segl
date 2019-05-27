@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <title>Instructions for using the program named SVGDraw01</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+	</head>
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 10pt"
+bgcolor="#FEFFF0" link="#0000ff" vlink="#cc00cc" alink="#ff0000">
+
+
+<h1>Instructions for using the program named ShapeExtractor02</h1>
+<p>Version 0.0.2 2012.02.16<br />
+</p>
+
+
+	<h2>Table of contents</h2>
+
+<ul>
+	<li><a href="#Introduction">Introduction</a><ul>
+		<li><a href="#Whats_new_in_Version_0.0.2">What's new in Version 0.0.2</a><ul>
+			<li><a href="#Ability_to_disable_the_onscreen_display">Ability to 
+			disable the onscreen display</a></li>
+			<li><a href="#Display_percent_black_pixels">Display percent black pixels</a></li>
+			<li><a href="#Big_steps_and_small_steps">Big steps and small steps</a></li>
+		</ul>
+		</li>
+		<li><a href="#Accessibility">Accessibility</a></li>
+		<li><a href="#An_image_processing_algorithm">An image processing algorithm</a></li>
+		<li><a href="#Output_file_format">Output file format</a></li>
+		<li><a href="#Semi-theoretical_background">Semi-theoretical background</a><ul>
+			<li><a href="#Loss_of_color_information">Loss of color 
+				information</a><ul>
+				<li><a href="#The_color_wheel_example">The color wheel example</a></li>
+				<li><a href="#The_billboard_example">The billboard example</a></li>
+				<li><a href="#Display_percent_black_pixels">Display percent 
+				black pixels</a></li>
+			</ul>
+			</li>
+			<li><a href="#The_solution">One solution to the color loss problem</a><ul>
+				<li><a href="#Outlines">Outlines</a></li>
+				<li><a href="#Horse_images">Horse images</a></li>
+				<li><a href="#A_written_description_is_necessary">A written 
+				description is necessary</a></li>
+				<li><a href="#Color_differences_are_paramount">Color differences are paramount</a></li>
+				<li><a href="#Camouflage">Camouflage</a></li>
+				<li><a href="#Un-camouflage">Un-camouflage</a></li>
+				<li><a href="#Emphasizing_outlines">Emphasizing outlines</a></li>
+				<li><a href="#Color_changes">Color changes</a></li>
+				<li><a href="#An_audio_speed_sensor">An audio speed sensor</a></li>
+				<li><a href="#Getting_back_to_outlines">Getting back to outlines</a></li>
+				<li><a href="#A_mathematical_description">A mathematical description</a></li>
+			</ul>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Operating_instructions">Operating instructions</a><ul>
+		<li><a href="#GUI_components">GUI components</a></li>
+		<li><a href="#CheckToDisplayGrayPixels">Check to display gray pixels</a></li>
+		<li><a href="#Check_to_show_onscreen_display">Check to show onscreen 
+		display</a></li>
+		<li><a href="#Select_file">Select file</a><ul>
+			<li><a href="#Allowable_file_types">Allowable file types</a></li>
+			<li><a href="#Processing_begins">Processing begins</a></li>
+		</ul>
+		</li>
+		<li><a href="#Slide_to_adjust_threshold">Slide to adjust threshold</a></li>
+		<li><a href="#Sliding_scale_value_display">Slider value</a></li>
+		<li><a href="#Percent_black_pixels">Percent black pixels</a></li>
+		<li><a href="#Write_the_output_file">Write output file</a></li>
+		<li><a href="#Exit_the_program">Exit the program</a></li>
+	</ul>
+	</li>
+
+</ul>
+<h2><a name="Introduction">Introduction</a></h2>
+<p>You may have discovered that your attempts to emboss bitmap images have been 
+met with less than outstanding success. If so, you may want to try using this 
+program to enhance your bitmap images for embossing prior to the application of 
+your chosen embossing method.</p>
+<p>This program is designed to enhance bitmap images for 
+improved embossing. The program is not tied to any particular embossing method. 
+It should work equally well with embossers with variable dot height, embossers 
+without variable dot height, and other embossing methods such as the use of 
+&quot;swell paper&quot;.</p>
+<h3><a name="Whats_new_in_Version_0.0.2">What's new in Version 0.0.2</a></h3>
+<p>The primary upgrades in this version are related to efforts to make the 
+program more accessible and useful for blind users.</p>
+<h4><a name="Ability_to_disable_the_onscreen_display">Ability to disable the 
+onscreen display</a></h4>
+<p>This version and the previous version both provide an onscreen display for 
+use by sighted teachers and others who assist blind students. However, the 
+onscreen display is of no use to blind users and actually makes the program more 
+difficult for them to use. Without getting into the details as to why this is 
+so, I will simply say that a checkbox was added to the graphical user interface 
+(GUI) so that blind users can disable the onscreen display.</p>
+<h4><a name="Display_percent_black_pixels">Display percent black pixels</a></h4>
+<p>Because blind users can't see the onscreen display as they adjust the slider, 
+producing good quality embossed images can be a trial and error process for 
+blind users. One of the criteria that can be used to reduce the uncertainty in 
+the trial and error process is a measure of the percentage of black pixels in 
+the embossed image.</p>
+<p>Version 0.0.2 adds a display that shows the percent black pixels as the user 
+moves the slider. There are two display fields below the slider in the user 
+interface. The 
+first shows the positional value of the slider from 0 on the left to 100 on the 
+right. The second shows the percentage of black pixels for the current slider 
+position.</p>
+<p>Experimentation with dozens of random images indicates that best results are often 
+achieved when the percentage value is between 5 and 25 percent, but that does 
+not hold true for all images.</p>
+<h4><a name="Big_steps_and_small_steps">Big steps and small steps</a></h4>
+<p>Originally, it was only possible to cause the slider to move in one-unit 
+steps from the keyboard. The program was updated so that pressing the arrow keys 
+still causes to slider to move in one-unit steps, but pressing the Page Up and 
+Page Down keys causes the slider to move in larger steps.</p>
+<h3><a name="Accessibility">Accessibility</a></h3>
+<p>This program is not completely accessible for blind users 
+because it uses a slider and an onscreen display to 
+adjust a threshold in the enhancement algorithm for best results on an image by 
+image basis.</p>
+<p><a name="However,_the_graphical_user_interface">However, the graphical user 
+interface</a> was written using SWT and should be fully accessible. If you are 
+blind, you can run the program to produce and emboss output files by using the 
+default level for the threshold or by adjusting the threshold level with the 
+slider on a trial and error basis.</p>
+<p>While you won't be able to use the 
+onscreen display to optimize the threshold on an image by image basis, you may find that 
+embossed images based on the default threshold value are more useful than 
+embossed versions of the raw images. You may also find that by making 
+adjustments on a trial and error basis, you are able to get even better results.</p>
+<p>One of the criteria that can be used to reduce the uncertainty in the trial 
+and error process is a measure of the percentage of black pixels in the embossed 
+image. The GUI contains a display that shows the percentage of black pixels as the 
+user moves the slider.</p>
+<p>There are two display fields below the slider. The first shows the positional 
+value of the slider from 0 on the left to 100 on the right. The second shows the 
+percentage of black pixels for the current slider position. Once you have both of 
+those values adjusted to your satisfaction, you can press a button and write an 
+output jpg file containing the enhanced image. You can then emboss that enhanced 
+image using the embossing method of your choice.</p>
+<p>Experimentation with dozens of random images indicates that best results are often 
+achieved when the percentage value is between 5 and 25 percent. Be aware, 
+however, that rule of thumb does not hold true for all images.</p>
+<p>The program is free, so if you are blind and you have access to a suitable 
+embosser, you might as well give it a try. If you discover operational 
+procedures that work for you to produce good results, you should consider 
+sharing them with others.</p>
+<h3><a name="An_image_processing_algorithm">An image processing algorithm</a></h3>
+<p>The program applies a sophisticated image processing algorithm to the 
+full-color bitmap image for the purpose of identifying and
+retaining the 
+salient features of the image prior to discarding the color information and converting to black and white or 
+black, gray, and white format.</p>
+<h3><a name="Output_file_format">Output file format</a></h3>
+<p>The enhanced output image is written into a jpg file. The name of the output 
+file is the same as the name of the input file but with &quot;-Enhanced&quot; inserted in 
+the file name.</p>
+<p>The dimensions of the image in the output file are the same as or possibly 
+smaller than the dimensions of the input image. After the image is enhanced, it 
+is trimmed to eliminate any blank areas around the borders of the enhanced 
+image. This can lead to smaller dimensions in the output image.</p>
+<h3><a name="Semi-theoretical_background">Semi-theoretical background</a></h3>
+<p>You may have discovered that it can be very difficult to produce good results 
+when embossing full-color bitmap images. The reasons for the poor results&nbsp; 
+are fairly easy to understand. The solution to the problem is somewhat more 
+difficult.</p>
+<p>The reasons for the difficulty are twofold:</p>
+<ul>
+	<li>loss of color information</li>
+	<li>loss of spatial detail due to very sparse spatial sampling</li>
+</ul>
+<p>This program deals with the loss of color information. It does not deal with 
+the loss of spatial detail due to sparse spatial sampling in any significant 
+way.</p>
+<h4><a name="Loss_of_color_information">Loss of color information</a></h4>
+<p>In many cases, a digital image consists of an array of colored pixels where 
+any one pixel can take on more than 16 million colors. It is the combination of 
+these widely varying colors in the array of pixels that imparts information to a 
+sighted viewer.</p>
+<p>An embossed output is often analogous to a digital image 
+containing only two colors -- black and white. The situation is somewhat better 
+with embossing methods that provide variable dot height. Those methods can represent black, white, and 
+possibly three 
+shades of gray. (Some might believe that a blind user of a variable dot height 
+embosser can recognize more than three shades of gray but as far as I know, 
+there have been no experimental trials to confirm that.)</p>
+<h5><a name="Map_16_million_colors_into_black,_white,_and_three_shades_of_gray">
+Map 16 million colors into black, white, and three shades of gray</a></h5>
+<p>In order to emboss a digital image and produce a meaningful tactile image, we 
+must map 16 million colors into black, white, and possibly three shades of gray and cause those 
+resulting two or five colors to convey the salient information content of the original image. 
+That is a tall order.</p>
+<h5><a name="Five_sets_of_3_million_colors_each">Five sets of 3.2 million colors 
+each</a></h5>
+<p>Assume, for example, that you were to divide the colors into five sets of 
+about 3.2 million colors each. Then assume that in order to emboss a bitmap image, 
+you were to </p>
+<ul>
+	<li>convert every pixel whose color falls in one set to black,</li>
+	<li>convert every pixel whose color falls in another set to dark gray,</li>
+	<li>convert every pixel whose color falls in still another set to gray,</li>
+	<li>convert every pixel whose color falls in still another set to light 
+	gray,</li>
+	<li>convert the remaining pixels to white.</li>
+</ul>
+<p>The results that you get will depend entirely on chance and the chances for 
+success aren't very good. About twenty-percent of the pixels will be indistinguishable from their neighbors in the final 
+embossed version of the image even if 
+those pixels were clearly distinguishable from their neighbors in the original 
+image.</p>
+<h5><a name="The_color_wheel_example">The color wheel example</a></h5>
+<p>This is illustrated by converting a simple color wheel to four-level 
+grayscale image as shown in <a href="#Figure_1">Figure 1</a> and 
+<a href="#Figure_2">Figure 2</a>.</p>
+<p><a href="#Figure_1">Figure 1</a> shows a color wheel as might appear in an 
+art course textbook showing a large number of vibrant colors that are easily 
+distinguishable from one another by a sighted viewer.</p>
+
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_1">Figure 1</a>. Color wheel.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="NewColorWheel.jpg" width="200" height="201" />
+</td></tr></tbody></table>
+
+
+<p>The bands of constant gray, black, or white shown in <a href="#Figure_2">Figure 2</a> 
+enclose the colors that would probably be indistinguishable from one another if 
+this color-wheel image were to be embossed on a four-level embosser.</p>
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_2">Figure 2</a>. Grayscale color wheel.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="NewColorWheelGray.jpg" width="200" height="204" />
+</td></tr></tbody></table>
+
+<h5><a name="The_billboard_example">The billboard example</a></h5>
+<p>Assume, for example, that red, green, and blue are 
+assigned to black as shown in <a href="#Figure_1">Figure 1</a> and
+<a href="#Figure_2">Figure 2</a>. (This probably would be the case for an 
+intensity-based grayscale conversion.)</p>
+<p>Now 
+assume that you emboss an image of a blue billboard containing red 
+letters in front of a green hillside. In its raw form, the letters and the 
+billboard would be easily distinguishable from the hillside in the background.</p>
+<p>However, in the embossed image, not only the letters on the billboard, but 
+the entire billboard would be indistinguishable from the hillside. In other 
+words, the entire billboard would disappear in the embossed image.</p>
+<p>Obviously, we need a better way to convert those 16 million colors to black, gray, and 
+white. I will explain a better way in the next section.</p>
+<h4><a name="The_solution">One solution to the color loss problem</a></h4>
+<p>Let me begin by saying that there is no single best solution to the problem 
+of color loss. 
+Different solutions may provide better results for different images. The 
+solution provided by this program is only one of several possible solutions.</p>
+<h5><a name="Outlines">Outlines</a></h5>
+
+<p>Coloring books used by small sighted children contain images consisting 
+almost entirely of the outlines of objects. Once a student progresses 
+beyond childhood coloring books and enrolls in an art class, she learns that there are very few outlines 
+in nature. Consequently, there are usually very few outlines in digital images. 
+However, you probably will want to return to outlines for the purpose of 
+embossing shapes. Outlines are probably more easily recognized than broad areas 
+of raised dots when exploring an image with the fingers.</p>
+<p>This is illustrated in the following four images.</p>
+<!--``1Fig001-->
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_3">Figure 3</a>. Full-color rendition.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="horse.jpg" width="480" height="640" />
+</td></tr></tbody></table>
+<!--``2-->
+<p>-</p>
+<!--``1Fig002-->
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_4">Figure 4</a>. Five-level gray scale rendition.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="horseFiveLevelGrayScale.jpg" width="475" height="635" />
+</td></tr></tbody></table>
+<!--``2-->
+<p>-</p>
+<!--``1Fig003-->
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_5">Figure 5</a>. Enhanced image with 5-level gray scale.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="horse-Enhanced01.jpg" width="481" height="641" />
+</td></tr></tbody></table>
+<!--``2-->
+<p>-</p>
+<!--``1Fig004-->
+<table border="1" width="0"><thead><tr><th>
+	<a name="Figure_6">Figure 6</a>. Enhanced image with black and white only.</th></tr></thead><tbody><tr><td>
+			<img alt="Missing image" src="horse-Enhanced02.jpg" width="481" height="641" />
+</td></tr></tbody></table>
+<!--``2-->
+<h5><a name="Horse_images">Horse images</a></h5>
+<p><a href="#Figure_3">Figure 3</a> shows a full-color image of a horse.
+Note the similarities of the colors in the image.</p>
+<p><a href="#Figure_4">Figure 4</a> shows a five-level gray scale rendition of the 
+same horse image. If you were to simply copy the original image to a 5-level embosser, 
+this is probably close to what you would get where each different shade of gray&nbsp; 
+is represented by dots of a given height. Thus, you would end up with large 
+areas of dots all at the same height with small differences in dot height 
+between the areas in some cases.</p>
+<p><a href="#Figure_5">Figure 5</a> shows a five-level rendition of an enhanced 
+version of the original image. In this rendition, the salient features of the 
+original image are outlined in black and the gray levels simply add accent to 
+the image. This version would be suitable for printing on an embosser that 
+supports variable dot height.</p>
+<p>I believe that the outlines shown in <a href="#Figure_5">Figure 5</a> would be much 
+easier to interpret with the fingers than the large areas of constant dot height 
+shown in <a href="#Figure_4">Figure 4</a>. I will admit, however, that never 
+having developed the ability to see with my fingers, even <a href="#Figure_5">
+Figure 5</a> would be nearly impossible for me to interpret blindfolded.</p>
+<p><a href="#Figure_6">Figure 6 </a>shows an enhanced black and white rendition 
+that would be suitable for printing on an embosser that doesn't support variable 
+dot height. Depending on the number of dots per inch that the embosser produces, 
+this version should work well with such an embosser. I don't know what you would 
+get if you were to print the rendition in <a href="#Figure_4">Figure 4</a> on 
+such an embosser, but I doubt that it would be very usable.</p>
+<h5><a name="A_written_description_is_necessary">A written description is 
+necessary</a></h5>
+<p>In all cases, a good written description of the embossed image would be 
+needed to help the student interpret what she feels with her fingers.</p>
+<h5><a name="Color_differences_are_paramount">Color differences are paramount</a></h5>
+<p>In general, the only 
+thing that distinguishes one object from another in a full color digital image is 
+the fact that the two objects are colored differently. (The horse's hair in
+<a href="#Figure_3">Figure 3</a> is a different color than the wooden planks 
+that were used to construct the stall.) As mentioned above, if 
+the scheme for converting the color image to black, gray, and white depends on 
+subdividing the colors into five groups, and simply mapping the colors into black, 
+dark gray, gray, light gray, 
+and white (as in <a href="#Figure_2">Figure 2</a> and <a href="#Figure_4">Figure 4</a>), much of the information will be lost in 
+the transformation from color to black, gray, and white.</p>
+<h5><a name="Camouflage">Camouflage</a></h5>
+<p>Animals and military combat troops use camouflage to avoid being seen by 
+predators or by the enemy. The purpose of camouflage is to eliminate outlines 
+and to prevent the recognition of common shapes.</p>
+<p>For example, the colors of the feathers on a quail cause it to blend into its 
+surroundings and eliminate or reduce its visual outline. The chameleon and 
+certain undersea creatures can change their color to match that of their 
+surroundings to eliminate or reduce their visual outline.</p>
+<h5><a name="Un-camouflage">Un-camouflage</a></h5>
+<p>For purposes of embossing a digital image&nbsp; we need to go in the exact 
+opposite direction from camouflage. We need a 
+way to un-camouflage the objects in the image. In other words, we need a way to 
+retain and even emphasize the shapes of objects in the process of converting from color to black, 
+gray, and white. Fortunately, differential calculus applied in two dimensions 
+provide that way.</p>
+<h5><a name="Emphasizing_outlines">Emphasizing outlines</a></h5>
+<p>The image processing algorithm used by this 
+program is designed to emphasize outlines. The primary objective is to cause each object 
+in an image to be described by a black outline against a white background. A 
+secondary objective, if elected by the user, is to fill in the outlines with 
+three shades of gray plus white.</p>
+<p>Technically, the process emphasizes high wave numbers and suppresses low wave 
+numbers much as you might emphasize high frequencies and suppress low 
+frequencies in time-domain frequency filtering.</p>
+<h5><a name="Color_changes">Color changes</a></h5>
+<p>The distinguishing characteristic among objects in a full-color digital image 
+is usually not the absolute colors themselves. Instead, the distinguishing characteristic is the 
+change in color from one object to the next. For example, I can invert the 
+colors in a color image so that every unique color is changed to a different 
+unique color and a sighted person will probably still be able to distinguish 
+among the different objects in the image.</p>
+<p>Therefore, the primary characteristic of the algorithm used by this program 
+is not based on the translation of absolute colors into black, gray, and white. Instead, it 
+is based on detecting the changes in color and reflecting those changes in black, 
+gray, 
+and white.</p>
+<h5><a name="An_audio_speed_sensor">An audio speed sensor</a></h5>
+<p>This is somewhat analogous to installing a buzzer in your car that sounds off when 
+your rate of change of position (speed) exceeds a preset limit. The buzzer 
+doesn't care about your absolute position, it cares only about the rate of 
+change in position.</p>
+<p>The algorithm used in this program doesn't care about absolute color, it 
+cares only about the rate of change of color.</p>
+<h5><a name="Getting_back_to_outlines">Getting back to outlines</a></h5>
+<p>The net effect of the algorithm is to convert the image back to the &quot;coloring book&quot; format of 
+black outlines on a white background. This is a format that seems to work well 
+for embossing images with a two-level embosser. The algorithm can also fill in 
+the outlines with three levels of gray, if elected by the user, to add accent to 
+the image when used with a multi-level embosser.</p>
+<h5><a name="A_mathematical_description">A mathematical description</a></h5>
+<p>For the mathematicians in the group, the enhancement algorithm simulates the 
+computation of the first derivative of a five-dimensional surface (X, Y, red, 
+green, and blue) and the creation of a three-dimensional surface where the height of the 
+surface at a particular X-Y coordinate position represents the rate of change of color at 
+that position in the original image.</p>
+<p>A slider is used to manually apply a level detector to the surface, producing 
+black pixels where the rate of change exceeds the threshold and producing white 
+pixels where the rate of change is less than the threshold. Thus, peaks in the 
+surface are represented as black islands in a sea of white.</p>
+<p>Alternatively, if elected by the user, four separate&nbsp; but related thresholds can be applied 
+producing black, dark gray, gray, light gray, and white pixels in the output 
+image.</p>
+<h2><a name="Operating_instructions">Operating instructions</a></h2>
+<p><strong>ShapeExtractor02</strong> is a GUI application that was originally designed for use by sighted instructors 
+and others who assist blind people. It was not originally designed to be accessible for 
+unassisted use by the blind. (See
+<a href="#However,_the_graphical_user_interface">earlier comments</a> regarding 
+use of the program with the default threshold value.) However, recent 
+modifications make it usable by blind students with some restrictions. Even with 
+those restrictions, the final embossed result will often be better than would be 
+the case without using it to pre-process the image before embossing.</p>
+<p>The user interface consists 
+of labels, checkboxes, a sliding scale, display windows, buttons, and a large onscreen visual display.</p>
+<h3><a name="GUI_components">GUI components</a></h3>
+<p>When the program starts running, focus is on a component that I refer to as 
+home base. It reads &quot;Start here and tab down.&quot; As you tab down, you will 
+encounter the following components in order, which are labeled as shown. I will explain 
+the purpose of each component in later sections of this document.</p>
+<ul>
+
+	<li>Checkbox - <a href="#CheckToDisplayGrayPixels">Check to display gray 
+	pixels</a></li>
+	<li>Checkbox - <a href="#Check_to_show_onscreen_display">Check to show 
+	onscreen display</a></li>
+	<li>Button - <a href="#Select_file">Select file</a></li>
+	<li>Sliding scale - <a href="#Slide_to_adjust_threshold">Slide to adjust threshold</a></li>
+	<li>Display - <a href="#Sliding_scale_value_display">Slider value</a></li>
+	<li>Display - <a href="#Percent_black_pixels">Percent black pixels</a></li>
+	<li>Button - <a href="#Write_the_output_file">Write output file</a></li>
+</ul>
+<h3><a name="CheckToDisplayGrayPixels">Check to display gray pixels</a></h3>
+<p>This checkbox is checked by default, meaning that the output file will 
+contain gray pixels by default. If you don't want gray pixels in the output, 
+clear the checkbox.</p>
+<h3><a name="Check_to_show_onscreen_display">Check to show onscreen display</a></h3>
+<p>The onscreen display appears when this checkbox is checked and does not 
+appear when the checkbox is cleared. It is checked by default. Blind users should clear the checkbox to 
+prevent the onscreen display from grabbing the focus each time the slider is 
+moved.</p>
+<p>When this checkbox is cleared, the slider gets the focus when the user opens 
+a file and keeps the focus until the user uses the tab key to change the focus. 
+While the slider has the focus, the arrow keys can be used to move it to the 
+left or to the right in small steps. The Page Up and Page Down keys can be used 
+to move it up and down in large steps.</p>
+<h3><a name="Select_file">Select file</a></h3>
+<p>Press the button 
+labeled &quot;Select file.&quot; to open a bitmap image file for processing. When you press that button, a 
+standard file selection dialog will appear allowing you to select 
+a bitmap image file.</p>
+<h4><a name="Allowable_file_types">Allowable file types</a></h4>
+<p>The image processing portion of this program was written using a multimedia 
+library provided by Georgia Tech University. I'm unsure as to all of the 
+different image file types that it will support. I know that the program will 
+support image files of <a name="types_jpg">types jpg</a>, bmp, and png, so the program is written to 
+allow you to easily select image files of those types. (The program will also allow you 
+to select a file of any type, but a little extra effort is required.)</p>
+<h4><a name="Processing_begins">Processing begins</a></h4>
+<p>Processing begins when you select the file and close the 
+dialog. At this point, you can begin moving the slider to adjust the image in 
+the onscreen display. </p>
+<p>Also, at this point, the values of the checkboxes labeled &quot;Check to display 
+gray pixels&quot; and &quot;Check to show onscreen display&quot; have been set. Clearing or setting 
+the checkboxes will have no effect until you select another file for processing.</p>
+<h3><a name="Slide_to_adjust_threshold">Slide to adjust threshold</a></h3>
+<p>When you select an image file for processing, the program will begin running 
+the image enhancement algorithm described <a href="#The_solution">earlier</a> The slider 
+on the scale will move to the center position with a value of 50 and a black and 
+white version of the selected image may&nbsp; appear in an onscreen display 
+depending on the state of the checkbox labeled &quot;Check to show onscreen display.&quot; If the 
+checkbox labeled &quot;Check to display gray pixels&quot; is also checked, a black, gray, 
+and white version of the selected image will appear in the onscreen display.</p>
+<p>A display field below the slider will show the positional value of the 
+slider, from 0 on the left to 100 on the right. A second display field below the 
+slider will show the percentage of pixels that are black in the enhanced image 
+for the current slider position.</p>
+<p>You use the slider to adjust a threshold value that is used by the enhancement algorithm 
+to determine how much detail is included in the enhanced image. Detail 
+decreases you move the slider to the left and increases as you move the slider 
+to the right. </p>
+<p>Only you can decide what works best for any particular 
+image and embossing method, and you can use the slider to adjust the level of detail accordingly.</p>
+<p>You can move the slider with your mouse, or when the slider has the focus, 
+you can move it by pressing the arrow keys on the keyboard. Each time you press 
+an arrow key, the slider will move one unit. This is useful in the final stages 
+of adjusting the threshold to cause the algorithm to produce the desired output.</p>
+<p>Pressing the Page Up or Page Down key when the slider has the focus will 
+cause it to move in a large step.</p>
+<p>Depending on the speed of your computer, you may find that the slider is 
+sluggish and difficult to move. Just be patient. One approach to moving the 
+slider is to press the 
+slider with the mouse and then move the mouse pointer to the location where you 
+want the slider to go. As soon as the computer 
+finishes the current task, an updated image will appear in the onscreen display 
+and the slider will move to the location of the mouse pointer.</p>
+<p>Another way to move the slider is to click the mouse in the track to the left 
+or the right of the slider. This will cause the slider to move in large 
+increments just like pressing the Page Up or Page Down key.</p>
+<h3><a name="Sliding_scale_value_display">Slider value</a></h3>
+<p>The sliding scale is calibrated from 0 on the left to 100 on the right. As 
+you move the slider, you should see the current position of the slider reflected 
+in a small read-only display immediately below the sliding scale. This display 
+is labeled &quot;Slider value&quot; and the contents of the display will range from 0 to 
+100.</p>
+<p>Note, however, that depending on the speed of your computer, you 
+may also find that updates to the display are somewhat sluggish.</p>
+<h3><a name="Percent_black_pixels">Percent black pixels</a></h3>
+<p>Also, as you move the slider, you should see a number being shown in a small 
+read-only display below the sliding scale labeled &quot;Percent black pixels.&quot; This 
+is the percentage of the pixels in the output image that are black for the 
+current position of the slider.</p>
+<p>Once again, depending on the speed of your computer, you 
+may also find that updates to this display are somewhat sluggish.</p>
+<h3><a name="Write_the_output_file">Write output file</a></h3>
+<p>When you are satisfied with the image showing in the onscreen display, press 
+the button labeled &quot;Write output file. This will cause the output jpg file to be written into the same folder as the input file that you
+<a href="#Select_file">selected</a> 
+for processing earlier.</p>
+<p>When the output jpg file has been written, you can use it to produce an 
+embossed version of the enhanced image using the embossing method of your 
+choice. </p>
+<p>At that point, you can either select another file for processing, or exit the 
+program.</p>
+<p>As mentioned earlier, the name of the jpg file will be based on the name of the image file 
+with &quot;-Enhanced&quot; inserted into the file name to distinguish it from the original 
+image file</p>
+<h3><a name="Exit_the_program">Exit the program</a></h3>
+<p>You can exit the program by selecting the X in the 
+upper-right corner of the graphical user interface.</p>
+<p>Dick Baldwin<br/>
+baldwin@dickbaldwin.comp</p>
+
+
+
+
+<p>-end-</p>
+
+
+
+
+
