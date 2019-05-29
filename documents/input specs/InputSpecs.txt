@@ -1,0 +1,7 @@
+Line {
+type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
+angle
+slope
+StartCordinates[x1,y1]
+EndCordinate[x2,y2]
+}
