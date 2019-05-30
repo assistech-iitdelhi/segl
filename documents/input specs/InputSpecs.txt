@@ -2,6 +2,38 @@ Line {
 type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
 angle
 slope
-StartCordinates[x1,y1]
-EndCordinate[x2,y2]
+StartCoordinates=a,[x1,y1]
+EndCoordinate=a,[x2,y2]
+}
+Quadrilateral {
+type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
+angle
+slope
+vertices=[(x1,y1),(x2,y2),(x3,y3),(x4,y4)]
+diagonals=(a,b),[(x1,y1),(x2,y2)]
+}
+Rect {
+type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
+angle
+slope
+startCoordinate=a,(x1,y1)
+length
+breadth
+diagonals=(a,b),[(x1,y1),(x2,y2)]
+}
+Ell {
+type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
+angle
+slope
+MajorAxis
+MinorAxis=MajorAxis
+center=a,(x1,y1)
+}
+Poly {
+type = normal,dotted,normal-singlearrowed,normal-doublearrowed,dotted-singlearrowed,dotted-doublearrowed;
+angle
+slope
+sides
+startCoordinate=a,(x1,y1)
+diagonals=(a,b),[(x1,y1),(x2,y2)]
 }
