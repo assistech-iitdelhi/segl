@@ -9,12 +9,12 @@ file=open(path,"w+")
 def instigate(width=screenWidth,height=screenHeight):
 	width=str(width)
 	height=str(height)
-	file.write('<svg width="'+width+'" height="'+height+'">')
+	file.write('<svg width="'+width+'" height="'+height+'">\n')
 
 class line:
-	def __init__(self,name="",length=80,color="black",x1=100,y1=100,angle=0):
+	def __init__(self,measurement="",length=80,color="black",x1=100,y1=100,angle=0):
 		self.angle=angle #angle at x1y1
-		self.name=name
+		self.measurement=measurement
 		self.length=length
 		self.color=color
 		self.x1=x1
@@ -33,7 +33,7 @@ class line:
 		x2=str(x2)
 		self.y1=str(self.y1)
 		y2=str(y2)
-		file.write('<line x1="'+self.x1+'" y1="'+self.y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+self.color+'"/>')
-		lengthOfName=len(self.name)*8
-		lengthOfName=str(lengthOfName)
-		file.write('<text x="'+textX+'" y="'+textY+'" fill="'+self.color+'" lengthAdjust="spacingAndGlyphs" textLength="'+lengthOfName+'">'+self.name+'</text>')
+		file.write('<line x1="'+self.x1+'" y1="'+self.y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+self.color+'"/>\n')
+		lengthOfMeasurement=len(self.measurement)*8
+		lengthOfMeasurement=str(lengthOfMeasurement)
+		file.write('<text x="'+textX+'" y="'+textY+'" fill="'+self.color+'" transform="rotate(-'+self.angle+' 0,0)" lengthAdjust="spacingAndGlyphs" textLength="'+lengthOfMeasurement+'">'+self.Measurement+'</text>\n')
