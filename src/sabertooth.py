@@ -36,4 +36,4 @@ class line:
 		file.write('<line x1="'+self.x1+'" y1="'+self.y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+self.color+'"/>\n')
 		lengthOfMeasurement=len(self.measurement)*8
 		lengthOfMeasurement=str(lengthOfMeasurement)
-		file.write('<text x="'+textX+'" y="'+textY+'" fill="'+self.color+'" transform="rotate(-'+self.angle+' 0,0)" lengthAdjust="spacingAndGlyphs" textLength="'+lengthOfMeasurement+'">'+self.Measurement+'</text>\n')
+		file.write('<text x="'+textX+'" y="'+textY+'" fill="'+self.color+'" transform="rotate(-'+str(self.angle)+' 0,0)" lengthAdjust="spacingAndGlyphs" textLength="'+lengthOfMeasurement+'">'+self.measurement+'</text>\n')
