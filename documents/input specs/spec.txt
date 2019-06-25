@@ -1,0 +1,12 @@
+line(
+label = 'A,B', 'l', ',l', 'l,'
+length = 20 (default: cm), 20in, 20px, 20m, 20cm, 20km, 20mi, 20mm, 
+angle - 60 (default: degree), 60r, 60d
+style = solid, dashed
+arrows = None (default), (ratio='5:7',direction='forward', 'backward', v1, v2, 'A', 'B') -- for both sides ((direction='forward'),(direction='backward'))
+showLength = False (default), True
+points = (ratio = '5:7', label = 'P') -- for more multiple points, we can use list of arrays
+extension = (direction = 'forward', 'backward', v1, v2, 'A', 'B',
+line = {length = 4cm, style = dashed}
+)
+)

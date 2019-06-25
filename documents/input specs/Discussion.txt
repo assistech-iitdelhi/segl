@@ -173,13 +173,13 @@ Manjot --
 2. finding hard to associate
 ------------------------------------------------------------------------------------------------------
 
-label = ' l' or (,'l')
+label = ' l' or (,'l') ' l'
 label = 'BCA' or ('B','C','A') or 'B C A'
 
 style = dotted, dotted-aarowed, dotted-right-arrowed, dotted-left-arrowed
 OR
 style = dotted
-arrow = forward, backward, both
+arrow = forward, backward, both, none
 
 ---------------------------------------------------------------------------------------------
 Manjot - Prefer second one -- seems simple
@@ -214,18 +214,22 @@ length
 angle
 baseAngle
 Style
+showLengths = None (default), 'all', 'AB,BC', (l1,l2)
+showAngles = None (default), 'all', 'all_', (v1_,v3_), 'A_,C_' -- _ is for values, all and all_ can be variables
 }
 
-line{
-label
-length
-angle
-style = solid, solid-arrowed, dashed, dashed-arrowed
-showLengths = False (default), True, 'AB,BC', (l1,l2)
-showAngles = False (default), True, (v1,v3), 'A,C'
-point = (ratio = '5:7', label = 'P') -- for more multiple points, we can use list of arrays
-#extension
-}
+line(
+label = 'A,B', 'l', ',l', 'l,'
+length = 20 (default: cm), 20in, 20px, 20m, 20cm, 20km, 20mi, 20mm, 
+angle - 60 (default: degree), 60r, 60d
+style = solid, dashed
+arrows = None (default), (ratio='5:7',direction='forward', 'backward', v1, v2, 'A', 'B') -- for both sides ((direction='forward'),(direction='backward'))
+showLength = False (default), True
+points = (ratio = '5:7', label = 'P') -- for more multiple points, we can use list of arrays
+extension = (direction = 'forward', 'backward', v1, v2, 'A', 'B',
+line = {length = 4cm, style = dashed}
+)
+)
 
 Cicle{
 point = (ratio, label, location, angle)
