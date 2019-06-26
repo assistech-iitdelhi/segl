@@ -173,18 +173,6 @@ Manjot --
 2. finding hard to associate
 ------------------------------------------------------------------------------------------------------
 
-label = ' l' or (,'l') ' l'
-label = 'BCA' or ('B','C','A') or 'B C A'
-
-style = dotted, dotted-aarowed, dotted-right-arrowed, dotted-left-arrowed
-OR
-style = dotted
-arrow = forward, backward, both, none
-
----------------------------------------------------------------------------------------------
-Manjot - Prefer second one -- seems simple
----------------------------------------------------------------------------------------------
-
 Visual parameters
 l2 = line(label="BC",length='6',svg={stroke-width=4,stroke=red})
 OR
