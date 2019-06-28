@@ -15,7 +15,8 @@ def instigate(width=screenWidth,height=screenHeight):
 	file.write('<svg width="'+width+'" height="'+height+'">\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=100,y1=100,angle="0",label="",x2=0,y2=0,showLength=False):
+	def __init__(self,length="10",color="black",x1=100,y1=100,angle="0",label="",x2=0,y2=0,showLength=False,style=""):
+		self.style=style
 		self.showLength=showLength
 		self.label=label
 		self.angle=angle #angle at x1y1
@@ -27,6 +28,10 @@ class line:
 		self.y2=y2
 		self.draw() #draws the line
 	def draw(self):
+		if((self.style).lower()=="dashed"):
+			styleInfo='stroke-dasharray="5 2" '
+		else:
+			styleInfo=None
 		angleMeasure=""
 		angleUnits=""
 		for character in self.angle:
@@ -63,7 +68,7 @@ class line:
 			measure=int(float(measure)*cm)
 		self.y2=int(self.y1-(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
 		self.x2=int(self.x1+(cosValue*measure))
-		file.write(f'<line x1="{self.x1}" y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
+		file.write(f'<line x1="{self.x1}" {styleInfo}y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		individualLabels=self.label.split(',')
 		labelBeginX=int(self.x1-cosValue*8) #x coordinate of the label for beginning of the line
 		labelBeginY=int(self.y1+sinValue*8)
