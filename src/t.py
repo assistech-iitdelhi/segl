@@ -1,3 +1,3 @@
 from sabertooth import instigate, line
 instigate()
-l=line(label="AB",angle=45)
+l=line(length="10mm",label="Abra,Kadabra",angle="45d",showLength=True)
