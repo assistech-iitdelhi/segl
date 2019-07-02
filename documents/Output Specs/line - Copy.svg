@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="300" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <marker id="markerCircle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+        <circle cx="5" cy="5" r="3" style="stroke: none; fill:#000000;"/>
+    </marker>
+
+    <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6"
+           orient="auto-start-reverse">
+        <path d="M2,2 L2,11 L10,6 L2,2" style="fill: #000000;" />
+    </marker>
+</defs>
+
+<line x1="27" y1="42" x2="115" y2="42" 
+      style="stroke: black;
+                   marker-start: url(#markerArrow);
+                   marker-end: url(#markerArrow);"/>
+
+  <polyline points="20,50 120,50 210,50" style="marker-mid: url(#markerCircle);" stroke="orange" stroke-width="1" data-type="HorizontalLine" data-startLabel="t1" data-endLabel="t2" data-length="t3"/>
+  <text id="t1" x="5" y="65">A</text>
+  <text id="t2" x="115" y="65">B</text>
+  <text id="t4" x="215" y="65">C</text>
+  <text id="t3" x="50" y="40">20cm</text>
+  <desc>Description of the image</desc>
+</svg>

@@ -4,4 +4,5 @@
   <text id="t1" x="5" y="50">A</text>
   <text id="t2" x="115" y="50">B</text>
   <text id="t3" x="50" y="40">20cm</text>
+  <desc>Description of the image</desc>
 </svg>

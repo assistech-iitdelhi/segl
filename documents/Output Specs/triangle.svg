@@ -9,4 +9,5 @@
 	<text id="t4" x="110" y="220">60cm</text>
 	<text id="t5" x="15" y="220">40cm</text>
 	<text id="t6" x="100" y="300">20cm</text>
+	<desc>Description of the image</desc>
 </svg>
