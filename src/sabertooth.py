@@ -1,11 +1,11 @@
 import tkinter
 import math
-cm=37.795
-mm=cm/10
-inch=2.54*cm
 root = tkinter.Tk()
 root.withdraw()
 screenWidth,screenHeight= root.winfo_screenwidth(), root.winfo_screenheight()
+cm=screenWidth/40.64
+mm=cm/10
+inch=2.54*cm
 path="draw.html"
 file=open(path,"w+")
 
@@ -27,11 +27,13 @@ class line:
 		self.x2=x2
 		self.y2=y2
 		self.draw() #draws the line
-	def draw(self):
+	def returnStyleInfo(self):
 		if((self.style).lower()=="dashed"):
 			styleInfo='stroke-dasharray="5 2" '
 		else:
 			styleInfo=None
+		return styleInfo
+	def handleAngle(self):
 		angleMeasure=""
 		angleUnits=""
 		for character in self.angle:
@@ -40,7 +42,6 @@ class line:
 		else:
 			angleUnits=angleUnits+character
 		angleUnits.lower()
-		
 		angleMeasure = float(angleMeasure)
 		if(angleUnits=="d" or angleUnits==None):
 			sinValue=math.sin(math.radians(angleMeasure))
@@ -49,7 +50,10 @@ class line:
 			sinValue=math.sin(angleMeasure)
 			cosValue=math.cos(angleMeasure)
 			angleMeasure = math.degrees(angleMeasure)
-		
+		return cosValue,sinValue,angleMeasure
+
+	def handleLine(self):
+		cosValue,sinValue,angleMeasure=self.handleAngle()
 		measure=""
 		units=""
 		for character in self.length:
@@ -66,9 +70,10 @@ class line:
 			measure=int(float(measure)*mm)
 		else:
 			measure=int(float(measure)*cm)
-		self.y2=int(self.y1-(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
-		self.x2=int(self.x1+(cosValue*measure))
-		file.write(f'<line x1="{self.x1}" {styleInfo}y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
+		return measure
+
+	def handleLabel(self):
+		cosValue,sinValue,angleMeasure=self.handleAngle()
 		individualLabels=self.label.split(',')
 		labelBeginX=int(self.x1-cosValue*8) #x coordinate of the label for beginning of the line
 		labelBeginY=int(self.y1+sinValue*8)
@@ -76,8 +81,20 @@ class line:
 		labelEndY=int(self.y2-sinValue*8)
 		labelExpression=f'<text x="{labelBeginX}" y="{labelBeginY}" fill="{self.color}">{individualLabels[0]}</text>\n<text x="{labelEndX}" y="{labelEndY}" fill="{self.color}">{individualLabels[1]}</text>\n'
 		file.write(labelExpression)
+
+	def handleLength(self):
+		cosValue,sinValue,angleMeasure=self.handleAngle()
 		lengthOfLength=len(self.length)*8
 		textX=(self.x1+self.x2-lengthOfLength)/2 #x coordinate for text tag
 		textY=(self.y1+self.y2+8)/2 #y coordinate for text tag
 		if(self.showLength==True):
 			file.write(f'<text x="0" y="0" fill="{self.color}" transform="translate({textX} {textY}) rotate(-{angleMeasure} 0,0)" lengthAdjust="spacingAndGlyphs" textLength="{lengthOfLength}">{self.length}</text>\n')
+
+	def draw(self):
+		styleInfo,measure=self.returnStyleInfo(),self.handleLine()
+		cosValue,sinValue,angleMeasure=self.handleAngle()
+		self.y2=int(self.y1-(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
+		self.x2=int(self.x1+(cosValue*measure))
+		file.write(f'<line x1="{self.x1}" {styleInfo}y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
+		self.handleLabel()
+		self.handleLength()
