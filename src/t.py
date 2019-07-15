@@ -1,3 +1,3 @@
-from sabertooth import instigate, line
+from sabertooth import instigate, line, direction,style
 instigate()
-l=line(style="dashed",length="10mm",label="Abra,Kadabra",angle="45d",showLength=True)
+l1=line(length="10cm",label="A,B",extension1={"length":"5cm","direction":"forward","style":"dashed"})

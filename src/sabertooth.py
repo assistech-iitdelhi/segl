@@ -1,5 +1,6 @@
 import tkinter
 import math
+direction,length,style="direction","length","style"
 root = tkinter.Tk()
 root.withdraw()
 screenWidth,screenHeight= root.winfo_screenwidth(), root.winfo_screenheight()
@@ -15,7 +16,9 @@ def instigate(width=screenWidth,height=screenHeight):
 	file.write('<svg width="'+width+'" height="'+height+'">\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=100,y1=100,angle="0",label="",x2=0,y2=0,showLength=False,style=""):
+	def __init__(self,length="10",color="black",x1=100,y1=100,angle="0",label=" , ",x2=0,y2=0,showLength=False,style="",extension1={},extension2={}):
+		self.extension1=extension1
+		self.extension2=extension2
 		self.style=style
 		self.showLength=showLength
 		self.label=label
@@ -31,7 +34,7 @@ class line:
 		if((self.style).lower()=="dashed"):
 			styleInfo='stroke-dasharray="5 2" '
 		else:
-			styleInfo=None
+			styleInfo=""
 		return styleInfo
 	def handleAngle(self):
 		angleMeasure=""
@@ -90,6 +93,18 @@ class line:
 		if(self.showLength==True):
 			file.write(f'<text x="0" y="0" fill="{self.color}" transform="translate({textX} {textY}) rotate(-{angleMeasure} 0,0)" lengthAdjust="spacingAndGlyphs" textLength="{lengthOfLength}">{self.length}</text>\n')
 
+	def handleExtension(self):
+		if(not self.extension1=={}):
+			if(self.extension1[direction]=="backward"):
+				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension1[length],style=self.extension1[style],angle=self.angle)
+			else:
+				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.extension1[style],length=self.extension1[length],angle=self.angle)
+		if(not self.extension2=={}):
+			if(self.extension2[direction]=="backward"):
+				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
+			else:
+				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
+
 	def draw(self):
 		styleInfo,measure=self.returnStyleInfo(),self.handleLine()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
@@ -98,3 +113,4 @@ class line:
 		file.write(f'<line x1="{self.x1}" {styleInfo}y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
+		self.handleExtension()
