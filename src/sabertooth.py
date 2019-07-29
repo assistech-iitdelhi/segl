@@ -16,7 +16,7 @@ def instigate(width=screenWidth,height=screenHeight):
 	file.write('<svg width="'+width+'" height="'+height+'">\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=200,y1=200,angle="0",label=" , ",x2=0,y2=0,showLength=False,style="",extension1={},extension2={},width=None):
+	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None):
 		self.width=width
 		self.extension1=extension1
 		self.extension2=extension2
@@ -30,6 +30,12 @@ class line:
 		self.y1=y1
 		self.x2=x2
 		self.y2=y2
+		self.v1=v1
+		self.v2=v2
+		if(self.v1!=(screenWidth/2,screenHeight/2)):
+			self.x1,self.y1=self.v1
+		else:
+			self.v1=(self.x1,self.y1)
 		self.draw() #draws the line
 	def returnStyleInfo(self):
 		if((self.style).lower()=="dashed"):
@@ -116,8 +122,14 @@ class line:
 	def draw(self):
 		styleInfo,measure,widthExpression=self.returnStyleInfo(),self.handleLine(),self.handleWidth()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
-		self.y2=int(self.y1+(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
-		self.x2=int(self.x1+(cosValue*measure))
+		if(self.v2!=None):
+			self.x2,self.y2=self.v2
+		else:
+			if(self.y2==None):
+				self.y2=int(self.y1+(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
+			if(self.x2==None):
+				self.x2=int(self.x1+(cosValue*measure))
+			self.v2=(self.x2,self.y2)
 		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
