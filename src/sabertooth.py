@@ -16,7 +16,8 @@ def instigate(width=screenWidth,height=screenHeight):
 	file.write('<svg width="'+width+'" height="'+height+'">\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=100,y1=100,angle="0",label=" , ",x2=0,y2=0,showLength=False,style="",extension1={},extension2={}):
+	def __init__(self,length="10",color="black",x1=200,y1=200,angle="0",label=" , ",x2=0,y2=0,showLength=False,style="",extension1={},extension2={},width=None):
+		self.width=width
 		self.extension1=extension1
 		self.extension2=extension2
 		self.style=style
@@ -45,8 +46,8 @@ class line:
 		else:
 			angleUnits=angleUnits+character
 		angleUnits.lower()
-		angleMeasure = float(angleMeasure)
-		if(angleUnits=="d" or angleUnits==None):
+		angleMeasure = 0-float(angleMeasure)
+		if(angleUnits=="d" or angleUnits==""):
 			sinValue=math.sin(math.radians(angleMeasure))
 			cosValue=math.cos(math.radians(angleMeasure))
 		else:
@@ -105,12 +106,19 @@ class line:
 			else:
 				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
 
+	def handleWidth(self):
+		if(self.width==None):
+			widthExpression=""
+		else:
+			widthExpression=f'stroke-width="{self.width}" '
+		return widthExpression
+
 	def draw(self):
-		styleInfo,measure=self.returnStyleInfo(),self.handleLine()
+		styleInfo,measure,widthExpression=self.returnStyleInfo(),self.handleLine(),self.handleWidth()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
-		self.y2=int(self.y1-(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
+		self.y2=int(self.y1+(sinValue*measure)) #because it may get into non-terminating, non-reckering decimal values
 		self.x2=int(self.x1+(cosValue*measure))
-		file.write(f'<line x1="{self.x1}" {styleInfo}y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
+		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
 		self.handleExtension()
