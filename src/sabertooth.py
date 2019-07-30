@@ -37,8 +37,8 @@ class line:
 		else:
 			self.v1=(self.x1,self.y1)
 		self.draw() #draws the line
-		if(points==""):#putting point, cause it won't work if put anywhere else
-			return
+
+	def handlePoints(self):
 		point=self.points.split(",")
 		for p in point:
 			s=p.split("=")
@@ -147,3 +147,5 @@ class line:
 		self.handleLabel()
 		self.handleLength()
 		self.handleExtension()
+		if(self.points!=""):
+			self.handlePoints()
