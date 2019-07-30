@@ -1,6 +1,5 @@
 import tkinter
 import math
-direction,length,style="direction","length","style"
 root = tkinter.Tk()
 root.withdraw()
 screenWidth,screenHeight= root.winfo_screenwidth(), root.winfo_screenheight()
@@ -13,10 +12,11 @@ file=open(path,"w+")
 def instigate(width=screenWidth,height=screenHeight):
 	width=str(width)
 	height=str(height)
-	file.write('<svg width="'+width+'" height="'+height+'">\n')
+	file.write('<svg width="'+width+'" height="'+height+'">\n<marker id="m2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">\n<circle cx="5" cy="5" r="2" fill="black"/>\n</marker>\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None):
+	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points=""):
+		self.points=points
 		self.width=width
 		self.extension1=extension1
 		self.extension2=extension2
@@ -37,6 +37,19 @@ class line:
 		else:
 			self.v1=(self.x1,self.y1)
 		self.draw() #draws the line
+		if(points==""):#putting point, cause it won't work if put anywhere else
+			return
+		point=self.points.split(",")
+		for p in point:
+			s=p.split("=")
+			ratio=s[1].split(":")
+			ratio[0]=int(ratio[0])
+			ratio[1]=int(ratio[1])
+			x=self.x1+((self.x2-self.x1)*ratio[0]/(ratio[0]+ratio[1]))
+			y=self.y1+((self.y2-self.y1)*ratio[0]/(ratio[0]+ratio[1]))
+			setattr(self, s[0], (x,y))
+			file.write(f'<path d="M {x},{y} h 1" marker-start="url(#m2)"/>\n')
+
 	def returnStyleInfo(self):
 		if((self.style).lower()=="dashed"):
 			styleInfo='stroke-dasharray="5 2" '
