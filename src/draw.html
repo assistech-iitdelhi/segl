@@ -2,14 +2,24 @@
 <marker id="m2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
 <circle cx="5" cy="5" r="2" fill="black"/>
 </marker>
-<line x1="768.0"   y1="432.0" x2="1132" y2="334" stroke="black"/>
-<text x="760" y="429" fill="black">A</text>
-<text x="1139" y="336" fill="black">B</text>
-<path d="M 950.0,383.0 h 1" marker-start="url(#m2)"/>
+<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z"/>
+</marker>
 <line x1="768.0"   y1="432.0" x2="1094" y2="243" stroke="black"/>
-<text x="761" y="428" fill="black"> </text>
-<text x="1100" y="247" fill="black">C</text>
-<path d="M 931.0,337.5 h 1" marker-start="url(#m2)"/>
-<line x1="950.0"   y1="383.0" x2="931.0" y2="337.5" stroke="black"/>
-<text x="942" y="383" fill="black"> </text>
-<text x="939" y="337" fill="black"> </text>
+<text x="761" y="428" fill="black">A</text>
+<text x="1100" y="247" fill="black">B</text>
+<polyline points="768.0,432.0 1094.0,243.0" stroke-width="" stroke="black" marker-end="url(#arrow)"/>
+<path d="M 849.5,384.75 h 1" marker-start="url(#m2)"/>
+<text fill="black" x="840.8397459621556" y="379.75">P</text>
+<path d="M 1012.5,290.25 h 1" marker-start="url(#m2)"/>
+<text fill="black" x="1003.8397459621556" y="285.25">Q</text>
+<line x1="849.5"   y1="384.75" x2="1116" y2="651" stroke="black"/>
+<text x="843" y="390" fill="black"> </text>
+<text x="1121" y="645" fill="black">R</text>
+<polyline points="849.5,384.75 982.75,517.875" stroke-width="" stroke="black" marker-end="url(#arrow)"/>
+<line x1="1012.5"   y1="290.25" x2="1116" y2="651" stroke="black"/>
+<text x="1004" y="290" fill="black"> </text>
+<text x="1124" y="651" fill="black"> </text>
+<line x1="1116" stroke-dasharray="5 2"   y1="651" x2="1304" y2="651" stroke="black"/>
+<text x="1108" y="651" fill="black"> </text>
+<text x="1312" y="651" fill="black"> </text>

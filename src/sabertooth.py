@@ -1,5 +1,6 @@
 import tkinter
 import math
+length,direction,style="length","direction","style"
 root = tkinter.Tk()
 root.withdraw()
 screenWidth,screenHeight= root.winfo_screenwidth(), root.winfo_screenheight()
@@ -13,9 +14,13 @@ def instigate(width=screenWidth,height=screenHeight):
 	width=str(width)
 	height=str(height)
 	file.write('<svg width="'+width+'" height="'+height+'">\n<marker id="m2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">\n<circle cx="5" cy="5" r="2" fill="black"/>\n</marker>\n')
+	file.write('<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">\n<path d="M 0 0 L 10 5 L 0 10 z"/>\n</marker>\n')
 
 class line:
-	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points=""):
+	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points="",forwardArrow=None,backwardArrow=None,showPoints=False):
+		self.showPoints=showPoints
+		self.forwardArrow=forwardArrow
+		self.backwardArrow=backwardArrow
 		self.points=points
 		self.width=width
 		self.extension1=extension1
@@ -39,6 +44,7 @@ class line:
 		self.draw() #draws the line
 
 	def handlePoints(self):
+		cosValue,sinValue,angle=self.handleAngle()
 		point=self.points.split(",")
 		for p in point:
 			s=p.split("=")
@@ -49,6 +55,10 @@ class line:
 			y=self.y1+((self.y2-self.y1)*ratio[0]/(ratio[0]+ratio[1]))
 			setattr(self, s[0], (x,y))
 			file.write(f'<path d="M {x},{y} h 1" marker-start="url(#m2)"/>\n')
+			if(self.showPoints==True):
+				textX=x-(10*cosValue)
+				textY=y+(10*sinValue)
+				file.write(f'<text fill="{self.color}" x="{textX}" y="{textY}">{s[0]}</text>\n')
 
 	def returnStyleInfo(self):
 		if((self.style).lower()=="dashed"):
@@ -132,6 +142,55 @@ class line:
 			widthExpression=f'stroke-width="{self.width}" '
 		return widthExpression
 
+	def handleArrows(self):
+		cosValue,sinValue,angle=self.handleAngle()
+		if(self.forwardArrow!=None):
+			arrows=self.forwardArrow.split(",")
+			for a in arrows:
+				ar=a.split("=")
+				arr=ar[0]
+				ar=ar[1].split(":")
+				ar[0]=int(ar[0])
+				ar[1]=int(ar[1])
+				x=self.x1+((self.x2-self.x1)*ar[0]/(ar[0]+ar[1]))
+				y=self.y1+((self.y2-self.y1)*ar[0]/(ar[0]+ar[1]))
+				if(x==self.x1):
+					otherX=int(self.x1-(cosValue*5))
+				else:
+					otherX=self.x1
+				if(y==self.y1):
+					otherY=int(self.y1-(sinValue*5))
+				else:
+					otherY=self.y1
+				w=self.width
+				if(w==None):
+					w=""
+				file.write(f'<polyline points="{otherX},{otherY} {x},{y}" stroke-width="{w}" stroke="{self.color}" marker-end="url(#arrow)"/>\n')
+				setattr(self,arr,(x,y))
+		if(self.backwardArrow!=None):
+			arrows=self.backwardArrow.split(",")
+			for a in arrows:
+				ar=a.split("=")
+				arr=ar[0]
+				ar=ar[1].split(":")
+				ar[0]=int(ar[0])
+				ar[1]=int(ar[1])
+				x=self.x1+((self.x2-self.x1)*ar[0]/(ar[0]+ar[1]))
+				y=self.y1+((self.y2-self.y1)*ar[0]/(ar[0]+ar[1]))
+				if(x==self.x1):
+					otherX=int(self.x1+(cosValue*5))
+				else:
+					otherX=self.x1
+				if(y==self.y1):
+					otherY=int(self.y1+(sinValue*5))
+				else:
+					otherY=self.y1
+				w=self.width
+				if(w==None):
+					w=""
+				file.write(f'<polyline points="{otherX},{otherY} {x},{y}" stroke="{self.color}" stroke-width="{w}" marker-start="url(#arrow)"/>\n')
+				setattr(self,arr,(x,y))
+
 	def draw(self):
 		styleInfo,measure,widthExpression=self.returnStyleInfo(),self.handleLine(),self.handleWidth()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
@@ -147,5 +206,6 @@ class line:
 		self.handleLabel()
 		self.handleLength()
 		self.handleExtension()
+		self.handleArrows()
 		if(self.points!=""):
 			self.handlePoints()
