@@ -202,6 +202,10 @@ class line:
 			if(self.x2==None):
 				self.x2=int(self.x1+(cosValue*measure))
 			self.v2=(self.x2,self.y2)
+
+		angle2=(self.y2-self.y1)/(self.x2-self.x1)#in case angle isn't given, to avoid the default angle=0 glitch
+		angle2=math.degrees(math.atan(angle2))
+		self.angle=str(angle2+180)+"d"
 		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
