@@ -125,11 +125,13 @@ class line:
 
 	def handleExtension(self):
 		if(not self.extension1=={}):
+			print("handleExtension")
 			if(self.extension1[direction]=="backward"):
 				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension1[length],style=self.extension1[style],angle=self.angle)
 			else:
-				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.extension1[style],length=self.extension1[length],angle=self.angle)
+				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.extension1[style],length=self.extension1[length],angle='-'+self.angle)
 		if(not self.extension2=={}):
+			print("handleExtension")
 			if(self.extension2[direction]=="backward"):
 				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
 			else:
@@ -192,6 +194,7 @@ class line:
 				setattr(self,arr,(x,y))
 
 	def draw(self):
+		print(f"self.angle = {self.angle}")
 		styleInfo,measure,widthExpression=self.returnStyleInfo(),self.handleLine(),self.handleWidth()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
 		if(self.v2!=None):
@@ -203,9 +206,12 @@ class line:
 				self.x2=int(self.x1+(cosValue*measure))
 			self.v2=(self.x2,self.y2)
 
+		print(f"self.x1 = {self.x1}, self.y1 = {self.y1}")
+		print(f"self.x2 = {self.x2}, self.y2 = {self.y2}")
 		angle2=(self.y2-self.y1)/(self.x2-self.x1)#in case angle isn't given, to avoid the default angle=0 glitch
 		angle2=math.degrees(math.atan(angle2))
-		self.angle=str(angle2+180)+"d"
+		print(f"angle2 = {angle2}")
+		self.angle=str(angle2)+"d"
 		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
