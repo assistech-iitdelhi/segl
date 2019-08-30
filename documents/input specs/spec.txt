@@ -1,12 +1,35 @@
+Conventions:
+{content} -- Agree, but yet to be implemented 
+[content] -- Not to discuss in future
+
+Specs:
 line(
 label = 'A,B', 'l', ',l', 'l,'
-length = 20 (default: cm), 20in, 20px, 20m, 20cm, 20km, 20mi, 20mm, 
-angle - 60 (default: degree), 60r, 60d
+length = 20 (default: cm), '20in', '20px', '20m', '20cm', '20km', '20mi', '20mm', 
+angle = 60 (default: degree), '60r', '60d'
+slope = 0.01
 style = solid, dashed
-arrows = None (default), (ratio='5:7',direction='forward', 'backward', v1, v2, 'A', 'B') -- for both sides ((direction='forward'),(direction='backward'))
+forwardArrow = None (default), 'Arrow1_Name=5:7,Arrow2_Name=Ratio', {v1, v2, 'A', 'B'}
+backwardArrow = None (default), 'Arrow1_Name=5:7,Arrow2_Name=Ratio', {v1, v2, 'A', 'B'}
 showLength = False (default), True
-points = (ratio = '5:7', label = 'P') -- for more multiple points, we can use list of arrays
-extension = (direction = 'forward', 'backward', v1, v2, 'A', 'B',
-line = {length = 4cm, style = dashed}
-)
-)
+points = 'Point_Name=5:7'
+showPoints = False (default), True, 'Point_Name', ['all,!Point1_Name,!Point2_Name'] -- show small circle as indication of point mark
+showPointLabels = False (default), True, 'Point_Name', ['all,!Point1_Name,!Point2_Name'] -- show the label names along with the point
+ext1 = extension(from = 'v1', 'v2', 'A', 'B',
+length = '4cm', label = 'E', style = 'dashed') -- min user has to give from, In this case, by default, style will be dashed, no label, length will be parent_line_length/2 -- Need to think about inconsistency in quote with v1, v2
+color = 'red'
+thickness = 2 (will consider in pixel)
+) -- no min parameter -- length = 10 cm, angle = 0d, x1,y1 = screen center
+
+circle(
+center = relative_position, 
+radius
+radii
+diameter
+chord
+tangent
+point
+arrow
+) -- no min parameter -- center = screen center, radius = 2.5cm
+
+circle(center=(l1.P.x+2,l1.P.y+3) center = l1.P + ('2in','3in')
