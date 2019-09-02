@@ -7,7 +7,7 @@ screenWidth,screenHeight= root.winfo_screenwidth(), root.winfo_screenheight()
 cm=screenWidth/40.64
 mm=cm/10
 inch=2.54*cm
-path="draw.html"
+path="draw.svg"
 file=open(path,"w+")
 
 def instigate(width=screenWidth,height=screenHeight):
@@ -16,15 +16,22 @@ def instigate(width=screenWidth,height=screenHeight):
 	file.write('<svg width="'+width+'" height="'+height+'">\n<marker id="m2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">\n<circle cx="5" cy="5" r="2" fill="black"/>\n</marker>\n')
 	file.write('<marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">\n<path d="M 0 0 L 10 5 L 0 10 z"/>\n</marker>\n')
 
+class extension:
+	def __init__(self,length,direction,point="",style="dashed"):
+		self.length=length
+		self.point=point
+		self.direction=direction
+		self.style=style
+
 class line:
-	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",extension1={},extension2={},width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points="",forwardArrow=None,backwardArrow=None,showPoints=False):
+	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points="",forwardArrow=None,backwardArrow=None,showPoints=False,ext1=None,ext2=None):
 		self.showPoints=showPoints
 		self.forwardArrow=forwardArrow
 		self.backwardArrow=backwardArrow
 		self.points=points
 		self.width=width
-		self.extension1=extension1
-		self.extension2=extension2
+		self.ext1=ext1
+		self.ext2=ext2
 		self.style=style
 		self.showLength=showLength
 		self.label=label
@@ -124,18 +131,16 @@ class line:
 			file.write(f'<text x="0" y="0" fill="{self.color}" transform="translate({textX} {textY}) rotate(-{angleMeasure} 0,0)" lengthAdjust="spacingAndGlyphs" textLength="{lengthOfLength}">{self.length}</text>\n')
 
 	def handleExtension(self):
-		if(not self.extension1=={}):
-			print("handleExtension")
-			if(self.extension1[direction]=="backward"):
-				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension1[length],style=self.extension1[style],angle=self.angle)
+		if(not self.ext1==None):
+			if(self.ext1.direction.lower()=="backward"):
+				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext1.length,style=self.ext1.style,angle='-'+self.angle,label=','+self.ext1.point)
 			else:
-				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.extension1[style],length=self.extension1[length],angle='-'+self.angle)
-		if(not self.extension2=={}):
-			print("handleExtension")
-			if(self.extension2[direction]=="backward"):
-				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
+				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.ext1.style,length=self.ext1.length,angle='-'+self.angle,label=','+self.ext1.point)
+		if(not self.ext2==None):
+			if(self.ext2.direction.lower()=="backward"):
+				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point)
 			else:
-				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.extension2[length],style=self.extension2[style],angle=self.angle)
+				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point)
 
 	def handleWidth(self):
 		if(self.width==None):
@@ -194,7 +199,6 @@ class line:
 				setattr(self,arr,(x,y))
 
 	def draw(self):
-		print(f"self.angle = {self.angle}")
 		styleInfo,measure,widthExpression=self.returnStyleInfo(),self.handleLine(),self.handleWidth()
 		cosValue,sinValue,angleMeasure=self.handleAngle()
 		if(self.v2!=None):
@@ -205,12 +209,14 @@ class line:
 			if(self.x2==None):
 				self.x2=int(self.x1+(cosValue*measure))
 			self.v2=(self.x2,self.y2)
-
-		print(f"self.x1 = {self.x1}, self.y1 = {self.y1}")
-		print(f"self.x2 = {self.x2}, self.y2 = {self.y2}")
-		angle2=(self.y2-self.y1)/(self.x2-self.x1)#in case angle isn't given, to avoid the default angle=0 glitch
+		if(self.x2==self.x1):
+			if(self.y2<self.y1):
+				angle2=90
+			else:
+				angle2=270
+		else:
+			angle2=(self.y2-self.y1)/(self.x2-self.x1)#in case angle isn't given, to avoid the default angle=0 glitch
 		angle2=math.degrees(math.atan(angle2))
-		print(f"angle2 = {angle2}")
 		self.angle=str(angle2)+"d"
 		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
@@ -219,3 +225,28 @@ class line:
 		self.handleArrows()
 		if(self.points!=""):
 			self.handlePoints()
+
+#circle code
+class circle:
+	def __init__(self,x1=screenWidth/2,y1=screenHeight/2,center=(screenWidth/2,screenHeight/2),radius="2.5cm",color="black",width=None,fill=None,radii=None,label=None,chords=None,showChords=False):
+		self.x1=x1
+		self.y1=y1
+		self.color=color
+		self.fill=fill
+		self.width=width
+		if(self.x1!=screenWidth/2 and self.y1!=screenHeight/2):
+			self.center=(self.x1,self.y1)
+		elif(self.x1!=screenWidth/2):
+			self.center=(self.x1,screenHeight/2)
+		elif(self.y1!=screenHeight/2):
+			self.center(screenWidth/2,self.y2)
+		else:
+			self.center=center
+		self.showChords=showChords
+		self.radius=radius
+		self.radii=radii
+		self.chords=chords
+		self.draw()
+
+	def draw(self):
+		file.write(f'<circle cx="{self.x1}" cy="{self.y1}" r="{self.radius}" stroke="{self.color}" fill="{self.fill}" stroke-width="{self.width}"/>')
