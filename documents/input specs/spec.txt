@@ -22,14 +22,17 @@ thickness = 2 (will consider in pixel)
 ) -- no min parameter -- length = 10 cm, angle = 0d, x1,y1 = screen center
 
 circle(
-center = relative_position, 
-radius
-radii
-diameter
-chord
-tangent
-point
-arrow
+center = relative_position,(l1.P.x+2,l1.P.y+3),l1.P + (2,3),l1.p + ('2in','3in')
+radius = relative_length,float
+drawRadii = 30 -- list [30,60] -- if d -- default is degree....later on can be extended to radian
+chord = [(int_angle,final_angle),(int_angle2,final_angle2)]
+tangent = (30,150,'intersect') -- angle of the line joining center and tangent point -- need to think about intersection of tangent scenerio
+point = 30
+clockwiseArrow = 30 -- list for multiple
+anticlockwiseArrow = 30
+sector = (angle1,angle2)
 ) -- no min parameter -- center = screen center, radius = 2.5cm
 
-circle(center=(l1.P.x+2,l1.P.y+3) center = l1.P + ('2in','3in')
+sector - minor and major
+segment - minor and major
+circle related labelling
