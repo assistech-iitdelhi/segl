@@ -79,7 +79,7 @@ class line:
 
 	def handleAngle(self):
 		if(self.slope!=0):
-			self.angle=math.degrees(math.atan(self.slope))
+			self.angle=str(math.degrees(math.atan(self.slope)))
 		angleMeasure=""
 		angleUnits=""
 		for character in self.angle:

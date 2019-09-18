@@ -1,3 +1,3 @@
 from sabertooth import instigate, line, circle
 instigate()
-c1=circle()
+l=line(slope=1)
