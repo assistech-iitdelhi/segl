@@ -24,12 +24,14 @@ class extension:
 		self.style=style
 
 class line:
-	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",width=None,v1=(screenWidth/2,screenHeight/2),v2=None,points="",forwardArrow=None,backwardArrow=None,showPoints=False,ext1=None,ext2=None):
+	def __init__(self,length="10",color="black",x1=screenWidth/2,y1=screenHeight/2,angle="0",label=" , ",x2=None,y2=None,showLength=False,style="",thickness=None,v1=(screenWidth/2,screenHeight/2),v2=None,points="",forwardArrow=None,backwardArrow=None,showPoints=False,ext1=None,ext2=None,slope=0,showPointsLabels=False):
+		self.showPointsLabels=showPointsLabels
+		self.slope=slope
 		self.showPoints=showPoints
 		self.forwardArrow=forwardArrow
 		self.backwardArrow=backwardArrow
 		self.points=points
-		self.width=width
+		self.thickness=thickness
 		self.ext1=ext1
 		self.ext2=ext2
 		self.style=style
@@ -61,8 +63,9 @@ class line:
 			x=self.x1+((self.x2-self.x1)*ratio[0]/(ratio[0]+ratio[1]))
 			y=self.y1+((self.y2-self.y1)*ratio[0]/(ratio[0]+ratio[1]))
 			setattr(self, s[0], (x,y))
-			file.write(f'<path d="M {x},{y} h 1" marker-start="url(#m2)"/>\n')
 			if(self.showPoints==True):
+				file.write(f'<path d="M {x},{y} h 1" marker-start="url(#m2)"/>\n')
+			if(self.showPointsLabels==True):
 				textX=x-(10*cosValue)
 				textY=y+(10*sinValue)
 				file.write(f'<text fill="{self.color}" x="{textX}" y="{textY}">{s[0]}</text>\n')
@@ -73,7 +76,10 @@ class line:
 		else:
 			styleInfo=""
 		return styleInfo
+
 	def handleAngle(self):
+		if(self.slope!=0):
+			self.angle=math.degrees(math.atan(self.slope))
 		angleMeasure=""
 		angleUnits=""
 		for character in self.angle:
@@ -121,6 +127,8 @@ class line:
 		labelEndY=int(self.y2-sinValue*8)
 		labelExpression=f'<text x="{labelBeginX}" y="{labelBeginY}" fill="{self.color}">{individualLabels[0]}</text>\n<text x="{labelEndX}" y="{labelEndY}" fill="{self.color}">{individualLabels[1]}</text>\n'
 		file.write(labelExpression)
+		setattr(self,individualLabels[0],(self.x1,self.y2))
+		setattr(self,individualLabels[1],(self.x2,self.y2))
 
 	def handleLength(self):
 		cosValue,sinValue,angleMeasure=self.handleAngle()
@@ -133,20 +141,20 @@ class line:
 	def handleExtension(self):
 		if(not self.ext1==None):
 			if(self.ext1.direction.lower()=="backward"):
-				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext1.length,style=self.ext1.style,angle='-'+self.angle,label=','+self.ext1.point)
+				e1=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext1.length,style=self.ext1.style,angle='-'+self.angle,label=','+self.ext1.point,thickness=self.thickness)
 			else:
-				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.ext1.style,length=self.ext1.length,angle='-'+self.angle,label=','+self.ext1.point)
+				e1=line(color=self.color,x1=self.x2,y1=self.y2,style=self.ext1.style,length=self.ext1.length,angle='-'+self.angle,label=','+self.ext1.point,thickness=self.thickness)
 		if(not self.ext2==None):
 			if(self.ext2.direction.lower()=="backward"):
-				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point)
+				e2=line(color=self.color,x1=self.x1,y1=self.y1,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point,thickness=self.thickness)
 			else:
-				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point)
+				e2=line(color=self.color,x1=self.x2,y1=self.y2,length=self.ext2.length,style=self.ext2.style,angle='-'+self.angle,label=','+self.ext2.point,thickness=self.thickness)
 
 	def handleWidth(self):
-		if(self.width==None):
+		if(self.thickness==None):
 			widthExpression=""
 		else:
-			widthExpression=f'stroke-width="{self.width}" '
+			widthExpression=f'stroke-width="{self.thickness}" '
 		return widthExpression
 
 	def handleArrows(self):
@@ -218,7 +226,8 @@ class line:
 			angle2=(self.y2-self.y1)/(self.x2-self.x1)#in case angle isn't given, to avoid the default angle=0 glitch
 		angle2=math.degrees(math.atan(angle2))
 		self.angle=str(angle2)+"d"
-		file.write(f'<line x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
+		self.thickness=self.handleWidth()
+		file.write(f'<line stroke-width="{self.thickness}" x1="{self.x1}" {styleInfo} {widthExpression} y1="{self.y1}" x2="{self.x2}" y2="{self.y2}" stroke="{self.color}"/>\n')
 		self.handleLabel()
 		self.handleLength()
 		self.handleExtension()
