@@ -1,3 +1,3 @@
 from sabertooth import instigate, line, circle
 instigate()
-l=line(slope=1)
+c=circle(sectors=[(30,60),(60,90)])

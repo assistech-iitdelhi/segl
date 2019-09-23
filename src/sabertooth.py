@@ -237,12 +237,17 @@ class line:
 
 #circle code
 class circle:
-	def __init__(self,x1=screenWidth/2,y1=screenHeight/2,center=(screenWidth/2,screenHeight/2),radius="2.5cm",color="black",width=None,fill=None,radii=None,label=None,chords=None,showChords=False):
+	def __init__(self,x1=screenWidth/2,y1=screenHeight/2,center=(screenWidth/2,screenHeight/2),radius="2.5cm",color="black",thickness=None,fill=None,drawRadii=None,label=None,chords=None,points=None,showPoints=False,showPointsLabels=False,tangents=None,sectors=None):
+		self.points=points
+		self.showPoints=showPoints
+		self.showPointsLabels=showPointsLabels
+		self.tangents=tangents
+		self.sectors=sectors
 		self.x1=x1
 		self.y1=y1
 		self.color=color
 		self.fill=fill
-		self.width=width
+		self.thickness=thickness
 		if(self.x1!=screenWidth/2 and self.y1!=screenHeight/2):
 			self.center=(self.x1,self.y1)
 		elif(self.x1!=screenWidth/2):
@@ -251,11 +256,91 @@ class circle:
 			self.center(screenWidth/2,self.y2)
 		else:
 			self.center=center
-		self.showChords=showChords
 		self.radius=radius
-		self.radii=radii
+		self.drawRadii=drawRadii
 		self.chords=chords
 		self.draw()
 
+	def handleRadius(self):
+		measure=""
+		units=""
+		for character in self.radius:
+			if(character.isalpha()==0):
+				measure=measure+character
+			else:
+				units=units+character
+		units.lower()
+		if(units=="cm"):
+			measure=int(float(measure)*cm)
+		elif(units=="inch"):
+			measure=int(float(measure)*inch)
+		elif(units=="mm"):
+			measure=int(float(measure)*mm)
+		else:
+			measure=int(float(measure)*cm)
+		return measure		
+
+	def handleDrawRadii(self):
+		if(self.drawRadii==None):
+			return
+		individuals=self.drawRadii.split(",")
+		for x in individuals:
+			l=line(v1=self.center,color=self.color,thickness=self.thickness,angle="-"+x,length=self.radius)
+
+	def handlePoints(self,radiusLength):
+		if(self.points==None):
+			return
+		individuals=self.points.split(",")
+		for x in individuals:
+			measure=""
+			unit=""
+			z=x.split("=")
+			for y in z[1]:#processing angles
+				if(y.isalpha()==0):
+					unit=unit+y
+				else:
+					measure=measure+y
+			if(unit!='r' or unit!='R'):
+				measure=math.radians(float(measure))
+			x=self.x1+math.cos(measure)*radiusLength
+			y=self.y1-math.sin(measure)*radiusLength
+			setattr(self,z[0],(x,y))
+			if(self.showPoints==True):
+				file.write(f'<path d="M {x},{y} h 1" marker-start="url(#m2)"/>\n')
+			if(self.showPointsLabels==True):
+				file.write(f'<text x="{self.x1+math.cos(measure)*(radiusLength+8)}" y="{self.y1-math.sin(measure)*(radiusLength+8)}" fill="{self.color}">{z[0]}</text>\n')
+
+	def handleTangents(self,radiusLength):
+		if(self.tangents==None):
+			return
+		individuals=self.tangents.split(",")
+		for z in individuals:
+			x=math.cos(math.radians(float(z)))*radiusLength+self.x1
+			y=math.sin(math.radians(float(z)))*radiusLength+self.y1
+			l=line(v1=(x,y),angle=z+90,length=self.radius,color=self.color,thickness=self.thickness)
+
+	def handleChords(self,radiusLength):
+		if(self.chords==None):
+			return
+		for individual in self.chords:
+			x1=radiusLength*math.cos(math.radians(individual[0]))+self.x1
+			x2=radiusLength*math.cos(math.radians(individual[1]))+self.x1
+			y1=self.y1-radiusLength*math.sin(math.radians(individual[0]))
+			y2=self.y1-radiusLength*math.sin(math.radians(individual[1]))
+			l=line(v1=(x1,y1),v2=(x2,y2),color=self.color,thickness=self.thickness)
+
+	def handleSectors(self):
+		if(self.sectors==None):
+			return
+		for individual in self.sectors:
+			l1=line(v1=self.center,length=self.radius,angle=str(individual[0]),color=self.color,thickness=self.thickness)
+			l2=line(v1=self.center,angle=str(individual[1]),length=self.radius,color=self.color,thickness=self.thickness)
+
 	def draw(self):
-		file.write(f'<circle cx="{self.x1}" cy="{self.y1}" r="{self.radius}" stroke="{self.color}" fill="{self.fill}" stroke-width="{self.width}"/>')
+		radiusLength=self.handleRadius()
+		file.write(f'<circle cx="{self.x1}" cy="{self.y1}" r="{radiusLength}" stroke="{self.color}" fill="{self.fill}" stroke-width="{self.thickness}"/>')
+		self.handleDrawRadii()
+		self.handlePoints(radiusLength)
+		self.handleTangents(radiusLength)
+		self.handleChords(radiusLength)
+		self.handleSectors()
